@@ -1,7 +1,0 @@
-Symlinking /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/share/gscam/cmake/gscamConfig.cmake
-Symlinking /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/share/gscam/cmake/gscamConfig-version.cmake
-Symlinking /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/libgscam.so
-Symlinking /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/libGSCamNodelet.so
-Symlinking /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/gscam/gscam_node
-Symlinking /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/gscam/gscam
-Symlinking /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/pkgconfig/gscam.pc

@@ -1,1 +1,0 @@
-/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/catkin_tools_prebuild/setup.bash

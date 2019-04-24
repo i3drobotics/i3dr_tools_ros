@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target imu_serial[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/imu_serial.dir/src/imu_serial.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/uno_imu/lib/uno_imu/imu_serial[0m
-[100%] Built target imu_serial

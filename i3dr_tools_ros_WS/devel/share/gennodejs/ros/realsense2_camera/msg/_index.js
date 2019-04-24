@@ -1,1 +1,0 @@
-/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/realsense2_camera/share/gennodejs/ros/realsense2_camera/msg/_index.js

@@ -1,8 +1,0 @@
-prefix=/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/ddynamic_reconfigure
-
-Name: ddynamic_reconfigure
-Description: Description of ddynamic_reconfigure
-Version: 0.0.6
-Cflags: -I/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/ddynamic_reconfigure/include -I/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_realsense/realsense/ddynamic_reconfigure/include
-Libs: -L/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/ddynamic_reconfigure/lib -lddynamic_reconfigure
-Requires: dynamic_reconfigure message_runtime std_msgs

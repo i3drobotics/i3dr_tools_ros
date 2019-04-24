@@ -1,1 +1,0 @@
-/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/realsense2_camera/lib/python2.7/dist-packages/realsense2_camera/__init__.py
