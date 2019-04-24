@@ -16,6 +16,7 @@ catkin_package(
     std_msgs
     sensor_msgs
     imu_filter_madgwick
+    rtabmap
     tf
 )
 

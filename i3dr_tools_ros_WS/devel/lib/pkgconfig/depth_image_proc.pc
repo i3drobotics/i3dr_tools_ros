@@ -1,0 +1,8 @@
+prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel
+
+Name: depth_image_proc
+Description: Description of depth_image_proc
+Version: 1.12.23
+Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline/depth_image_proc/include
+Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib -ldepth_image_proc
+Requires: 

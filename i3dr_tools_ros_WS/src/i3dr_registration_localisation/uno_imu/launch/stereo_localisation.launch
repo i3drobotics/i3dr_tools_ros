@@ -1,0 +1,33 @@
+<launch>
+    
+    <arg name="camera_namespace" default="stereo"/>
+    <group ns="$(arg camera_namespace)">
+        <node pkg="nodelet" type="nodelet" name="disparity2depth" args="standalone rtabmap_ros/disparity_to_depth"/>
+    </group>
+
+    <!-- SLAM -->
+    <arg name="depth_odom" value="true"/>
+    <arg name="stereo_odom" value="false"/>
+    
+    <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+        <arg name="args" value="--delete_db_on_start"/>
+        <arg name="frame_id" value="$(arg camera_namespace)_base_link"/>
+        <arg name="vo_frame_id" value="$(arg camera_namespace)_cameraLeft"/>
+
+        <arg if="$(arg stereo_odom)" name="stereo" value="true"/>
+        <arg unless="$(arg stereo_odom)" name="stereo" value="false"/>
+
+        <arg if="$(arg depth_odom)" name="visual_odometry" value="true"/>
+        <arg unless="$(arg depth_odom)" name="visual_odometry" value="false"/>
+        <arg if="$(arg depth_odom)" name="depth_topic" value="/$(arg camera_namespace)/depth"/>
+        <arg if="$(arg depth_odom)" name="rgb_topic" value="/$(arg camera_namespace)/left/image_rect_color"/>
+        <arg if="$(arg depth_odom)" name="camera_info_topic" value="/$(arg camera_namespace)/left/camera_info"/>
+
+        <arg name="stereo_namespace" value="/$(arg camera_namespace)"/>
+        <arg name="approx_sync" value="true"/>
+           
+        <arg name="rtabmapviz" value="true"/>
+        <arg name="rviz" value="false"/>
+    </include>
+  
+</launch>

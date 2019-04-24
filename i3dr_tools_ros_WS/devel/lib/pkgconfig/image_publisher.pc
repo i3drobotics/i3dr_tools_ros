@@ -1,0 +1,8 @@
+prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel
+
+Name: image_publisher
+Description: Description of image_publisher
+Version: 1.12.23
+Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include
+Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib 
+Requires: 

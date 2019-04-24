@@ -1,0 +1,8 @@
+prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel
+
+Name: i3dr_realsense
+Description: Description of i3dr_realsense
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib 
+Requires: 

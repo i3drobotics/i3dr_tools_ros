@@ -1,0 +1,5 @@
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/i3dr_phobos_nuclear_geneus.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -5,27 +5,38 @@
     <!-- enable/disable this machine as ROS master -->
     <arg name="master" default="true" />
     <!-- enable/disable rviz -->
-    <arg name="rviz" default="true" />
+    <arg name="rviz" default="false" />
 
     <!-- STEREO CAPTURE -->
-    <include file="$(find i3dr_phobos)/launch/stereo_capture.launch">
-        <!-- enable/disable this launcher as ROS master -->
-        <!-- (robot model should be handelled by master) -->
-        <arg name="master_robot_model" value="$(arg master)"/>
+    <include file="$(find i3dr_phobos_nuclear)/launch/stereo_capture.launch">
         <!-- Be sure to change this to your cameras serials -->
-        <arg name="camera_right_serial" default="31710260"/>
-        <arg name="camera_left_serial" default="31710277"/>
+        <arg name="camera_right_serial" value="31710260"/>
+        <arg name="camera_left_serial" value="31710277"/>
     </include>
 
     <!-- STEREO MATCHER -->
-    <include file="$(find i3dr_phobos)/launch/stereo_matcher.launch">
+    <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
         <!-- enable/disable gui for stereo matching parameters -->
-        <arg name="gui" value="false"/>
+        <arg name="gui" value="true"/>
+        <arg name="camera_namespace" value="phobos_nuclear"/>
+
+        <arg name="stereo_algorithm" value="0" />
+        <arg name="min_disparity" value="300" />
+        <arg name="disparity_range" value="192" />
+        <arg name="correlation_window_size" value="19" />
+        <arg name="uniqueness_ratio" value="2" />
+        <arg name="speckle_size" value="1000" />
+    </include>
+
+    <!-- STEREO LOCALISATION -->
+    <include file="$(find uno_imu)/launch/stereo_localisation.launch">
+        <!-- Be sure to change this to your cameras serials -->
+        <arg name="camera_namespace" value="phobos_nuclear"/>
     </include>
 
     <!-- DISPLAY -->
     <!-- run rviz with config file -->
     <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rivz" 
-        args="-d $(find i3dr_phobos)/rviz/scene.rviz"/>
+        args="-d $(find i3dr_phobos_nuclear)/rviz/scene.rviz"/>
 
 </launch>

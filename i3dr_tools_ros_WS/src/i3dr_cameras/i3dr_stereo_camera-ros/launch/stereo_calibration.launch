@@ -7,9 +7,11 @@
     <!-- number of columns in checkerboard -->
     <arg name="grid_cols" default="6" />
     <!-- size of squares in checkerboard -->
-    <arg name="grid_size" default="0.025" />
+    <arg name="grid_size" default="0.036" />
     <!-- enable/disable approximate sync for stereo cameras that do not trigger in unison -->
     <arg name="approximate_sync" default="true" />
+
+    <arg name="camera_namespace" default="stereo" />
 
     <!-- STEREO CALIBRATION -->
     <!-- turn on/off approximate sync for stereo cameras not fully in unison -->
@@ -18,10 +20,10 @@
    
     <node pkg="camera_calibration" type="cameracalibrator.py" name="stereo_cal" output="screen"
         args="$(arg approx_val) --size $(arg grid_rows)x$(arg grid_cols) --square $(arg grid_size)">
-        <remap from="right" to="/phobos/right/image_raw"/>
-        <remap from="left" to="/phobos/left/image_raw"/>
-        <remap from="right_camera" to="/phobos/right"/>
-        <remap from="left_camera" to="/phobos/left"/>
+        <remap from="right" to="/$(arg camera_namespace)/right/image_raw"/>
+        <remap from="left" to="/$(arg camera_namespace)/left/image_raw"/>
+        <remap from="right_camera" to="/$(arg camera_namespace)/right"/>
+        <remap from="left_camera" to="/$(arg camera_namespace)/left"/>
     </node>
 
     <!-- See below for more information on the stereo calibration process -->
