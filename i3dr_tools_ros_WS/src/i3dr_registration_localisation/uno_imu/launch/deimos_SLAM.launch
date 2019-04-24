@@ -1,0 +1,93 @@
+<launch>
+
+    <param name="robot_description_deimos" command="$(find xacro)/xacro '$(find i3dr_deimos)/urdf/deimos_scene.urdf.xacro'" />
+    <arg name="gui" default="False" />
+    <arg name="use_tf_static" default="false"/>
+    <param name="use_gui" value="$(arg gui)"/>
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+        <remap from="robot_description" to ="robot_description_deimos" />
+        <param name="use_tf_static" value="$(arg use_tf_static)"/>
+    </node>
+
+    <!--<node pkg="tf" type="static_transform_publisher" name="deimos_to_imu"
+        args="0 0 0 0 0 0 /imu_link /deimos_base_link 1" />-->
+
+
+    <group ns="stereo">
+        
+        <node pkg="i3dr_deimos" type="deimos_node" name="deimos" output="screen" required="true">
+            <param name="width" type="int" value="752" />
+            <param name="height" type="int" value="480" />
+            <param name="fps" type="int" value="60" />
+            <param name="device" type="string" value="/dev/video0" />
+            <param name="exposureValue" type="int" value="1" />
+            <param name="cameraLeft_info_url" type="string" value="file://${ROS_HOME}/camera_info/left.yaml" />
+            <param name="cameraRight_info_url" type="string" value="file://${ROS_HOME}/camera_info/right.yaml" />
+        </node>
+
+        <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
+            <param name="stereo_algorithm" value="0" />
+            <param name="min_disparity" value="4" />
+            <param name="disparity_range" value="128" />
+            <param name="correlation_window_size" value="19" />
+            <param name="uniqueness_ratio" value="3"/>
+            <param name="speckle_size" value="500"/>
+            <param name="speckle_range" value="4"/>
+        </node>
+
+        <!--<node pkg="nodelet" type="nodelet" name="disparity2depth" args="standalone rtabmap_ros/disparity_to_depth"/>-->
+    </group>
+
+    <!-- SLAM -->
+    <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+        <arg name="args" value="--delete_db_on_start"/>
+        <arg name="frame_id" value="deimos_base_link"/>
+        <arg name="vo_frame_id" value="deimos_cameraLeft"/>
+
+        <arg name="stereo" value="true"/>
+        <arg name="stereo_namespace" value="/stereo"/>
+           
+        <arg name="rtabmapviz" value="true"/>
+        <arg name="rviz" value="false"/>
+    </include>
+
+    <!-- IMU DATA IS NOT CURRENTLY IMPLIMENTED -->
+    <!-- But rtabmap still works with visual registration alone -->
+
+    <!--<node pkg="uno_imu" type="imu_serial" name="ImuSerial" output="screen"/>
+
+    <node pkg="imu_filter_madgwick" type="imu_filter_node" name="ImuFilter" output="screen">
+        <param name="use_mag" type="bool" value="true" />
+        <param name="use_magnetic_field_msg " type="bool" value="true" />
+        <param name="publish_tf" type="bool" value="false" />
+        <param name="world_frame" type="string" value="nwu" />
+    </node>
+
+    <include file="$(find robot_localization)/launch/ukf_template.launch"/>
+    <param name="/ukf_se/frequency" value="300"/>
+    <param name="/ukf_se/base_link_frame" value="deimos_base_link"/>
+    <param name="/ukf_se/odom0" value="rtabmap/odom"/>
+    <rosparam param="/ukf_se/odom0_config">[true,true,true,
+                                            true,true,true,
+                                            true,true,true,
+                                            true,true,true,
+                                            true,true,true]
+    </rosparam>
+    <param name="/ukf_se/odom0_relative" value="true"/>
+    <param name="/ukf_se/odom0_pose_rejection_threshold" value="10000000"/>
+    <param name="/ukf_se/odom0_twist_rejection_threshold" value="10000000"/>
+
+    <param name="/ukf_se/imu0" value="/imu/data_raw"/>
+    <rosparam param="/ukf_se/imu0_config">[false, false, false,
+                                           true,  true,  true,
+                                           true,  true,  true,
+                                           true,  true,  true,
+                                           true,  true,  true]
+    </rosparam>
+    <param name="/ukf_se/imu0_differential" value="true"/>
+    <param name="/ukf_se/imu0_relative" value="false"/>
+    <param name="/ukf_se/use_control" value="false"/>
+    -->
+    
+</launch>

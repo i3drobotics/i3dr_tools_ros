@@ -1,0 +1,94 @@
+<launch>
+    
+    <param name="robot_description_realsense_D435i" command="$(find xacro)/xacro --inorder '$(find i3dr_realsense)/urdf/realsense_D435i_scene.urdf.xacro'" />
+    <node name="robot_state_publisher_realsense_D435i" pkg="robot_state_publisher" type="state_publisher">
+        <remap from="robot_description" to ="robot_description_realsense_D435i" />
+    </node>
+
+    <param name="robot_description_deimos" command="$(find xacro)/xacro --inorder '$(find deimos)/urdf/deimos_scene.urdf.xacro'" />
+    <node name="robot_state_publisher_deimos" pkg="robot_state_publisher" type="state_publisher">
+        <remap from="robot_description" to ="robot_description_deimos" />
+    </node>
+
+    <!-- Join camera base links with world -->
+    <node pkg="tf" type="static_transform_publisher" name="D435i_to_world"
+        args="0 0 0 0 0 0 /world realsense_D435i_base_link 1" />
+    <node pkg="tf" type="static_transform_publisher" name="deimos_to_world"
+        args="0 0 0 0 0 0 /world deimos_base_link 1" />
+
+    <arg name="gui" default="True" />
+    <param name="use_gui" value="$(arg gui)"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find i3dr_realsense)/rviz/realsense_D435i_scene.rviz" required="true" />
+
+    <arg name="realsense_en" default="True"/>
+
+    <group if="$(arg realsense_en)" ns="realsense_D435i">
+        <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+            <arg name="serial_no" value="845112072407"/>
+            <arg name="filters" value="pointcloud,disparity"/>
+            <arg name="tf_prefix" value="realsense_D435i"/>
+            <arg name="align_depth" value="true"/>
+            <arg name="linear_accel_cov" value="1.0"/>
+            <arg name="unite_imu_method" value="linear_interpolation"/>
+        </include>
+
+        <node pkg="i3dr_deimos" type="generate_disparity" name="i3dr_disparity_D435i" output="screen">
+            <remap from="/left/camera_info" to="/camera/infra1/camera_info"/>
+            <remap from="/right/camera_info" to="/camera/infra2/camera_info"/>
+            <remap from="/left/image_rect" to="/camera/infra1/image_rect_raw"/>
+            <remap from="/right/image_rect" to="/camera/infra2/image_rect_raw"/>
+            <param name="frame_id" value="realsense_D435i_left_ir_optical_frame"/>
+            <remap from="/i3dr_disparity" to="/i3dr_disparity_D435i" />
+            <param name="stereo_algorithm" value="0" />
+            <param name="min_disparity" value="4" />
+            <param name="disparity_range" value="128" />
+            <param name="correlation_window_size" value="35" />
+        </node>
+
+        <node pkg="image_view" type="disparity_view" name="disparity_view_D435i">
+            <remap from="image" to="/i3dr_disparity_D435i" />
+        </node>
+
+        <node pkg="i3dr_deimos" type="generate_point_cloud" name="i3dr_point_cloud_D435i" output="screen">
+            <remap from="/left/image_rect" to="/camera/infra1/image_rect_raw"/>
+        </node>
+    </group>
+
+    <group ns="deimos">
+        <node pkg="i3dr_deimos" type="deimos_node" name="deimos" output="screen" required="true">
+            <param name="width" type="int" value="752" />
+            <param name="height" type="int" value="480" />
+            <param name="fps" type="int" value="60" />
+            <param name="device" type="string" value="/dev/video0" />
+            <param name="exposureValue" type="int" value="1" />
+            <param name="cameraLeft_info_url" type="string" value="file://${ROS_HOME}/camera_info/left.yaml" />
+            <param name="cameraRight_info_url" type="string" value="file://${ROS_HOME}/camera_info/right.yaml" />
+        </node>
+
+        <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
+            <param name="stereo_algorithm" value="0" />
+            <param name="min_disparity" value="4" />
+            <param name="disparity_range" value="128" />
+            <param name="correlation_window_size" value="35" />
+        </node>
+        
+        <node pkg="i3dr_deimos" type="generate_disparity" name="i3dr_disparity_deimos" output="screen">            
+            <param name="frame_id" value="deimos_cameraLeft_optical"/>
+            <remap from="/i3dr_disparity" to="/i3dr_disparity_deimos" />
+            
+            <param name="stereo_algorithm" value="0" />
+            <param name="min_disparity" value="4" />
+            <param name="disparity_range" value="128" />
+            <param name="correlation_window_size" value="35" />
+        </node>
+
+        <node pkg="image_view" type="disparity_view" name="disparity_view_deimos">
+            <remap from="image" to="/i3dr_disparity_deimos" />
+        </node>
+
+        <node pkg="i3dr_deimos" type="generate_point_cloud" name="i3dr_point_cloud_deimos" output="screen">
+            <remap from="image" to="/i3dr_disparity_deimos" />
+        </node>
+        
+    </group>
+</launch>

@@ -1,0 +1,8 @@
+prefix=/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/install
+
+Name: catkin_tools_prebuild
+Description: Description of catkin_tools_prebuild
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/install/lib 
+Requires: 

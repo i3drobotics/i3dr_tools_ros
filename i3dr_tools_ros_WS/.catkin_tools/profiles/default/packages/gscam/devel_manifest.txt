@@ -1,0 +1,8 @@
+i3dr_cameras/gscam
+/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/gscam/share/gscam/cmake/gscamConfig.cmake /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/share/gscam/cmake/gscamConfig.cmake
+/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/gscam/share/gscam/cmake/gscamConfig-version.cmake /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/share/gscam/cmake/gscamConfig-version.cmake
+/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/gscam/lib/libgscam.so /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/libgscam.so
+/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/gscam/lib/libGSCamNodelet.so /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/libGSCamNodelet.so
+/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/gscam/lib/gscam/gscam_node /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/gscam/gscam_node
+/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/gscam/lib/gscam/gscam /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/gscam/gscam
+/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/gscam/lib/pkgconfig/gscam.pc /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/pkgconfig/gscam.pc

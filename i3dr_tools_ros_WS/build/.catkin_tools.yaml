@@ -1,0 +1,6 @@
+devel_space: /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel
+install: false
+install_space: /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/install
+profile: default
+source_space: /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/src
+workspace: /home/htp/i3dr_tools_ros/i3dr_tools_ros_WS

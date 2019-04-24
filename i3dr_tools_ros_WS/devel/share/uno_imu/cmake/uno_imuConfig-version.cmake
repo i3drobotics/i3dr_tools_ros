@@ -1,0 +1,1 @@
+/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/uno_imu/share/uno_imu/cmake/uno_imuConfig-version.cmake

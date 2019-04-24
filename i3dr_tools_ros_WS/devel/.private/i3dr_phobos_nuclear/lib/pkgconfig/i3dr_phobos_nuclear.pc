@@ -1,0 +1,8 @@
+prefix=/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/i3dr_phobos_nuclear
+
+Name: i3dr_phobos_nuclear
+Description: Description of i3dr_phobos_nuclear
+Version: 0.0.1
+Cflags: -I/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/i3dr_phobos_nuclear/include
+Libs: -L/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/i3dr_phobos_nuclear/lib 
+Requires: 

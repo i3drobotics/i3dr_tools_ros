@@ -1,0 +1,8 @@
+prefix=/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/i3dr_phobos
+
+Name: i3dr_phobos
+Description: Description of i3dr_phobos
+Version: 0.0.1
+Cflags: -I/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/i3dr_phobos/include
+Libs: -L/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/i3dr_phobos/lib 
+Requires: 

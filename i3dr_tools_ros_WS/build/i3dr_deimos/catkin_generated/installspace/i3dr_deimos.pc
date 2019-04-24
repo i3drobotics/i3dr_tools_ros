@@ -1,0 +1,8 @@
+prefix=/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/install
+
+Name: i3dr_deimos
+Description: Description of i3dr_deimos
+Version: 0.3.1
+Cflags: -I/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/install/include
+Libs: -L/home/htp/i3dr_tools_ros/i3dr_tools_ros_WS/install/lib -li3dr_deimos
+Requires: roscpp nodelet std_msgs sensor_msgs
