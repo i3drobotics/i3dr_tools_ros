@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--XML-->
+<launch>
+    <!-- SETUP ARGUMENTS -->
+    <!-- enable/disable this machine as ROS master -->
+    <arg name="master" default="true" />
+    <!-- enable/disable rviz -->
+    <arg name="rviz" default="true" />
+
+    <!-- STEREO CAPTURE -->
+    <include file="$(find i3dr_phobos)/launch/stereo_capture.launch">
+        <!-- enable/disable this launcher as ROS master -->
+        <!-- (robot model should be handelled by master) -->
+        <arg name="master_robot_model" value="$(arg master)"/>
+        <!-- Be sure to change this to your cameras serials -->
+        <arg name="camera_right_serial" default="31710260"/>
+        <arg name="camera_left_serial" default="31710277"/>
+    </include>
+
+    <!-- STEREO MATCHER -->
+    <include file="$(find i3dr_phobos)/launch/stereo_matcher.launch">
+        <!-- enable/disable gui for stereo matching parameters -->
+        <arg name="gui" value="false"/>
+    </include>
+
+    <!-- DISPLAY -->
+    <!-- run rviz with config file -->
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rivz" 
+        args="-d $(find i3dr_phobos)/rviz/scene.rviz"/>
+
+</launch>
