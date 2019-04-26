@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<robot name="realsense2_camera" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find i3dr_realsense)/urdf/realsense_D435i.urdf.xacro"/>
+  
+  <sensor_d435 camera_name="realsense_D435i"/>
+</robot>

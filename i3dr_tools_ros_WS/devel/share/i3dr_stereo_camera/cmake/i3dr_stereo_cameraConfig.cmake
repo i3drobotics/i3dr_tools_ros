@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(i3dr_stereo_camera_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include " STREQUAL " ")
+if(NOT "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include;/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera-ros/include " STREQUAL " ")
   set(i3dr_stereo_camera_INCLUDE_DIRS "")
-  set(_include_dirs "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include")
+  set(_include_dirs "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include;/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera-ros/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://i3drobotics.com/ " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include " STREQUAL " "
   endforeach()
 endif()
 
-set(libraries "")
+set(libraries "i3dr_stereo_camera")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -152,7 +152,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(i3dr_stereo_camera_EXPORTED_TARGETS "i3dr_stereo_camera_generate_messages_cpp;i3dr_stereo_camera_generate_messages_eus;i3dr_stereo_camera_generate_messages_lisp;i3dr_stereo_camera_generate_messages_nodejs;i3dr_stereo_camera_generate_messages_py")
+set(i3dr_stereo_camera_EXPORTED_TARGETS "i3dr_stereo_camera_generate_messages_cpp;i3dr_stereo_camera_generate_messages_eus;i3dr_stereo_camera_generate_messages_lisp;i3dr_stereo_camera_generate_messages_nodejs;i3dr_stereo_camera_generate_messages_py;i3dr_stereo_camera_gencfg")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${i3dr_stereo_camera_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -160,7 +160,7 @@ foreach(t ${i3dr_stereo_camera_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "")
+set(depends "roscpp;nodelet;std_msgs;sensor_msgs")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

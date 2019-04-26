@@ -3,14 +3,17 @@
 <launch>
     <!-- SETUP ARGUMENTS -->
     <!-- enable/disable rviz -->
-    <arg name="rviz" default="true" />
+    <arg name="rviz" default="false" />
+    <!-- enable/disable calibration -->
+    <arg name="calibrate" default="false"/>
+    <arg name="slam" default="false"/>
 
     <!-- SETUP ROBOT MODEL -->
     <!-- (robot model should be handelled by master) -->
-    <param name="rd_i3dr_stereo_camera" command="$(find xacro)/xacro '$(find stereo_camera)/urdf/stereo_camera.urdf.xacro'" />
+    <param name="rd_$(arg camera_namespace)" command="$(find xacro)/xacro '$(find i3dr_stereo_camera)/urdf/example_camera.urdf.xacro'" />
     <arg name="use_tf_static" default="false"/>
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
-        <remap from="robot_description" to="rd_i3dr_stereo_camera"/>
+    <node name="robot_state_publisher_$(arg camera_namespace)" pkg="robot_state_publisher" type="state_publisher">
+        <remap from="robot_description" to="rd_$(arg camera_namespace)"/>
         <param name="use_tf_static" value="$(arg use_tf_static)"/>
     </node>
 
@@ -21,10 +24,29 @@
         <arg name="camera_left_serial" default="31710277"/>
     </include>
 
+    <!-- STEREO CALIBRATION -->
+    <include if="$(arg calibrate)" file="$(find i3dr_stereo_camera)/launch/stereo_calibration.launch">
+        <arg name="camera_namespace" value="stereo"/>
+    </include>
+
     <!-- STEREO MATCHER -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
         <!-- enable/disable gui for stereo matching parameters -->
+        <arg name="camera_namespace" value="stereo"/>
         <arg name="gui" value="false"/>
+        <arg name="stereo_algorithm" default="0" />
+        <arg name="min_disparity" default="256" />
+        <arg name="disparity_range" default="128" />
+        <arg name="correlation_window_size" default="19" />
+        <arg name="uniqueness_ratio" default="2" />
+        <arg name="speckle_size" default="1000" />
+    </include>
+
+    <!-- STEREO REGISTRATOIN -->
+    <include if="$(arg slam)" file="$(find i3dr_registration_localisation)/launch/stereo_localisation.launch">
+        <!-- enable/disable gui for stereo matching parameters -->
+        <arg name="camera_namespace" value="stereo"/>
+        <arg name="depth_odom" value="true"/>
     </include>
 
     <!-- DISPLAY -->

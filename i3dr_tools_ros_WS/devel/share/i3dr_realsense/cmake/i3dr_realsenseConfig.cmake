@@ -67,7 +67,7 @@ set(i3dr_realsense_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(i3dr_realsense_SOURCE_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_realsense/i3dr_realsense)
+  set(i3dr_realsense_SOURCE_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_realsense-ros)
   set(i3dr_realsense_DEVEL_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel)
   set(i3dr_realsense_INSTALL_PREFIX "")
   set(i3dr_realsense_PREFIX ${i3dr_realsense_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT " " STREQUAL " ")
         message(FATAL_ERROR "Project 'i3dr_realsense' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'i3dr_realsense' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_realsense/i3dr_realsense/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'i3dr_realsense' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_realsense-ros/${idir}'.  ${_report}")
     endif()
     _list_append_unique(i3dr_realsense_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

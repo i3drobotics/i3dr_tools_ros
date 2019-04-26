@@ -20,7 +20,13 @@
   <depend>image_transport</depend>
   <depend>nodelet</depend>
   <depend>sensor_msgs</depend>
-  <depend>libv4l-dev</depend>
-  <depend>gscam></depend>
+  <depend>xacro</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>stereo_image_proc</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>std_msgs</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>pcl_ros</depend>
+  <depend>cv_bridge</depend>
 
 </package>

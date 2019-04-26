@@ -396,7 +396,7 @@ dd_full_scale-test: cmake_check_build_system
 
 # fast build rule for target.
 dd_full_scale-test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_full_scale-test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_full_scale-test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_full_scale-test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_full_scale-test.dir/build
 .PHONY : dd_full_scale-test/fast
 
 #=============================================================================
@@ -409,7 +409,7 @@ _run_tests_ddynamic_reconfigure_rostest_test_dd_value.test: cmake_check_build_sy
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest_test_dd_value.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_value.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_value.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_value.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_value.test.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest_test_dd_value.test/fast
 
 #=============================================================================
@@ -422,7 +422,7 @@ _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test: cmake_check_
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test/fast
 
 #=============================================================================
@@ -435,7 +435,7 @@ dd_enum-test: cmake_check_build_system
 
 # fast build rule for target.
 dd_enum-test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_enum-test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_enum-test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_enum-test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_enum-test.dir/build
 .PHONY : dd_enum-test/fast
 
 #=============================================================================
@@ -448,7 +448,7 @@ dd_string-test: cmake_check_build_system
 
 # fast build rule for target.
 dd_string-test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_string-test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_string-test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_string-test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_string-test.dir/build
 .PHONY : dd_string-test/fast
 
 #=============================================================================
@@ -461,7 +461,7 @@ dd_bool-test: cmake_check_build_system
 
 # fast build rule for target.
 dd_bool-test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_bool-test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_bool-test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_bool-test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_bool-test.dir/build
 .PHONY : dd_bool-test/fast
 
 #=============================================================================
@@ -474,7 +474,7 @@ run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test: cmake_check
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test/fast
 
 #=============================================================================
@@ -487,7 +487,7 @@ _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test: cmake_chec
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test/fast
 
 #=============================================================================
@@ -500,7 +500,7 @@ run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test: cmake_check
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_double.test/fast
 
 #=============================================================================
@@ -513,7 +513,7 @@ rosgraph_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -526,7 +526,7 @@ run_tests_ddynamic_reconfigure_rostest_test_dd_value.test: cmake_check_build_sys
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest_test_dd_value.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_value.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_value.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_value.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_value.test.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest_test_dd_value.test/fast
 
 #=============================================================================
@@ -539,7 +539,7 @@ run_tests_ddynamic_reconfigure_rostest: cmake_check_build_system
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest/fast
 
 #=============================================================================
@@ -552,7 +552,7 @@ _run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test: cmake_ch
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test/fast
 
 #=============================================================================
@@ -565,7 +565,7 @@ rosgraph_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -578,7 +578,7 @@ rosgraph_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_py/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -591,7 +591,7 @@ _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test: cmake_chec
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_string.test/fast
 
 #=============================================================================
@@ -604,7 +604,7 @@ run_tests_ddynamic_reconfigure: cmake_check_build_system
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure.dir/build
 .PHONY : run_tests_ddynamic_reconfigure/fast
 
 #=============================================================================
@@ -617,7 +617,7 @@ rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -630,7 +630,7 @@ ddynamic_reconfigure-test: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure-test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure-test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure-test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure-test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure-test.dir/build
 .PHONY : ddynamic_reconfigure-test/fast
 
 #=============================================================================
@@ -643,7 +643,7 @@ run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test: cm
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test/fast
 
 #=============================================================================
@@ -656,7 +656,7 @@ rosgraph_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 rosgraph_msgs_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -669,7 +669,7 @@ ddynamic_reconfigure_genpy: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_genpy/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_genpy.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_genpy.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_genpy.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_genpy.dir/build
 .PHONY : ddynamic_reconfigure_genpy/fast
 
 #=============================================================================
@@ -682,7 +682,7 @@ roscpp_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_py/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_py.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_py.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_py.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_py.dir/build
 .PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
@@ -695,7 +695,7 @@ dynamic_reconfigure_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 dynamic_reconfigure_generate_messages_py/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_py/fast
 
 #=============================================================================
@@ -708,7 +708,7 @@ _ddynamic_reconfigure_generate_messages_check_deps_TutorialParams: cmake_check_b
 
 # fast build rule for target.
 _ddynamic_reconfigure_generate_messages_check_deps_TutorialParams/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_ddynamic_reconfigure_generate_messages_check_deps_TutorialParams.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_ddynamic_reconfigure_generate_messages_check_deps_TutorialParams.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_ddynamic_reconfigure_generate_messages_check_deps_TutorialParams.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_ddynamic_reconfigure_generate_messages_check_deps_TutorialParams.dir/build
 .PHONY : _ddynamic_reconfigure_generate_messages_check_deps_TutorialParams/fast
 
 #=============================================================================
@@ -721,7 +721,7 @@ ddynamic_reconfigure_geneus: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_geneus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_geneus.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_geneus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_geneus.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_geneus.dir/build
 .PHONY : ddynamic_reconfigure_geneus/fast
 
 #=============================================================================
@@ -734,7 +734,7 @@ std_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_py/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_py.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_py.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -747,7 +747,7 @@ dynamic_reconfigure_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 dynamic_reconfigure_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -760,7 +760,7 @@ dynamic_reconfigure_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 dynamic_reconfigure_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_eus/fast
 
 #=============================================================================
@@ -773,7 +773,7 @@ run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test: cmake_check_b
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_enum.test/fast
 
 #=============================================================================
@@ -786,7 +786,7 @@ roscpp_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_eus.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_eus.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_eus.dir/build
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
@@ -799,7 +799,7 @@ roscpp_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
 
 #=============================================================================
@@ -812,7 +812,7 @@ std_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 .PHONY : std_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -825,7 +825,7 @@ dynamic_reconfigure_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 dynamic_reconfigure_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_lisp/fast
 
 #=============================================================================
@@ -838,7 +838,7 @@ std_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 .PHONY : std_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -851,7 +851,7 @@ dynamic_reconfigure_gencfg: cmake_check_build_system
 
 # fast build rule for target.
 dynamic_reconfigure_gencfg/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
 .PHONY : dynamic_reconfigure_gencfg/fast
 
 #=============================================================================
@@ -864,7 +864,7 @@ dynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 dynamic_reconfigure_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_cpp/fast
 
 #=============================================================================
@@ -877,7 +877,7 @@ ddynamic_reconfigure_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_generate_messages_py/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_py.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_py.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_py.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_py.dir/build
 .PHONY : ddynamic_reconfigure_generate_messages_py/fast
 
 #=============================================================================
@@ -890,7 +890,7 @@ roscpp_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 .PHONY : roscpp_generate_messages_cpp/fast
 
 #=============================================================================
@@ -903,7 +903,7 @@ _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test: cmake_check_
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test/fast
 
 #=============================================================================
@@ -916,7 +916,7 @@ run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test: cmake_check_b
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_bool.test/fast
 
 #=============================================================================
@@ -929,7 +929,7 @@ ddynamic_reconfigure: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure.dir/build
 .PHONY : ddynamic_reconfigure/fast
 
 #=============================================================================
@@ -942,7 +942,7 @@ std_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
 .PHONY : std_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -955,7 +955,7 @@ ddynamic_reconfigure_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_lisp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_lisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_lisp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_lisp.dir/build
 .PHONY : ddynamic_reconfigure_generate_messages_lisp/fast
 
 #=============================================================================
@@ -968,7 +968,7 @@ roscpp_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 roscpp_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
 .PHONY : roscpp_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -981,7 +981,7 @@ ddynamic_reconfigure_gencpp: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_gencpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_gencpp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_gencpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_gencpp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_gencpp.dir/build
 .PHONY : ddynamic_reconfigure_gencpp/fast
 
 #=============================================================================
@@ -994,7 +994,7 @@ ddynamic_reconfigure_generate_messages: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_generate_messages/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages.dir/build
 .PHONY : ddynamic_reconfigure_generate_messages/fast
 
 #=============================================================================
@@ -1007,7 +1007,7 @@ dd_int-test: cmake_check_build_system
 
 # fast build rule for target.
 dd_int-test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_int-test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_int-test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_int-test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_int-test.dir/build
 .PHONY : dd_int-test/fast
 
 #=============================================================================
@@ -1020,7 +1020,7 @@ _run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test: c
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest_test_dd_full_scale_dd_full_scale.test/fast
 
 #=============================================================================
@@ -1033,7 +1033,7 @@ run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test: cmake_check_bu
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test/fast
 
 #=============================================================================
@@ -1046,7 +1046,7 @@ ddynamic_reconfigure_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_eus.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_eus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_eus.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_eus.dir/build
 .PHONY : ddynamic_reconfigure_generate_messages_eus/fast
 
 #=============================================================================
@@ -1059,7 +1059,7 @@ ddynamic_reconfigure_genlisp: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_genlisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_genlisp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_genlisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_genlisp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_genlisp.dir/build
 .PHONY : ddynamic_reconfigure_genlisp/fast
 
 #=============================================================================
@@ -1072,7 +1072,7 @@ ddynamic_reconfigure_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_nodejs.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_nodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_nodejs.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_nodejs.dir/build
 .PHONY : ddynamic_reconfigure_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -1085,7 +1085,7 @@ dd_value-test: cmake_check_build_system
 
 # fast build rule for target.
 dd_value-test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_value-test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_value-test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_value-test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_value-test.dir/build
 .PHONY : dd_value-test/fast
 
 #=============================================================================
@@ -1098,7 +1098,7 @@ ddynamic_reconfigure_gennodejs: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_gennodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_gennodejs.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_gennodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_gennodejs.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_gennodejs.dir/build
 .PHONY : ddynamic_reconfigure_gennodejs/fast
 
 #=============================================================================
@@ -1111,7 +1111,7 @@ std_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 std_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -1124,7 +1124,7 @@ run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test: cmake_che
 
 # fast build rule for target.
 run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test.dir/build
 .PHONY : run_tests_ddynamic_reconfigure_rostest_test_ddynamic_reconfigure.test/fast
 
 #=============================================================================
@@ -1137,7 +1137,7 @@ dd_server: cmake_check_build_system
 
 # fast build rule for target.
 dd_server/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_server.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_server.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_server.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_server.dir/build
 .PHONY : dd_server/fast
 
 #=============================================================================
@@ -1150,7 +1150,7 @@ _run_tests_ddynamic_reconfigure: cmake_check_build_system
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure/fast
 
 #=============================================================================
@@ -1163,7 +1163,7 @@ _run_tests_ddynamic_reconfigure_rostest: cmake_check_build_system
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest/fast
 
 #=============================================================================
@@ -1176,7 +1176,7 @@ clean_test_results_ddynamic_reconfigure: cmake_check_build_system
 
 # fast build rule for target.
 clean_test_results_ddynamic_reconfigure/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/clean_test_results_ddynamic_reconfigure.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/clean_test_results_ddynamic_reconfigure.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/clean_test_results_ddynamic_reconfigure.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/clean_test_results_ddynamic_reconfigure.dir/build
 .PHONY : clean_test_results_ddynamic_reconfigure/fast
 
 #=============================================================================
@@ -1189,7 +1189,7 @@ _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test: cmake_check_b
 
 # fast build rule for target.
 _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/_run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test.dir/build
 .PHONY : _run_tests_ddynamic_reconfigure_rostest_test_dd_param_dd_int.test/fast
 
 #=============================================================================
@@ -1202,7 +1202,7 @@ ddynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 ddynamic_reconfigure_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_cpp.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_cpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_cpp.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/ddynamic_reconfigure_generate_messages_cpp.dir/build
 .PHONY : ddynamic_reconfigure_generate_messages_cpp/fast
 
 #=============================================================================
@@ -1215,7 +1215,7 @@ dd_double-test: cmake_check_build_system
 
 # fast build rule for target.
 dd_double-test/fast:
-	$(MAKE) -f i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_double-test.dir/build.make i3dr_realsense/realsense/ddynamic_reconfigure/CMakeFiles/dd_double-test.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_double-test.dir/build.make i3dr_cameras/realsense/ddynamic_reconfigure/CMakeFiles/dd_double-test.dir/build
 .PHONY : dd_double-test/fast
 
 #=============================================================================
@@ -2116,175 +2116,6 @@ i3dr_phobos_nuclear_generate_messages_nodejs/fast:
 .PHONY : i3dr_phobos_nuclear_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named i3dr_stereo_camera_genpy
-
-# Build rule for target.
-i3dr_stereo_camera_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_genpy
-.PHONY : i3dr_stereo_camera_genpy
-
-# fast build rule for target.
-i3dr_stereo_camera_genpy/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_genpy.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_genpy.dir/build
-.PHONY : i3dr_stereo_camera_genpy/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_gennodejs
-
-# Build rule for target.
-i3dr_stereo_camera_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_gennodejs
-.PHONY : i3dr_stereo_camera_gennodejs
-
-# fast build rule for target.
-i3dr_stereo_camera_gennodejs/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gennodejs.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gennodejs.dir/build
-.PHONY : i3dr_stereo_camera_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named _i3dr_stereo_camera_generate_messages_check_deps_SetFloat
-
-# Build rule for target.
-_i3dr_stereo_camera_generate_messages_check_deps_SetFloat: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _i3dr_stereo_camera_generate_messages_check_deps_SetFloat
-.PHONY : _i3dr_stereo_camera_generate_messages_check_deps_SetFloat
-
-# fast build rule for target.
-_i3dr_stereo_camera_generate_messages_check_deps_SetFloat/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/_i3dr_stereo_camera_generate_messages_check_deps_SetFloat.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/_i3dr_stereo_camera_generate_messages_check_deps_SetFloat.dir/build
-.PHONY : _i3dr_stereo_camera_generate_messages_check_deps_SetFloat/fast
-
-#=============================================================================
-# Target rules for targets named _i3dr_stereo_camera_generate_messages_check_deps_SetInt
-
-# Build rule for target.
-_i3dr_stereo_camera_generate_messages_check_deps_SetInt: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _i3dr_stereo_camera_generate_messages_check_deps_SetInt
-.PHONY : _i3dr_stereo_camera_generate_messages_check_deps_SetInt
-
-# fast build rule for target.
-_i3dr_stereo_camera_generate_messages_check_deps_SetInt/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/_i3dr_stereo_camera_generate_messages_check_deps_SetInt.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/_i3dr_stereo_camera_generate_messages_check_deps_SetInt.dir/build
-.PHONY : _i3dr_stereo_camera_generate_messages_check_deps_SetInt/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_generate_messages_lisp
-
-# Build rule for target.
-i3dr_stereo_camera_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_lisp
-.PHONY : i3dr_stereo_camera_generate_messages_lisp
-
-# fast build rule for target.
-i3dr_stereo_camera_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_lisp.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_lisp.dir/build
-.PHONY : i3dr_stereo_camera_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_generate_messages
-
-# Build rule for target.
-i3dr_stereo_camera_generate_messages: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages
-.PHONY : i3dr_stereo_camera_generate_messages
-
-# fast build rule for target.
-i3dr_stereo_camera_generate_messages/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages.dir/build
-.PHONY : i3dr_stereo_camera_generate_messages/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_genlisp
-
-# Build rule for target.
-i3dr_stereo_camera_genlisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_genlisp
-.PHONY : i3dr_stereo_camera_genlisp
-
-# fast build rule for target.
-i3dr_stereo_camera_genlisp/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_genlisp.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_genlisp.dir/build
-.PHONY : i3dr_stereo_camera_genlisp/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_gencpp
-
-# Build rule for target.
-i3dr_stereo_camera_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_gencpp
-.PHONY : i3dr_stereo_camera_gencpp
-
-# fast build rule for target.
-i3dr_stereo_camera_gencpp/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gencpp.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gencpp.dir/build
-.PHONY : i3dr_stereo_camera_gencpp/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_generate_messages_py
-
-# Build rule for target.
-i3dr_stereo_camera_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_py
-.PHONY : i3dr_stereo_camera_generate_messages_py
-
-# fast build rule for target.
-i3dr_stereo_camera_generate_messages_py/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_py.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_py.dir/build
-.PHONY : i3dr_stereo_camera_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_geneus
-
-# Build rule for target.
-i3dr_stereo_camera_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_geneus
-.PHONY : i3dr_stereo_camera_geneus
-
-# fast build rule for target.
-i3dr_stereo_camera_geneus/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_geneus.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_geneus.dir/build
-.PHONY : i3dr_stereo_camera_geneus/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_generate_messages_eus
-
-# Build rule for target.
-i3dr_stereo_camera_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_eus
-.PHONY : i3dr_stereo_camera_generate_messages_eus
-
-# fast build rule for target.
-i3dr_stereo_camera_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_eus.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_eus.dir/build
-.PHONY : i3dr_stereo_camera_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_generate_messages_cpp
-
-# Build rule for target.
-i3dr_stereo_camera_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_cpp
-.PHONY : i3dr_stereo_camera_generate_messages_cpp
-
-# fast build rule for target.
-i3dr_stereo_camera_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_cpp.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_cpp.dir/build
-.PHONY : i3dr_stereo_camera_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named i3dr_stereo_camera_generate_messages_nodejs
-
-# Build rule for target.
-i3dr_stereo_camera_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_nodejs
-.PHONY : i3dr_stereo_camera_generate_messages_nodejs
-
-# fast build rule for target.
-i3dr_stereo_camera_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_nodejs.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_nodejs.dir/build
-.PHONY : i3dr_stereo_camera_generate_messages_nodejs/fast
-
-#=============================================================================
 # Target rules for targets named image_proc_exe
 
 # Build rule for target.
@@ -2775,7 +2606,7 @@ realsense2_camera: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera.dir/build
 .PHONY : realsense2_camera/fast
 
 #=============================================================================
@@ -2788,7 +2619,7 @@ realsense2_camera_genpy: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_genpy/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_genpy.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_genpy.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_genpy.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_genpy.dir/build
 .PHONY : realsense2_camera_genpy/fast
 
 #=============================================================================
@@ -2801,7 +2632,7 @@ diagnostic_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_nodejs.dir/build
 .PHONY : diagnostic_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -2814,7 +2645,7 @@ nav_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 nav_msgs_generate_messages_py/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_py.dir/build
 .PHONY : nav_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -2827,7 +2658,7 @@ diagnostic_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_cpp.dir/build
 .PHONY : diagnostic_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2840,7 +2671,7 @@ nav_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 nav_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
 .PHONY : nav_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2853,7 +2684,7 @@ _realsense2_camera_generate_messages_check_deps_IMUInfo: cmake_check_build_syste
 
 # fast build rule for target.
 _realsense2_camera_generate_messages_check_deps_IMUInfo/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_IMUInfo.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_IMUInfo.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_IMUInfo.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_IMUInfo.dir/build
 .PHONY : _realsense2_camera_generate_messages_check_deps_IMUInfo/fast
 
 #=============================================================================
@@ -2866,7 +2697,7 @@ nav_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 nav_msgs_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
 .PHONY : nav_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -2879,7 +2710,7 @@ nav_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 nav_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
 .PHONY : nav_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -2892,7 +2723,7 @@ _realsense2_camera_generate_messages_check_deps_Extrinsics: cmake_check_build_sy
 
 # fast build rule for target.
 _realsense2_camera_generate_messages_check_deps_Extrinsics/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/_realsense2_camera_generate_messages_check_deps_Extrinsics.dir/build
 .PHONY : _realsense2_camera_generate_messages_check_deps_Extrinsics/fast
 
 #=============================================================================
@@ -2905,7 +2736,7 @@ nav_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 nav_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
 .PHONY : nav_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -2918,7 +2749,7 @@ realsense2_camera_generate_messages: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_generate_messages/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages.dir/build
 .PHONY : realsense2_camera_generate_messages/fast
 
 #=============================================================================
@@ -2931,7 +2762,7 @@ realsense2_camera_gencpp: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_gencpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_gencpp.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_gencpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_gencpp.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_gencpp.dir/build
 .PHONY : realsense2_camera_gencpp/fast
 
 #=============================================================================
@@ -2944,7 +2775,7 @@ diagnostic_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_eus.dir/build
 .PHONY : diagnostic_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -2957,7 +2788,7 @@ realsense2_camera_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_generate_messages_cpp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_cpp.dir/build
 .PHONY : realsense2_camera_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2970,7 +2801,7 @@ realsense2_camera_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_generate_messages_py/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_py.dir/build
 .PHONY : realsense2_camera_generate_messages_py/fast
 
 #=============================================================================
@@ -2983,7 +2814,7 @@ realsense2_camera_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_generate_messages_eus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_eus.dir/build
 .PHONY : realsense2_camera_generate_messages_eus/fast
 
 #=============================================================================
@@ -2996,7 +2827,7 @@ diagnostic_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_lisp.dir/build
 .PHONY : diagnostic_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -3009,7 +2840,7 @@ realsense2_camera_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_generate_messages_nodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_nodejs.dir/build
 .PHONY : realsense2_camera_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -3022,7 +2853,7 @@ realsense2_camera_geneus: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_geneus/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_geneus.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_geneus.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_geneus.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_geneus.dir/build
 .PHONY : realsense2_camera_geneus/fast
 
 #=============================================================================
@@ -3035,7 +2866,7 @@ diagnostic_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 diagnostic_msgs_generate_messages_py/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/diagnostic_msgs_generate_messages_py.dir/build
 .PHONY : diagnostic_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -3048,7 +2879,7 @@ realsense2_camera_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_generate_messages_lisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_generate_messages_lisp.dir/build
 .PHONY : realsense2_camera_generate_messages_lisp/fast
 
 #=============================================================================
@@ -3061,7 +2892,7 @@ realsense2_camera_genlisp: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_genlisp/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_genlisp.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_genlisp.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_genlisp.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_genlisp.dir/build
 .PHONY : realsense2_camera_genlisp/fast
 
 #=============================================================================
@@ -3074,7 +2905,7 @@ realsense2_camera_gennodejs: cmake_check_build_system
 
 # fast build rule for target.
 realsense2_camera_gennodejs/fast:
-	$(MAKE) -f i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_gennodejs.dir/build.make i3dr_realsense/realsense/realsense2_camera/CMakeFiles/realsense2_camera_gennodejs.dir/build
+	$(MAKE) -f i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_gennodejs.dir/build.make i3dr_cameras/realsense/realsense2_camera/CMakeFiles/realsense2_camera_gennodejs.dir/build
 .PHONY : realsense2_camera_gennodejs/fast
 
 #=============================================================================
@@ -3130,6 +2961,19 @@ imu_serial/fast:
 .PHONY : imu_serial/fast
 
 #=============================================================================
+# Target rules for targets named deimos_node
+
+# Build rule for target.
+deimos_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 deimos_node
+.PHONY : deimos_node
+
+# fast build rule for target.
+deimos_node/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build
+.PHONY : deimos_node/fast
+
+#=============================================================================
 # Target rules for targets named xunitTara
 
 # Build rule for target.
@@ -3169,30 +3013,82 @@ xunit/fast:
 .PHONY : xunit/fast
 
 #=============================================================================
-# Target rules for targets named generate_point_cloud
+# Target rules for targets named i3dr_stereo_camera_generate_messages_nodejs
 
 # Build rule for target.
-generate_point_cloud: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 generate_point_cloud
-.PHONY : generate_point_cloud
+i3dr_stereo_camera_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_nodejs
+.PHONY : i3dr_stereo_camera_generate_messages_nodejs
 
 # fast build rule for target.
-generate_point_cloud/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/build
-.PHONY : generate_point_cloud/fast
+i3dr_stereo_camera_generate_messages_nodejs/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_nodejs.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_nodejs.dir/build
+.PHONY : i3dr_stereo_camera_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named deimos_node
+# Target rules for targets named i3dr_stereo_camera_generate_messages_eus
 
 # Build rule for target.
-deimos_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 deimos_node
-.PHONY : deimos_node
+i3dr_stereo_camera_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_eus
+.PHONY : i3dr_stereo_camera_generate_messages_eus
 
 # fast build rule for target.
-deimos_node/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build
-.PHONY : deimos_node/fast
+i3dr_stereo_camera_generate_messages_eus/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_eus.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_eus.dir/build
+.PHONY : i3dr_stereo_camera_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_geneus
+
+# Build rule for target.
+i3dr_stereo_camera_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_geneus
+.PHONY : i3dr_stereo_camera_geneus
+
+# fast build rule for target.
+i3dr_stereo_camera_geneus/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_geneus.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_geneus.dir/build
+.PHONY : i3dr_stereo_camera_geneus/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_generate_messages_py
+
+# Build rule for target.
+i3dr_stereo_camera_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_py
+.PHONY : i3dr_stereo_camera_generate_messages_py
+
+# fast build rule for target.
+i3dr_stereo_camera_generate_messages_py/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_py.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_py.dir/build
+.PHONY : i3dr_stereo_camera_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_genlisp
+
+# Build rule for target.
+i3dr_stereo_camera_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_genlisp
+.PHONY : i3dr_stereo_camera_genlisp
+
+# fast build rule for target.
+i3dr_stereo_camera_genlisp/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_genlisp.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_genlisp.dir/build
+.PHONY : i3dr_stereo_camera_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_generate_messages
+
+# Build rule for target.
+i3dr_stereo_camera_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages
+.PHONY : i3dr_stereo_camera_generate_messages
+
+# fast build rule for target.
+i3dr_stereo_camera_generate_messages/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages.dir/build
+.PHONY : i3dr_stereo_camera_generate_messages/fast
 
 #=============================================================================
 # Target rules for targets named generate_disparity
@@ -3204,8 +3100,125 @@ generate_disparity: cmake_check_build_system
 
 # fast build rule for target.
 generate_disparity/fast:
-	$(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/build
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/generate_disparity.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/generate_disparity.dir/build
 .PHONY : generate_disparity/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_generate_messages_cpp
+
+# Build rule for target.
+i3dr_stereo_camera_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_cpp
+.PHONY : i3dr_stereo_camera_generate_messages_cpp
+
+# fast build rule for target.
+i3dr_stereo_camera_generate_messages_cpp/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_cpp.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_cpp.dir/build
+.PHONY : i3dr_stereo_camera_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _i3dr_stereo_camera_generate_messages_check_deps_SetInt
+
+# Build rule for target.
+_i3dr_stereo_camera_generate_messages_check_deps_SetInt: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _i3dr_stereo_camera_generate_messages_check_deps_SetInt
+.PHONY : _i3dr_stereo_camera_generate_messages_check_deps_SetInt
+
+# fast build rule for target.
+_i3dr_stereo_camera_generate_messages_check_deps_SetInt/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/_i3dr_stereo_camera_generate_messages_check_deps_SetInt.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/_i3dr_stereo_camera_generate_messages_check_deps_SetInt.dir/build
+.PHONY : _i3dr_stereo_camera_generate_messages_check_deps_SetInt/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_gencpp
+
+# Build rule for target.
+i3dr_stereo_camera_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_gencpp
+.PHONY : i3dr_stereo_camera_gencpp
+
+# fast build rule for target.
+i3dr_stereo_camera_gencpp/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gencpp.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gencpp.dir/build
+.PHONY : i3dr_stereo_camera_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named _i3dr_stereo_camera_generate_messages_check_deps_SetFloat
+
+# Build rule for target.
+_i3dr_stereo_camera_generate_messages_check_deps_SetFloat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _i3dr_stereo_camera_generate_messages_check_deps_SetFloat
+.PHONY : _i3dr_stereo_camera_generate_messages_check_deps_SetFloat
+
+# fast build rule for target.
+_i3dr_stereo_camera_generate_messages_check_deps_SetFloat/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/_i3dr_stereo_camera_generate_messages_check_deps_SetFloat.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/_i3dr_stereo_camera_generate_messages_check_deps_SetFloat.dir/build
+.PHONY : _i3dr_stereo_camera_generate_messages_check_deps_SetFloat/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_generate_messages_lisp
+
+# Build rule for target.
+i3dr_stereo_camera_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_generate_messages_lisp
+.PHONY : i3dr_stereo_camera_generate_messages_lisp
+
+# fast build rule for target.
+i3dr_stereo_camera_generate_messages_lisp/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_lisp.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_generate_messages_lisp.dir/build
+.PHONY : i3dr_stereo_camera_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_gennodejs
+
+# Build rule for target.
+i3dr_stereo_camera_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_gennodejs
+.PHONY : i3dr_stereo_camera_gennodejs
+
+# fast build rule for target.
+i3dr_stereo_camera_gennodejs/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gennodejs.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gennodejs.dir/build
+.PHONY : i3dr_stereo_camera_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_genpy
+
+# Build rule for target.
+i3dr_stereo_camera_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_genpy
+.PHONY : i3dr_stereo_camera_genpy
+
+# fast build rule for target.
+i3dr_stereo_camera_genpy/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_genpy.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_genpy.dir/build
+.PHONY : i3dr_stereo_camera_genpy/fast
+
+#=============================================================================
+# Target rules for targets named i3dr_stereo_camera_gencfg
+
+# Build rule for target.
+i3dr_stereo_camera_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 i3dr_stereo_camera_gencfg
+.PHONY : i3dr_stereo_camera_gencfg
+
+# fast build rule for target.
+i3dr_stereo_camera_gencfg/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gencfg.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/i3dr_stereo_camera_gencfg.dir/build
+.PHONY : i3dr_stereo_camera_gencfg/fast
+
+#=============================================================================
+# Target rules for targets named generate_point_cloud
+
+# Build rule for target.
+generate_point_cloud: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generate_point_cloud
+.PHONY : generate_point_cloud
+
+# fast build rule for target.
+generate_point_cloud/fast:
+	$(MAKE) -f i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/generate_point_cloud.dir/build.make i3dr_cameras/i3dr_stereo_camera-ros/CMakeFiles/generate_point_cloud.dir/build
+.PHONY : generate_point_cloud/fast
 
 # Help Target
 help:
@@ -3370,19 +3383,6 @@ help:
 	@echo "... i3dr_phobos_nuclear_generate_messages_lisp"
 	@echo "... i3dr_phobos_nuclear_geneus"
 	@echo "... i3dr_phobos_nuclear_generate_messages_nodejs"
-	@echo "... i3dr_stereo_camera_genpy"
-	@echo "... i3dr_stereo_camera_gennodejs"
-	@echo "... _i3dr_stereo_camera_generate_messages_check_deps_SetFloat"
-	@echo "... _i3dr_stereo_camera_generate_messages_check_deps_SetInt"
-	@echo "... i3dr_stereo_camera_generate_messages_lisp"
-	@echo "... i3dr_stereo_camera_generate_messages"
-	@echo "... i3dr_stereo_camera_genlisp"
-	@echo "... i3dr_stereo_camera_gencpp"
-	@echo "... i3dr_stereo_camera_generate_messages_py"
-	@echo "... i3dr_stereo_camera_geneus"
-	@echo "... i3dr_stereo_camera_generate_messages_eus"
-	@echo "... i3dr_stereo_camera_generate_messages_cpp"
-	@echo "... i3dr_stereo_camera_generate_messages_nodejs"
 	@echo "... image_proc_exe"
 	@echo "... image_proc_gencfg"
 	@echo "... image_proc"
@@ -3448,12 +3448,26 @@ help:
 	@echo "... image_rotate"
 	@echo "... image_rotate_exe"
 	@echo "... imu_serial"
+	@echo "... deimos_node"
 	@echo "... xunitTara"
 	@echo "... i3dr_deimos_gencfg"
 	@echo "... xunit"
-	@echo "... generate_point_cloud"
-	@echo "... deimos_node"
+	@echo "... i3dr_stereo_camera_generate_messages_nodejs"
+	@echo "... i3dr_stereo_camera_generate_messages_eus"
+	@echo "... i3dr_stereo_camera_geneus"
+	@echo "... i3dr_stereo_camera_generate_messages_py"
+	@echo "... i3dr_stereo_camera_genlisp"
+	@echo "... i3dr_stereo_camera_generate_messages"
 	@echo "... generate_disparity"
+	@echo "... i3dr_stereo_camera_generate_messages_cpp"
+	@echo "... _i3dr_stereo_camera_generate_messages_check_deps_SetInt"
+	@echo "... i3dr_stereo_camera_gencpp"
+	@echo "... _i3dr_stereo_camera_generate_messages_check_deps_SetFloat"
+	@echo "... i3dr_stereo_camera_generate_messages_lisp"
+	@echo "... i3dr_stereo_camera_gennodejs"
+	@echo "... i3dr_stereo_camera_genpy"
+	@echo "... i3dr_stereo_camera_gencfg"
+	@echo "... generate_point_cloud"
 .PHONY : help
 
 

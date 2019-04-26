@@ -7,10 +7,6 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel:/opt/ros/kinetic"
 export LD_LIBRARY_PATH="/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:/opt/halcon/lib/x64-linux:/opt/halcon/lib/x64-linux"
-export PKG_CONFIG_PATH="/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/pkgconfig:/opt/ros/kinetic/lib/pkgconfig:/opt/ros/kinetic/lib/x86_64-linux-gnu/pkgconfig"
+export PATH="/opt/ros/kinetic/bin:/opt/halcon/bin/x64-linux:/opt/halcon/bin/x64-linux:/home/i3dr/bin:/home/i3dr/.local/bin:/opt/halcon/bin/x64-linux:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PWD="/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build"
-export PYTHONPATH="/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src:/opt/ros/kinetic/share"

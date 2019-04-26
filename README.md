@@ -7,3 +7,5 @@ Install:
 	Registration and localisation:
 		sudo apt-get install ros-kinetic-serial
 		sudo apt-get install ros-kinetic-rtabmap
+		sudo apt-get install ros-kinetic-robot-localization
+		sudo apt-get install ros-kinetic-imu-tools

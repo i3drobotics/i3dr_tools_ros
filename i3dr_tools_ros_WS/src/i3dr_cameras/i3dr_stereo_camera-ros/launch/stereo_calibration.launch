@@ -18,7 +18,7 @@
     <arg if="$(arg approximate_sync)" name="approx_val" value="--approximate 0.1" />
     <arg unless="$(arg approximate_sync)" name="approx_val" value="" />
    
-    <node pkg="camera_calibration" type="cameracalibrator.py" name="stereo_cal" output="screen"
+    <node pkg="camera_calibration" type="cameracalibrator.py" name="stereo_cal_$(arg camera_namespace)" output="screen"
         args="$(arg approx_val) --size $(arg grid_rows)x$(arg grid_cols) --square $(arg grid_size)">
         <remap from="right" to="/$(arg camera_namespace)/right/image_raw"/>
         <remap from="left" to="/$(arg camera_namespace)/left/image_raw"/>

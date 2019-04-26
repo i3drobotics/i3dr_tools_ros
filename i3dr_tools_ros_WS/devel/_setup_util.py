@@ -262,7 +262,7 @@ if __name__ == '__main__':
             sys.exit(1)
 
         # environment at generation time
-        CMAKE_PREFIX_PATH = '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/.private/catkin_tools_prebuild;/opt/ros/kinetic'.split(';')
+        CMAKE_PREFIX_PATH = '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel;/opt/ros/kinetic'.split(';')
         # prepend current workspace if not already part of CPP
         base_path = os.path.dirname(__file__)
         if base_path not in CMAKE_PREFIX_PATH:

@@ -56,29 +56,6 @@ CMAKE_BINARY_DIR = /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -133,6 +110,29 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
 	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build/CMakeFiles /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build/i3dr_cameras/i3dr_deimos-ros/CMakeFiles/progress.marks
@@ -164,6 +164,21 @@ preinstall/fast:
 depend:
 	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/rule:
+	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f CMakeFiles/Makefile2 i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/rule
+.PHONY : i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/rule
+
+# Convenience name for target.
+deimos_node: i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/rule
+
+.PHONY : deimos_node
+
+# fast build rule for target.
+deimos_node/fast:
+	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build
+.PHONY : deimos_node/fast
 
 # Convenience name for target.
 i3dr_cameras/i3dr_deimos-ros/CMakeFiles/xunitTara.dir/rule:
@@ -209,51 +224,6 @@ xunit: i3dr_cameras/i3dr_deimos-ros/CMakeFiles/xunit.dir/rule
 xunit/fast:
 	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/xunit.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/xunit.dir/build
 .PHONY : xunit/fast
-
-# Convenience name for target.
-i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/rule:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f CMakeFiles/Makefile2 i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/rule
-.PHONY : i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/rule
-
-# Convenience name for target.
-generate_point_cloud: i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/rule
-
-.PHONY : generate_point_cloud
-
-# fast build rule for target.
-generate_point_cloud/fast:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/build
-.PHONY : generate_point_cloud/fast
-
-# Convenience name for target.
-i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/rule:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f CMakeFiles/Makefile2 i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/rule
-.PHONY : i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/rule
-
-# Convenience name for target.
-deimos_node: i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/rule
-
-.PHONY : deimos_node
-
-# fast build rule for target.
-deimos_node/fast:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build
-.PHONY : deimos_node/fast
-
-# Convenience name for target.
-i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/rule:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f CMakeFiles/Makefile2 i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/rule
-.PHONY : i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/rule
-
-# Convenience name for target.
-generate_disparity: i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/rule
-
-.PHONY : generate_disparity
-
-# fast build rule for target.
-generate_disparity/fast:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/build
-.PHONY : generate_disparity/fast
 
 src/deimos_node.o: src/deimos_node.cpp.o
 
@@ -308,60 +278,6 @@ src/deimos_ros.s: src/deimos_ros.cpp.s
 src/deimos_ros.cpp.s:
 	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/deimos_node.dir/src/deimos_ros.cpp.s
 .PHONY : src/deimos_ros.cpp.s
-
-src/generate_disparity.o: src/generate_disparity.cpp.o
-
-.PHONY : src/generate_disparity.o
-
-# target to build an object file
-src/generate_disparity.cpp.o:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/src/generate_disparity.cpp.o
-.PHONY : src/generate_disparity.cpp.o
-
-src/generate_disparity.i: src/generate_disparity.cpp.i
-
-.PHONY : src/generate_disparity.i
-
-# target to preprocess a source file
-src/generate_disparity.cpp.i:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/src/generate_disparity.cpp.i
-.PHONY : src/generate_disparity.cpp.i
-
-src/generate_disparity.s: src/generate_disparity.cpp.s
-
-.PHONY : src/generate_disparity.s
-
-# target to generate assembly for a file
-src/generate_disparity.cpp.s:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_disparity.dir/src/generate_disparity.cpp.s
-.PHONY : src/generate_disparity.cpp.s
-
-src/generate_point_cloud.o: src/generate_point_cloud.cpp.o
-
-.PHONY : src/generate_point_cloud.o
-
-# target to build an object file
-src/generate_point_cloud.cpp.o:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/src/generate_point_cloud.cpp.o
-.PHONY : src/generate_point_cloud.cpp.o
-
-src/generate_point_cloud.i: src/generate_point_cloud.cpp.i
-
-.PHONY : src/generate_point_cloud.i
-
-# target to preprocess a source file
-src/generate_point_cloud.cpp.i:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/src/generate_point_cloud.cpp.i
-.PHONY : src/generate_point_cloud.cpp.i
-
-src/generate_point_cloud.s: src/generate_point_cloud.cpp.s
-
-.PHONY : src/generate_point_cloud.s
-
-# target to generate assembly for a file
-src/generate_point_cloud.cpp.s:
-	cd /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build && $(MAKE) -f i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/build.make i3dr_cameras/i3dr_deimos-ros/CMakeFiles/generate_point_cloud.dir/src/generate_point_cloud.cpp.s
-.PHONY : src/generate_point_cloud.cpp.s
 
 src/uvc_cam.o: src/uvc_cam.cpp.o
 
@@ -477,31 +393,23 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... rebuild_cache"
+	@echo "... deimos_node"
 	@echo "... xunitTara"
 	@echo "... i3dr_deimos_gencfg"
 	@echo "... xunit"
-	@echo "... generate_point_cloud"
-	@echo "... deimos_node"
-	@echo "... generate_disparity"
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... edit_cache"
+	@echo "... rebuild_cache"
+	@echo "... install"
 	@echo "... src/deimos_node.o"
 	@echo "... src/deimos_node.i"
 	@echo "... src/deimos_node.s"
 	@echo "... src/deimos_ros.o"
 	@echo "... src/deimos_ros.i"
 	@echo "... src/deimos_ros.s"
-	@echo "... src/generate_disparity.o"
-	@echo "... src/generate_disparity.i"
-	@echo "... src/generate_disparity.s"
-	@echo "... src/generate_point_cloud.o"
-	@echo "... src/generate_point_cloud.i"
-	@echo "... src/generate_point_cloud.s"
 	@echo "... src/uvc_cam.o"
 	@echo "... src/uvc_cam.i"
 	@echo "... src/uvc_cam.s"

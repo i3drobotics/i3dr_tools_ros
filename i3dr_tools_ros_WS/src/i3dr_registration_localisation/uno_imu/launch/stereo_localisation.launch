@@ -1,14 +1,15 @@
 <launch>
     
     <arg name="camera_namespace" default="stereo"/>
+    <arg name="depth_odom" value="true"/>
+    <arg name="stereo_odom" value="false"/>
+
+    <!-- Convert disparity to depth -->
     <group ns="$(arg camera_namespace)">
-        <node pkg="nodelet" type="nodelet" name="disparity2depth" args="standalone rtabmap_ros/disparity_to_depth"/>
+        <node if="$(arg depth_odom)" pkg="nodelet" type="nodelet" name="disparity2depth" args="standalone rtabmap_ros/disparity_to_depth"/>
     </group>
 
     <!-- SLAM -->
-    <arg name="depth_odom" value="true"/>
-    <arg name="stereo_odom" value="false"/>
-    
     <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
         <arg name="args" value="--delete_db_on_start"/>
         <arg name="frame_id" value="$(arg camera_namespace)_base_link"/>

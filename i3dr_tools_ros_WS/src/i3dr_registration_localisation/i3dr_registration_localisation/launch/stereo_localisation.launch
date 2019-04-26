@@ -1,0 +1,83 @@
+<launch>
+    
+    <arg name="camera_namespace" default="stereo"/>
+    <arg name="depth_odom" default="false"/>
+    <arg name="stereo_odom" default="false"/>
+    <arg name="disparity2Depth" default="false"/>
+    <arg name="madgwick" default="false"/>
+    <arg name="localisation" default="false"/>
+    <arg name="base_link_frame" default="$(arg camera_namespace)_base_link"/>
+    <arg name="rgb_topic" default="/$(arg camera_namespace)/color/image_raw"/>
+    <arg name="camera_info_topic" default="/$(arg camera_namespace)/color/camera_info"/>
+    <arg name="depth_topic" default="/$(arg camera_namespace)/depth"/>
+    <arg name="depth_camera_info_topic" default="/$(arg camera_namespace)/depth/camera_info"/>
+    <arg name="slow_processing" default="false"/>
+
+    <!-- Convert disparity to depth -->
+    <group ns="$(arg camera_namespace)">
+        <node if="$(arg disparity2Depth)" pkg="nodelet" type="nodelet" name="disparity2depth" args="standalone rtabmap_ros/disparity_to_depth"/>
+    </group>
+
+    <!-- madgwick imu filter -->
+    <node if="$(arg madgwick)" pkg="imu_filter_madgwick" type="imu_filter_node" name="ImuFilter">
+        <param name="_use_ma" type="bool" value="false" />
+        <param name="_publish_tf" type="bool" value="false" />
+        <param name="_world_frame" type="string" value="enu" />
+        <remap from="/imu/data_raw" to="/$(arg camera_namespace)/imu"/>
+    </node>
+
+    <!-- SLAM -->
+    <include file="$(find i3dr_registration_localisation)/launch/rtabmap.launch">
+        <arg name="namespace" value="$(arg camera_namespace)"/>
+        <arg name="args" value="--delete_db_on_start"/>
+        <arg name="frame_id" value="$(arg base_link_frame)"/>
+        <arg name="vo_frame_id" value="$(arg camera_namespace)_depth_optical_frame"/>
+
+        <arg if="$(arg stereo_odom)" name="stereo" value="true"/>
+        <arg unless="$(arg stereo_odom)" name="stereo" value="false"/>
+
+        <arg name="visual_odometry" value="true"/>
+        <arg if="$(arg depth_odom)" name="depth_topic" value="$(arg depth_topic)"/>
+        <arg if="$(arg depth_odom)" name="rgb_topic" value="$(arg rgb_topic)"/>
+        <arg if="$(arg depth_odom)" name="camera_info_topic" value="$(arg camera_info_topic)"/>
+        <arg if="$(arg depth_odom)" name="depth_camera_info_topic" value="$(arg depth_camera_info_topic)"/>
+
+        <arg name="stereo_namespace" value="/$(arg camera_namespace)"/>
+        <arg name="approx_sync" value="true"/>
+
+        <arg unless="$(arg slow_processing)" name="queue_size" value="10"/>
+        <arg unless="$(arg slow_processing)" name="wait_for_transform" value="0.2"/>   
+        <arg if="$(arg slow_processing)" name="queue_size" value="30"/>
+        <arg if="$(arg slow_processing)" name="wait_for_transform" value="0.5"/>     
+
+        <arg name="rtabmapviz" value="true"/>
+        <arg name="rviz" value="false"/>
+    </include>
+
+    <include if="$(arg localisation)" file="$(find robot_localization)/launch/ukf_template.launch">
+        <param name="/ukf_se/frequency" value="300"/>
+        <param name="/ukf_se/base_link_frame" value="$(arg base_link_frame)"/>
+        <param name="/ukf_se/odom0" value="rtabmap/odom"/>
+        <rosparam param="/ukf_se/odom0_config">[true,true,true,
+                                                true,true,true,
+                                                true,true,true,
+                                                true,true,true,
+                                                true,true,true]
+        </rosparam>
+        <param name="/ukf_se/odom0_relative" value="true"/>
+        <param name="/ukf_se/odom0_pose_rejection_threshold" value="10000000"/>
+        <param name="/ukf_se/odom0_twist_rejection_threshold" value="10000000"/>
+
+        <param name="/ukf_se/imu0" value="/imu/data"/>
+        <rosparam param="/ukf_se/imu0_config">[false, false, false,
+                                            true,  true,  true,
+                                            true,  true,  true,
+                                            true,  true,  true,
+                                            true,  true,  true]
+        </rosparam>
+        <param name="/ukf_se/imu0_differential" value="true"/>
+        <param name="/ukf_se/imu0_relative" value="false"/>
+        <param name="/ukf_se/use_control" value="false"/>
+    </include>
+  
+</launch>

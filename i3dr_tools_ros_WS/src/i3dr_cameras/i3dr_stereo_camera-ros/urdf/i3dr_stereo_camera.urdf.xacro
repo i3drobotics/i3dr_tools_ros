@@ -10,6 +10,8 @@ Copyright (c) 2019, I3D Robotics Ltd.
         <link name="${camera_name}_cameraLeft" />
         <link name="${camera_name}_cameraRight" />
 
+        <link name="${camera_name}_depth_optical_frame" />
+
         <link name="${camera_name}_base_link" />
         <!--<link name="imu_link"/>-->
 
@@ -49,6 +51,12 @@ Copyright (c) 2019, I3D Robotics Ltd.
             <child link="${camera_name}_cameraRight_optical"/>
             <!-- Correct for the optical frame orientation -->
             <origin xyz="0 0 0" rpy="${-pi/2} 0 ${(-pi/2)+(toe_in_r * (pi/180))}" />
+        </joint>
+
+        <joint name="${camera_name}_depth_optical_joint" type="fixed">
+            <parent link="${camera_name}_cameraLeft_optical"/>
+            <child link="${camera_name}_depth_optical_frame"/>
+            <origin xyz="0 0 0" rpy="0 0 0" />
         </joint>
 
         <sensor name="${camera_name}_right_camera_sensor" update_rate="60">
