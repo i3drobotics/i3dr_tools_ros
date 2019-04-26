@@ -1,10 +1,10 @@
 # Install package dependences
 ## i3dr_realsense:
-	Follow realsense instructions for install realsense in ROS
-	[link](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages)
+Follow realsense instructions for install realsense in ROS
+[link](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages)
 ## i3dr_deimos:
-	Follow deimos install instructions
-	[link](https://github.com/i3drobotics/deimos-ros/blob/master/README.md)
+Follow deimos install instructions 
+[link](https://github.com/i3drobotics/deimos-ros/blob/master/README.md)
 
 ## i3dr_registration_localisation:
 	sudo apt-get install ros-kinetic-serial
