@@ -1,0 +1,103 @@
+<launch>
+
+    <!-- SETUP ROBOT MODEL -->
+    <param name="rd_i3dr_deimos" command="$(find xacro)/xacro '$(find i3dr_deimos)/urdf/deimos_scene.urdf.xacro'" />
+    <arg name="use_tf_static" default="false"/>
+    <node name="robot_state_publisher_deimos" pkg="robot_state_publisher" type="state_publisher">
+        <remap from="robot_description" to="rd_i3dr_deimos"/>
+        <param name="use_tf_static" value="$(arg use_tf_static)"/>
+    </node>
+
+    <!-- STEREO CAPTURE -->
+    <arg name="camera_namespace" default="deimos"/>
+    <arg name="device" default="/dev/video0"/>
+    <arg name="exposure" default="1" />
+    <group ns="$(arg camera_namespace)">
+        <node pkg="i3dr_deimos" type="deimos_node" name="deimos">
+            <param name="width" type="int" value="752" />
+            <param name="height" type="int" value="480" />
+            <param name="fps" type="int" value="60" />
+            <param name="frame_id" type="string" value="deimos_depth_optical_frame"/>
+            <param name="device" type="string" value="$(arg device)" />
+            <param name="exposureValue" type="int" value="$(arg exposure)" />
+            <param name="cameraLeft_info_url" type="string" value="file://${ROS_HOME}/camera_info/deimos/deimos_left.yaml" />
+            <param name="cameraRight_info_url" type="string" value="file://${ROS_HOME}/camera_info/deimos/deimos_right.yaml" />
+        </node>
+    </group>
+
+    <!-- STEREO <MATCHER> -->
+    <arg name="stereo_algorithm" value="0" />
+    <arg name="min_disparity" value="-60" />
+    <arg name="disparity_range" value="128" />
+    <arg name="correlation_window_size" value="19" />
+    <arg name="uniqueness_ratio" value="2" />
+    <arg name="speckle_range" value="5"/>
+    <arg name="speckle_size" value="1000" />
+
+    <node ns="$(arg camera_namespace)" pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc_$(arg camera_namespace)" output="screen">
+        <!-- Matcher Parameters -->
+        <!-- see link below for details on matcher parameters -->
+        <!-- http://wiki.ros.org/stereo_image_proc/Tutorials/ChoosingGoodStereoParameters -->
+        <!-- algorithm 1: OpenCV block -->
+        <!-- algorithm 2: OpenCV SGBM -->
+        <param name="stereo_algorithm" value="$(arg stereo_algorithm)" />
+        <param name="min_disparity" value="$(arg min_disparity)" />
+        <param name="disparity_range" value="$(arg disparity_range)" />
+        <param name="correlation_window_size" value="$(arg correlation_window_size)" />
+        <param name="uniqueness_ratio" value="$(arg uniqueness_ratio)" />
+        <param name="speckle_range" value="$(arg speckle_range)" />
+        <param name="speckle_size" value="$(arg speckle_size)" />
+
+        <!-- approximate sync used when cameras are not perfectly triggered in unison -->
+        <param name="approximate_sync" value="true" />
+        <param name="queue_size" value="50"/>
+    </node>
+    
+    <!-- SLAM -->
+    <arg name="localization" value="false"/>
+    <arg name="depth_odom" default="true"/>
+    <arg name="stereo_odom" default="false"/>
+    <arg name="disparity2Depth" default="true"/>
+    <arg name="base_link_frame" value="deimos_base_link"/>
+    <!--<arg name="vo_frame" value="deimos_depth_optical_frame"/>-->
+    <arg name="rgb_topic" value="/deimos/left/image_rect_color"/>
+    <arg name="camera_info_topic" value="/deimos/left/camera_info"/>
+    <arg name="depth_topic" default="/$(arg camera_namespace)/depth"/>
+    <arg name="depth_camera_info_topic" value="/deimos/left/camera_info"/>
+    <arg name="slow_processing" default="false"/>
+
+    <!-- Convert disparity to depth -->
+    <group ns="$(arg camera_namespace)">
+        <node if="$(arg disparity2Depth)" pkg="nodelet" type="nodelet" name="disparity2depth" args="standalone rtabmap_ros/disparity_to_depth"/>
+    </group>
+
+    <!-- RTAB Map -->
+    <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+        <arg name="namespace" value="$(arg camera_namespace)"/>
+        <arg unless="$(arg localization)" name="args" value="--delete_db_on_start"/>
+        <arg name="frame_id" value="$(arg base_link_frame)"/>
+        <!--<arg name="vo_frame_id" value="$(arg vo_frame)"/>-->
+
+        <arg name="localization" value="$(arg localization)"/>
+
+        <arg if="$(arg stereo_odom)" name="stereo" value="true"/>
+        <arg unless="$(arg stereo_odom)" name="stereo" value="false"/>
+
+        <arg name="visual_odometry" value="true"/>
+        <arg if="$(arg depth_odom)" name="depth_topic" value="$(arg depth_topic)"/>
+        <arg if="$(arg depth_odom)" name="rgb_topic" value="$(arg rgb_topic)"/>
+        <arg if="$(arg depth_odom)" name="camera_info_topic" value="$(arg camera_info_topic)"/>
+        <arg if="$(arg depth_odom)" name="depth_camera_info_topic" value="$(arg depth_camera_info_topic)"/>
+
+        <arg name="stereo_namespace" value="/$(arg camera_namespace)"/>
+        <arg name="approx_sync" value="true"/>
+
+        <arg unless="$(arg slow_processing)" name="queue_size" value="20"/>
+        <arg unless="$(arg slow_processing)" name="wait_for_transform" value="0.2"/>   
+        <arg if="$(arg slow_processing)" name="queue_size" value="30"/>
+        <arg if="$(arg slow_processing)" name="wait_for_transform" value="0.5"/>     
+
+        <arg name="rtabmapviz" value="true"/>
+        <arg name="rviz" value="false"/>
+    </include>
+</launch>

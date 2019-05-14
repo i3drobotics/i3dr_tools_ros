@@ -1,0 +1,5 @@
+<launch>
+    <!-- Start serial comms with arduino and publish imu to ROS topic -->
+    <node pkg="uno_imu" type="imu_serial" name="ImuSerial" output="screen"/>
+
+</launch>

@@ -2,8 +2,10 @@
 #include <image_transport/image_transport.h>
 #include <sensor_msgs/Image.h>
 #include <stereo_msgs/DisparityImage.h>
+#include <sensor_msgs/CameraInfo.h>
 
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/ximgproc.hpp>
 #include <cv_bridge/cv_bridge.h>
 
 #include <pcl_ros/point_cloud.h>
@@ -19,8 +21,46 @@ typedef pcl::PointCloud<pcl::PointXYZRGBNormal> PointCloudRGBNormal;
 typedef pcl::PointCloud<pcl::PointXYZRGB> PointCloudRGB;
 
 typedef message_filters::sync_policies::ApproximateTime<
-    stereo_msgs::DisparityImage, sensor_msgs::Image>
+    stereo_msgs::DisparityImage, sensor_msgs::Image, sensor_msgs::CameraInfo>
     policy_t;
+
+cv::Mat generateQ(double principle_point_x, double principle_point_y, double focal_length, double baseline){
+    cv::Mat Q(cv::Size(4,4),CV_64FC1,cv::Scalar(0));
+    Q.at<double>(0,0)=1.0;
+    Q.at<double>(0,1)=0.0;
+    Q.at<double>(0,2)=0.0;
+    Q.at<double>(0,3)=-principle_point_x; //cx
+    Q.at<double>(1,0)=0.0;
+    Q.at<double>(1,1)=1.0;
+    Q.at<double>(1,2)=0.0;
+    Q.at<double>(1,3)=-principle_point_y;  //cy
+    Q.at<double>(2,0)=0.0;
+    Q.at<double>(2,1)=0.0;
+    Q.at<double>(2,2)=0.0;
+    Q.at<double>(2,3)=focal_length;  //Focal
+    Q.at<double>(3,0)=0.0;
+    Q.at<double>(3,1)=0.0;
+    Q.at<double>(3,2)=1.0/baseline;    //-1.0/BaseLine
+    Q.at<double>(3,3)=0.0;    //cx - cx'/Baseline
+    return Q;
+}
+
+cv::Mat reproject(const sensor_msgs::Image& dimage, const sensor_msgs::CameraInfoConstPtr &camera_info){
+  const cv::Mat_<float> dmat(dimage.height, dimage.width, (float*)&dimage.data[0], dimage.step);
+
+  double cx = camera_info->K[2];
+  double cy = camera_info->K[5];
+  double f = camera_info->K[0];
+  double T = camera_info->P[3];
+  cv::Mat Q = generateQ(cx,cy,f,T);
+
+  cv_bridge::CvImagePtr disparity_image;
+  disparity_image = cv_bridge::toCvCopy(dimage);
+
+  cv::Mat xyz;
+  cv::reprojectImageTo3D(disparity_image->image, xyz, Q, true);
+  return(xyz);
+}
 
 //Convert disparity image from opencv Mat to PCL Point Cloud XYZRGB
 PointCloudRGB::Ptr Mat2PCL(cv::Mat image, cv::Mat coords, PointCloudRGBNormal::Ptr normal){
@@ -102,15 +142,16 @@ PointCloudRGB::Ptr Mat2PCL(cv::Mat image, cv::Mat coords, PointCloudRGBNormal::P
 }
 
 //Get ROS disparity msg from stereo camera and send to processing
-void disparityCallback(const stereo_msgs::DisparityImageConstPtr& msg_disp, const sensor_msgs::ImageConstPtr &msg_img)
+void disparityCallback(const stereo_msgs::DisparityImageConstPtr& msg_disp, const sensor_msgs::ImageConstPtr &msg_img, const sensor_msgs::CameraInfoConstPtr &msg_info)
 {
   cv_bridge::CvImagePtr input_disparity, input_image;
   input_image = cv_bridge::toCvCopy(msg_img);
-  input_disparity = cv_bridge::toCvCopy(msg_disp->image);
 
   PointCloudRGBNormal::Ptr point_cloud_normal (new PointCloudRGBNormal);
   PointCloudRGB::Ptr point_cloud (new PointCloudRGB);
-  point_cloud = Mat2PCL(input_image->image,input_disparity->image,point_cloud_normal);
+  const sensor_msgs::Image& dimage = msg_disp->image;
+  cv::Mat xyz = reproject(dimage, msg_info);
+  point_cloud = Mat2PCL(input_image->image,xyz,point_cloud_normal);
 
   point_cloud->header.frame_id = msg_disp->header.frame_id;
   point_cloud_normal->header.frame_id = msg_disp->header.frame_id;
@@ -131,10 +172,11 @@ int main(int argc, char **argv)
   // Subscribers creation
   message_filters::Subscriber<stereo_msgs::DisparityImage> disparity_sub(nh, ns+"/disparity", 1);
   message_filters::Subscriber<sensor_msgs::Image> image_sub(nh, ns+"/left/image_rect", 1);
+  message_filters::Subscriber<sensor_msgs::CameraInfo> camera_info_sub(nh, ns+"/left/camera_info", 1);
 
   // Message filter creation.
-  message_filters::Synchronizer<policy_t> sync(policy_t(10), disparity_sub, image_sub);
-  sync.registerCallback(boost::bind(&disparityCallback, _1, _2));
+  message_filters::Synchronizer<policy_t> sync(policy_t(10), disparity_sub, image_sub, camera_info_sub);
+  sync.registerCallback(boost::bind(&disparityCallback, _1, _2, _3));
 
   point_cloud_pub = nh.advertise<PointCloudRGB>(ns+"/i3dr_points2", 1);
   point_cloud_normal_pub = nh.advertise<PointCloudRGBNormal>(ns+"/i3dr_points2_normal", 1);

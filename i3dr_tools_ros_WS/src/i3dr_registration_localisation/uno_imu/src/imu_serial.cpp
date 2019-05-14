@@ -232,14 +232,19 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "serial_example_node");
     ros::NodeHandle nh;
 
+    std::string port;
+    int baud;
+    nh.param<std::string>("port", port, "/dev/ttyACM0");
+    nh.param<int>("baud", baud, 115200);
+
     ros::Subscriber write_sub = nh.subscribe("write_to_imu", 1000, write_callback);
     imu_data_raw_pub = nh.advertise<sensor_msgs::Imu>("imu/data_raw", 1);
     imu_mag_pub = nh.advertise<sensor_msgs::MagneticField>("imu/mag", 1);
 
     try
     {
-        ser.setPort("/dev/ttyACM0");
-        ser.setBaudrate(115200);
+        ser.setPort(port);
+        ser.setBaudrate(baud);
         serial::Timeout to = serial::Timeout::simpleTimeout(1000);
         ser.setTimeout(to);
         ser.open();

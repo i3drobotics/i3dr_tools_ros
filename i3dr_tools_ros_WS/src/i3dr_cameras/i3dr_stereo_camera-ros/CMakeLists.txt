@@ -50,6 +50,7 @@ target_link_libraries(
 	generate_disparity
 	${catkin_LIBRARIES}
 	${OpenCV_LIBRARIES}
+	yaml-cpp
 )
 
 add_executable(

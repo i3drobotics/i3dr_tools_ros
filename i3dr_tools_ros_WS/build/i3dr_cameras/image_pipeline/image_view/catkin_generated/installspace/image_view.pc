@@ -1,8 +1,0 @@
-prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/install
-
-Name: image_view
-Description: Description of image_view
-Version: 1.12.23
-Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/install/include
-Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/install/lib 
-Requires: dynamic_reconfigure

@@ -7,6 +7,8 @@
     <arg name="camera_right_serial" default="31710260"/>
     <arg name="camera_left_serial" default="31710277"/>
     <arg name="camera_namespace" default="stereo"/>
+    <arg name="exposure" default="10000"/>
+    <arg name="gain" default="100"/>
 
     <!-- STEREO <MATCHER> -->
     <group ns="$(arg camera_namespace)">
@@ -15,9 +17,7 @@
         <arg name="frame_height" value="1080"/>
 
         <arg name="exposure_auto" value="false"/>
-        <arg name="exposure" value="20000"/>
         <arg name="gain_auto" value="false"/>
-        <arg name="gain" value="32"/>
 
         <arg name="pipeline" value="video/x-raw, format=(string)GRAY8, width=$(arg frame_width), height=$(arg frame_height),framerate=$(arg fps)/1 ! videoconvert --verbose"/>
         
@@ -44,7 +44,7 @@
         <!-- (optional) set inital camera properties using the parameters [Exposure/Gain/Exposure_Auto/Gain_Auto] -->
         <!-- set camera properties using services from this node
              rosservice call /phobos/left/tiscam_set_exposure_auto -->
-<!--
+
         <node ns="left" name="i3dr_stereo_camera_left_ctrl" pkg="i3dr_stereo_camera" type="tiscamera_ctrl.py" output="screen">
             <param name="Serial" value="$(arg camera_left_serial)"/>
             <param name="Width" value="$(arg frame_width)"/>
@@ -66,7 +66,7 @@
             <param name="Exposure_Auto" value="$(arg exposure_auto)"/>
             <param name="Gain_Auto" value="$(arg gain_auto)"/>
         </node>
--->
+
 
     </group>
 

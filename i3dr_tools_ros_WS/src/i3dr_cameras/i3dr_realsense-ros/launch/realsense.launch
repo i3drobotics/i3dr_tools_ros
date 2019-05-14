@@ -23,7 +23,7 @@
 
     <!-- STEREO MATCHER -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
-        <arg name="use_i3dr_matcher" value="true"/>
+        <arg name="use_i3dr_matcher" value="false"/>
 
         <arg name="camera_namespace" value="realsense_D435i"/>
         <arg name="gui" value="true"/>
@@ -49,7 +49,7 @@
         <arg name="camera_namespace" value="realsense_D435i"/>
         <arg name="depth_odom" value="true"/>
         <arg name="madgwick" value="true"/>
-        <arg name="localisation" value="true"/>
+        <arg name="ukf" value="true"/>
         <arg name="base_link_frame" value="realsense_D435i_link"/>
         <arg name="disparity2Depth" value="false"/>
         <arg name="depth_topic" value="/realsense_D435i/aligned_depth_to_color/image_raw"/>

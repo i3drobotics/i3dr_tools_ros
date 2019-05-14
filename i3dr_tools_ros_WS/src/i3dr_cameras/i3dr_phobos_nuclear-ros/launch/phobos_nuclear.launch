@@ -16,6 +16,7 @@
         <remap from="robot_description" to="rd_i3dr_phobos_nuclear"/>
         <param name="use_tf_static" value="$(arg use_tf_static)"/>
     </node>
+    
 
     <!-- STEREO CAPTURE -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_capture.launch">
@@ -23,6 +24,8 @@
         <arg name="camera_namespace" value="phobos_nuclear"/>
         <arg name="camera_right_serial" value="31710260"/>
         <arg name="camera_left_serial" value="31710277"/>
+        <arg name="exposure" value="6000"/>
+        <arg name="gain" value="100"/>
     </include>
 
     <!-- STEREO CALIBRATION -->
@@ -32,14 +35,17 @@
 
     <!-- STEREO MATCHER -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
+        <arg name="use_i3dr_matcher" value="false"/>
+
         <!-- enable/disable gui for stereo matching parameters -->
         <arg name="camera_namespace" value="phobos_nuclear"/>
-        <arg name="gui" value="false"/>
-        <arg name="stereo_algorithm" value="0" />
-        <arg name="min_disparity" value="300" />
-        <arg name="disparity_range" value="128" />
-        <arg name="correlation_window_size" value="19" />
-        <arg name="uniqueness_ratio" value="2" />
+        <arg name="gui" value="true"/>
+        <arg name="stereo_algorithm" value="1" />
+        <arg name="min_disparity" value="45" />
+        <arg name="disparity_range" value="512" />
+        <arg name="correlation_window_size" value="5" />
+        <arg name="uniqueness_ratio" value="1" />
+        <arg name="speckle_range" value="4" />
         <arg name="speckle_size" value="1000" />
     </include>
 

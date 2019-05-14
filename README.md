@@ -1,4 +1,8 @@
-# Install package dependences
+# Auto install package dependences
+Run install script to automatically install the required packages
+	./install.sh
+
+# Manually install package dependences
 ## i3dr_realsense:
 Follow realsense instructions for install realsense in ROS
 [link](https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages)

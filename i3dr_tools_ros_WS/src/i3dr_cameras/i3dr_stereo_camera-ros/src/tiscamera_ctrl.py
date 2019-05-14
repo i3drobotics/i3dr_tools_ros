@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from std_srvs.srv import Empty, EmptyResponse, SetBool, SetBoolResponse
-from phobos.srv import SetInt, SetIntResponse
+from i3dr_stereo_camera.srv import SetInt, SetIntResponse
 import tiscamera
 
 class tiscamera_ctrl(object):
@@ -18,6 +18,8 @@ class tiscamera_ctrl(object):
             self.fps = rospy.get_param('~FPS')
             self.cam = tiscamera.Camera(
                 self.serial, self.width, self.height, self.fps, False, False)
+
+            self.set_property('Trigger Mode', True)
 
             # set inital camera properties based on parameters
             # initalise rosservice for each camera property given in parameters

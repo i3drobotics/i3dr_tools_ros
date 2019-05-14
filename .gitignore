@@ -4,7 +4,9 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-build/*
-devel/*
-logs/*
-.catkin_tools/*
+i3dr_tools_ros_WS/.vscode/*
+i3dr_tools_ros_WS/build/*
+i3dr_tools_ros_WS/devel/*
+i3dr_tools_ros_WS/logs/*
+i3dr_tools_ros_WS/.catkin_tools/*
+i3dr_tools_ros_WS/Examples/*

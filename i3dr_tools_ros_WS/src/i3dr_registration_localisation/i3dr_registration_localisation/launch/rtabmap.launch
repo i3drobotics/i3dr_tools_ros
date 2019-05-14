@@ -298,6 +298,9 @@
       <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
       <param unless="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="true"/>
       <param name="Mem/InitWMWithAllNodes" type="string" value="$(arg localization)"/>
+
+      <!-- Force 3DoF if camera is fixed to 2D plane -->
+      <!--<param name="Reg/Force3DoF" type="string" value="true"/>-->
     </node>
   
     <!-- Visualisation RTAB-Map -->

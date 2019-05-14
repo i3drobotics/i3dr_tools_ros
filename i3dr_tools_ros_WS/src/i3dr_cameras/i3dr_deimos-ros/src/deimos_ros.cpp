@@ -35,10 +35,10 @@ namespace uvc_camera {
 			device = "/dev/video0";
 			frame = "camera";
 			frameIMU = "imu_link";
-			frameImageLeft = "deimos_cameraLeft_optical";
-			frameImageRight = "deimos_cameraLeft_optical";
-			frameCameraInfoLeft = "deimos_cameraLeft_optical";
-			frameCameraInfoRight = "deimos_cameraLeft_optical";
+			frameImageLeft = "deimos_depth_optical_frame";
+			frameImageRight = "deimos_depth_optical_frame";
+			frameCameraInfoLeft = "deimos_depth_optical_frame";
+			frameCameraInfoRight = "deimos_depth_optical_frame";
 			rotate = false;
 			exposure_value = 0;
 			brightness_value = 0;

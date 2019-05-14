@@ -1,0 +1,12 @@
+<launch>
+
+    <node pkg="uno_imu" type="imu_serial" name="ImuSerial" output="screen"/>
+
+    <node pkg="imu_filter_madgwick" type="imu_filter_node" name="ImuFilter" output="screen">
+        <param name="_use_mag" type="bool" value="true" />
+        <param name="_use_magnetic_field_msg " type="bool" value="true" />
+        <param name="_publish_tf" type="bool" value="true" />
+        <param name="_world_frame" type="string" value="nwu" />
+    </node>
+    
+</launch>
