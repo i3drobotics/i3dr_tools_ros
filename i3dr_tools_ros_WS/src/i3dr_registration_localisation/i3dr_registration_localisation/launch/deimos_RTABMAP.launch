@@ -76,7 +76,6 @@
         <arg name="namespace" value="$(arg camera_namespace)"/>
         <arg unless="$(arg localization)" name="args" value="--delete_db_on_start"/>
         <arg name="frame_id" value="$(arg base_link_frame)"/>
-        <!--<arg name="vo_frame_id" value="$(arg vo_frame)"/>-->
 
         <arg name="localization" value="$(arg localization)"/>
 

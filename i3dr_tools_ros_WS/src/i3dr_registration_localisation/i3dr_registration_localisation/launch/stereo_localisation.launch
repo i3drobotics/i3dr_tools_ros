@@ -3,15 +3,17 @@
     <arg name="camera_namespace" default="stereo"/>
     <arg name="depth_odom" default="false"/>
     <arg name="stereo_odom" default="false"/>
+    <arg name="scan3d_odom" default="false"/>
+    <arg name="depth_icp_odom" default="false"/>
     <arg name="disparity2Depth" default="false"/>
     <arg name="madgwick" default="false"/>
     <arg name="ukf" default="false"/>
     <arg name="base_link_frame" default="$(arg camera_namespace)_base_link"/>
-    <arg name="vo_frame" default="$(arg camera_namespace)_depth_optical_frame"/>
     <arg name="rgb_topic" default="/$(arg camera_namespace)/color/image_raw"/>
     <arg name="camera_info_topic" default="/$(arg camera_namespace)/color/camera_info"/>
     <arg name="depth_topic" default="/$(arg camera_namespace)/depth"/>
     <arg name="depth_camera_info_topic" default="/$(arg camera_namespace)/depth/camera_info"/>
+    <arg name="cloud_topic" default="/$(arg camera_namespace)/points2"/>
     <arg name="slow_processing" default="false"/>
     <arg name="localization" default="false"/>
 
@@ -31,28 +33,30 @@
     <!-- SLAM -->
     <include file="$(find i3dr_registration_localisation)/launch/rtabmap.launch">
         <arg name="namespace" value="$(arg camera_namespace)"/>
-        <arg if="$(arg localization)" name="args" value="--delete_db_on_start"/>
+        <arg unless="$(arg localization)" name="args" value="--delete_db_on_start"/>
         <arg name="frame_id" value="$(arg base_link_frame)"/>
-        <!--<arg name="vo_frame_id" value="$(arg vo_frame)"/>-->
 
         <arg name="localization" value="$(arg localization)"/>
 
-        <arg if="$(arg stereo_odom)" name="stereo" value="true"/>
-        <arg unless="$(arg stereo_odom)" name="stereo" value="false"/>
+        <arg name="stereo_odometry" value="$(arg stereo_odom)"/>
+        <arg name="icp_odometry" value="$(arg scan3d_odom)"/>
+        <arg name="visual_odometry" value="$(arg depth_odom)"/>
+        <arg name="icp_rgbd_odometry" value="$(arg depth_icp_odom)"/>
 
-        <arg name="visual_odometry" value="true"/>
-        <arg if="$(arg depth_odom)" name="depth_topic" value="$(arg depth_topic)"/>
-        <arg if="$(arg depth_odom)" name="rgb_topic" value="$(arg rgb_topic)"/>
-        <arg if="$(arg depth_odom)" name="camera_info_topic" value="$(arg camera_info_topic)"/>
-        <arg if="$(arg depth_odom)" name="depth_camera_info_topic" value="$(arg depth_camera_info_topic)"/>
+        <arg name="depth_topic" value="$(arg depth_topic)"/>
+        <arg name="rgb_topic" value="$(arg rgb_topic)"/>
+        <arg name="camera_info_topic" value="$(arg camera_info_topic)"/>
+        <arg name="depth_camera_info_topic" value="$(arg depth_camera_info_topic)"/>
+        <arg name="scan_cloud_topic" value="$(arg cloud_topic)"/>
+        <arg name="subscribe_scan_cloud" value="true"/>
 
         <arg name="stereo_namespace" value="/$(arg camera_namespace)"/>
         <arg name="approx_sync" value="true"/>
 
         <arg unless="$(arg slow_processing)" name="queue_size" value="20"/>
         <arg unless="$(arg slow_processing)" name="wait_for_transform" value="0.2"/>   
-        <arg if="$(arg slow_processing)" name="queue_size" value="30"/>
-        <arg if="$(arg slow_processing)" name="wait_for_transform" value="0.5"/>     
+        <arg if="$(arg slow_processing)" name="queue_size" value="50"/>
+        <arg if="$(arg slow_processing)" name="wait_for_transform" value="0.8"/>     
 
         <arg name="rtabmapviz" value="true"/>
         <arg name="rviz" value="false"/>

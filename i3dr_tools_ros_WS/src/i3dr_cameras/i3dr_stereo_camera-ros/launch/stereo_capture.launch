@@ -12,9 +12,9 @@
 
     <!-- STEREO <MATCHER> -->
     <group ns="$(arg camera_namespace)">
-        <arg name="fps" value="15"/>
-        <arg name="frame_width" value="1920"/>
-        <arg name="frame_height" value="1080"/>
+        <arg name="fps" value="1"/>
+        <arg name="frame_width" value="2448"/>
+        <arg name="frame_height" value="2048"/>
 
         <arg name="exposure_auto" value="false"/>
         <arg name="gain_auto" value="false"/>

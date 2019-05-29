@@ -3,7 +3,7 @@
 <launch>
     <!-- SETUP ARGUMENTS -->
     <!-- enable/disable rviz -->
-    <arg name="rviz" default="false" />
+    <arg name="rviz" default="true" />
     <!-- enable/disable calibration -->
     <arg name="calibrate" default="false"/>
     <arg name="slam" default="false"/>
@@ -17,15 +17,14 @@
         <param name="use_tf_static" value="$(arg use_tf_static)"/>
     </node>
     
-
     <!-- STEREO CAPTURE -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_capture.launch">
         <!-- Be sure to change this to your cameras serials -->
         <arg name="camera_namespace" value="phobos_nuclear"/>
         <arg name="camera_right_serial" value="31710260"/>
         <arg name="camera_left_serial" value="31710277"/>
-        <arg name="exposure" value="6000"/>
-        <arg name="gain" value="100"/>
+        <arg name="exposure" value="15000"/>
+        <arg name="gain" value="0"/>
     </include>
 
     <!-- STEREO CALIBRATION -->
@@ -40,24 +39,28 @@
         <!-- enable/disable gui for stereo matching parameters -->
         <arg name="camera_namespace" value="phobos_nuclear"/>
         <arg name="gui" value="true"/>
-        <arg name="stereo_algorithm" value="1" />
-        <arg name="min_disparity" value="45" />
-        <arg name="disparity_range" value="512" />
-        <arg name="correlation_window_size" value="5" />
-        <arg name="uniqueness_ratio" value="1" />
+        <arg name="stereo_algorithm" value="0" />
+        <arg name="min_disparity" value="0" />
+        <arg name="disparity_range" value="432" />
+        <arg name="correlation_window_size" value="21" />
+        <arg name="uniqueness_ratio" value="10" />
         <arg name="speckle_range" value="4" />
         <arg name="speckle_size" value="1000" />
     </include>
 
     <!-- STEREO REGISTRATOIN -->
     <include if="$(arg slam)" file="$(find i3dr_registration_localisation)/launch/stereo_localisation.launch">
-        <!-- enable/disable gui for stereo matching parameters -->
+        <arg name="localization" value="false"/>
         <arg name="camera_namespace" value="phobos_nuclear"/>
         <arg name="depth_odom" value="true"/>
+        <!--<arg name="scan3d_odom" value="true"/>-->
+        <!--<arg name="depth_icp_odom" value="true"/>-->
         <arg name="disparity2Depth" default="true"/>
         <arg name="rgb_topic" value="/phobos_nuclear/left/image_rect_color"/>
         <arg name="camera_info_topic" value="/phobos_nuclear/left/camera_info"/>
         <arg name="depth_camera_info_topic" value="/phobos_nuclear/left/camera_info"/>
+        <arg name="cloud_topic" value="/phobos_nuclear/points2"/>
+        <arg name="base_link_frame" value="phobos_nuclear_base_link"/>
         <!-- should be set to true if using SGBM as this takes longer to process -->
         <arg name="slow_processing" default="true"/>
     </include>
@@ -65,6 +68,6 @@
     <!-- DISPLAY -->
     <!-- run rviz with config file -->
     <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rivz" 
-        args="-d $(find i3dr_stereo_camera)/rviz/scene.rviz"/>
+        args="-d $(find i3dr_phobos_nuclear)/rviz/scene.rviz"/>
 
 </launch>

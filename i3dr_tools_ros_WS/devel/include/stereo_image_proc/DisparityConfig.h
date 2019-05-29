@@ -483,9 +483,9 @@ DisparityConfig::GroupDescription<DisparityConfig::DEFAULT, DisparityConfig> Def
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(DisparityConfig::AbstractParamDescriptionConstPtr(new DisparityConfig::ParamDescription<int>("correlation_window_size", "int", 0, "SAD correlation window width, pixels", "", &DisparityConfig::correlation_window_size)));
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __min__.min_disparity = -512;
+      __min__.min_disparity = -1024;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __max__.min_disparity = 512;
+      __max__.min_disparity = 1024;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.min_disparity = 0;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
@@ -495,7 +495,7 @@ DisparityConfig::GroupDescription<DisparityConfig::DEFAULT, DisparityConfig> Def
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.disparity_range = 32;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __max__.disparity_range = 512;
+      __max__.disparity_range = 1024;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.disparity_range = 64;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"

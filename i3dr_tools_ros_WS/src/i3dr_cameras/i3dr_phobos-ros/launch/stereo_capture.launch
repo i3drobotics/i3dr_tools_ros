@@ -5,8 +5,8 @@
     <!-- SETUP ARGUMENTS -->
     <arg name="master_robot_model" default="true"/>
     <!-- Be sure to change this to your cameras serials -->
-    <arg name="camera_right_serial" default="31710260"/>
-    <arg name="camera_left_serial" default="31710277"/>
+    <arg name="camera_right_serial" default="27810457"/>
+    <arg name="camera_left_serial" default="41810612"/>
 
     <group if="$(arg master_robot_model)">
         <!-- SETUP ROBOT MODEL -->

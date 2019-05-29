@@ -3,7 +3,7 @@
 <launch>
     <!-- SETUP ARGUMENTS -->
     <!-- enable/disable rviz -->
-    <arg name="rviz" default="false" />
+    <arg name="rviz" default="true" />
     <!-- enable/disable calibration -->
     <arg name="calibrate" default="false"/>
     <!-- enable/disable slam -->
@@ -28,7 +28,7 @@
     <include file="$(find i3dr_deimos)/launch/deimos_capture.launch">
         <arg name="camera_namespace" value="deimos"/>
         <arg name="device" value="/dev/video0"/>
-        <arg name="exposure" default="20000" />
+        <arg name="exposure" default="6000" />
     </include>
 
     <!-- STEREO CALIBRATION -->
@@ -59,8 +59,7 @@
         <arg name="rgb_topic" value="/deimos/left/image_rect_color"/>
         <arg name="camera_info_topic" value="/deimos/left/camera_info"/>
         <arg name="depth_camera_info_topic" value="/deimos/left/camera_info"/>
-        <arg name="base_link_frame" value="deimos_depth_optical_frame"/>
-        <arg name="vo_frame" value="deimos_depth_optical_frame"/>
+        <arg name="base_link_frame" value="deimos_base_link"/>
         <!-- should be set to true if using SGBM as this takes longer to process -->
         <arg name="slow_processing" default="true"/>
     </include>
@@ -68,6 +67,6 @@
     <!-- DISPLAY -->
     <!-- run rviz with config file -->
     <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rivz" 
-        args="-d $(find i3dr_stereo_camera)/rviz/scene.rviz"/>
+        args="-d $(find i3dr_deimos)/rviz/scene.rviz"/>
 
 </launch>
