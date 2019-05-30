@@ -1,0 +1,8 @@
+prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel
+
+Name: ur_modern_driver
+Description: Description of ur_modern_driver
+Version: 0.1.0
+Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_robot_interface/universal_robot/ur_modern_driver/include
+Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel/lib -lur_hardware_interface
+Requires: actionlib control_msgs controller_manager geometry_msgs hardware_interface industrial_msgs roscpp sensor_msgs trajectory_msgs ur_msgs

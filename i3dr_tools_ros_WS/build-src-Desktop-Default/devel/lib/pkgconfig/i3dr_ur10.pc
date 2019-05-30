@@ -1,0 +1,8 @@
+prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel
+
+Name: i3dr_ur10
+Description: Description of i3dr_ur10
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel/lib -li3dr_ur10
+Requires: roscpp std_msgs

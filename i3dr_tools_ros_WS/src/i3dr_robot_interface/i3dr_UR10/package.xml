@@ -19,5 +19,10 @@
   <depend>rospy</depend>
   <depend>std_msgs</depend>
   <depend>std_srvs</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_transport</depend>
+  <depend>message_filters</depend>
+  <depend>tf</depend>
+  <depend>message_generation</depend>
 
 </package>

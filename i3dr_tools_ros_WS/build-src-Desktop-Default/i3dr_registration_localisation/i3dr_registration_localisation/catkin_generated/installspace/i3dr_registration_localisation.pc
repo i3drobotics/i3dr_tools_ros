@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: i3dr_registration_localisation
+Description: Description of i3dr_registration_localisation
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: std_msgs sensor_msgs imu_filter_madgwick rtabmap tf

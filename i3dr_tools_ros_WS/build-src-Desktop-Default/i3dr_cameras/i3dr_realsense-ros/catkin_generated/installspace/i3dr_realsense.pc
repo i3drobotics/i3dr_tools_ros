@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: i3dr_realsense
+Description: Description of i3dr_realsense
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

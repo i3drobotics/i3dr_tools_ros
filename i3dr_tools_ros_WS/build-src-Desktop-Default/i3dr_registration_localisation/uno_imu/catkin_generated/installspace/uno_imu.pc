@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: uno_imu
+Description: Description of uno_imu
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: serial std_msgs sensor_msgs imu_filter_madgwick rtabmap tf

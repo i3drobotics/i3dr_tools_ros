@@ -1,0 +1,1 @@
+/usr/bin/g++  -fPIC   -shared -Wl,-soname,libxunitTara.so -o ../../devel/lib/libxunitTara.so CMakeFiles/xunitTara.dir/src/xunit/xunit_lib_tara.cpp.o 
