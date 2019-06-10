@@ -1,12 +1,15 @@
 [submodule "realsense"]
 	path = i3dr_tools_ros_WS/src/i3dr_realsense/realsense
 	url = https://github.com/intel-ros/realsense.git
-[submodule "tiscamera"]
-	path = i3dr_tools_ros_WS/3rd_party/tiscamera
-	url = https://github.com/TheImagingSource/tiscamera.git
-[submodule "gscam"]
-	path = i3dr_tools_ros_WS/src/i3dr_cameras/gscam
-	url = https://github.com/i3drobotics/gscam.git
+[submodule "universal_robot"]
+	path = i3dr_tools_ros_WS/src/i3dr_robot_interface/universal_robot
+	url = https://github.com/ros-industrial/universal_robot
 [submodule "image_pipeline"]
 	path = i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline
 	url = https://github.com/i3drobotics/image_pipeline
+[submodule "gscam"]
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/gscam
+	url = https://github.com/i3drobotics/gscam.git
+[submodule "tiscamera"]
+	path = i3dr_tools_ros_WS/3rd_party/tiscamera
+	url = https://github.com/TheImagingSource/tiscamera.git
