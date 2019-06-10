@@ -1,8 +1,0 @@
-prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel
-
-Name: ur_driver
-Description: Description of ur_driver
-Version: 1.2.5
-Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel/include
-Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel/lib 
-Requires: dynamic_reconfigure

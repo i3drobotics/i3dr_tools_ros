@@ -1,8 +1,0 @@
-prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel
-
-Name: image_publisher
-Description: Description of image_publisher
-Version: 1.12.23
-Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel/include
-Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel/lib 
-Requires: 

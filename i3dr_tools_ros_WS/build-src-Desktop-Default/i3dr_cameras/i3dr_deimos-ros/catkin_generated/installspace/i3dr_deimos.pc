@@ -1,8 +1,0 @@
-prefix=/usr/local
-
-Name: i3dr_deimos
-Description: Description of i3dr_deimos
-Version: 0.3.1
-Cflags: -I/usr/local/include
-Libs: -L/usr/local/lib -li3dr_deimos
-Requires: roscpp nodelet std_msgs sensor_msgs

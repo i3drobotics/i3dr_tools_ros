@@ -28,7 +28,7 @@
     <include file="$(find i3dr_deimos)/launch/deimos_capture.launch">
         <arg name="camera_namespace" value="deimos"/>
         <arg name="device" value="/dev/video0"/>
-        <arg name="exposure" default="6000" />
+        <arg name="exposure" default="15000" />
     </include>
 
     <!-- STEREO CALIBRATION -->
@@ -60,6 +60,9 @@
         <arg name="camera_info_topic" value="/deimos/left/camera_info"/>
         <arg name="depth_camera_info_topic" value="/deimos/left/camera_info"/>
         <arg name="base_link_frame" value="deimos_base_link"/>
+        <arg name="ukf" value="false"/>
+        <arg name="madgwick" value="false"/>
+        <arg name="imu_topic" value="/deimos/imu_data"/>
         <!-- should be set to true if using SGBM as this takes longer to process -->
         <arg name="slow_processing" default="true"/>
     </include>

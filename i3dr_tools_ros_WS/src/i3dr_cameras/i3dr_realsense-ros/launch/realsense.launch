@@ -48,11 +48,15 @@
         <!-- enable/disable gui for stereo matching parameters -->
         <arg name="camera_namespace" value="realsense_D435i"/>
         <arg name="depth_odom" value="true"/>
+        <arg name="depth_icp_odom" default="false"/>
         <arg name="madgwick" value="true"/>
-        <arg name="ukf" value="true"/>
+        <arg name="ukf" value="false"/>
+        <arg name="imu_topic" value="/realsense_D435i/imu"/>
         <arg name="base_link_frame" value="realsense_D435i_link"/>
         <arg name="disparity2Depth" value="false"/>
+        <arg name="rgb_topic" default="/realsense_D435i/left/image_rect"/>
         <arg name="depth_topic" value="/realsense_D435i/aligned_depth_to_color/image_raw"/>
+        <arg name="cloud_topic" default="/realsense_D435i/points2"/>
     </include>
 
     <!-- DISPLAY -->

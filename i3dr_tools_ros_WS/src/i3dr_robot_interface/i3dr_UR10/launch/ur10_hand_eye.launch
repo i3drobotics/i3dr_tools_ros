@@ -14,7 +14,7 @@
     </include>
 
     <node name="i3dr_hand_eye" pkg="i3dr_ur10" type="i3dr_hand_eye" output="screen">
-        <param name="camera_namespace" type="string" value="/phobos/left"/>
+        <param name="camera_namespace" type="string" value="/phobos"/>
         <param name="world_tf" type="string" value="/world"/>
         <param name="arm_tooltip_tf" type="string" value="/tool0"/>
     </node>

@@ -21,7 +21,6 @@
   <depend>image_transport</depend>
   <depend>nodelet</depend>
   <depend>sensor_msgs</depend>
-  <depend>libv4l-dev</depend>
-  <depend>gscam></depend>
+  <depend>i3dr_stereo_camera</depend>
 
 </package>

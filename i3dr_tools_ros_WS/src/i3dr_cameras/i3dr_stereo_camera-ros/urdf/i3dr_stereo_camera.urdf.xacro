@@ -13,7 +13,7 @@ Copyright (c) 2019, I3D Robotics Ltd.
         <link name="${camera_name}_depth_optical_frame" />
 
         <link name="${camera_name}_base_link" />
-        <!--<link name="imu_link"/>-->
+        <link name="${camera_name}_imu_link"/>
 
         <link name="${camera_name}_center">
             <visual>
@@ -30,12 +30,14 @@ Copyright (c) 2019, I3D Robotics Ltd.
         <joint name="${camera_name}_right_camera_joint" type="fixed">
             <parent link="${camera_name}_center"/>
             <child link="${camera_name}_cameraRight"/>
+            <!--<origin xyz="0 -0.1447027  0" rpy="0 0 0"/>-->
             <origin xyz="${camera_offset_x} -${(baseline/2)+camera_offset_y} ${camera_offset_z}" rpy="0 0 0" />
         </joint>
 
         <joint name="${camera_name}_left_camera_joint" type="fixed">
             <parent link="${camera_name}_center"/>
             <child link="${camera_name}_cameraLeft"/>
+            <!--<origin xyz="0 0.1447027  0" rpy="0 0 0"/>-->
             <origin xyz="${camera_offset_x} ${(baseline/2)+camera_offset_y} ${camera_offset_z}" rpy="0 0 0" />
         </joint>
 
@@ -74,11 +76,11 @@ Copyright (c) 2019, I3D Robotics Ltd.
         </joint>
 
         <!-- Correct for IMU orientation, Z -> X -->
-        <!--<joint name="${camera_name}_imu_joint" type="fixed">
+        <joint name="${camera_name}_imu_joint" type="fixed">
             <origin xyz="0 0.015 -0.002" rpy="0 ${pi/2} 0" />
-            <parent link="${camera_name}_center" />
-            <child link="imu_link" />
-        </joint>-->
+            <parent link="${camera_name}_imu_link" />
+            <child link="${camera_name}_base_link" />
+        </joint>
 
     </xacro:macro>
 </robot>

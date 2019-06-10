@@ -2,7 +2,7 @@ prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel
 
 Name: realsense2_camera
 Description: Description of realsense2_camera
-Version: 2.2.3
+Version: 2.2.6
 Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include
 Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib -lrealsense2_camera
 Requires: message_runtime roscpp sensor_msgs std_msgs nodelet cv_bridge image_transport ddynamic_reconfigure nav_msgs

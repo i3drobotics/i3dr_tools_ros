@@ -7,4 +7,6 @@
 [submodule "gscam"]
 	path = i3dr_tools_ros_WS/src/i3dr_cameras/gscam
 	url = https://github.com/i3drobotics/gscam.git
-	
+[submodule "image_pipeline"]
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline
+	url = https://github.com/i3drobotics/image_pipeline

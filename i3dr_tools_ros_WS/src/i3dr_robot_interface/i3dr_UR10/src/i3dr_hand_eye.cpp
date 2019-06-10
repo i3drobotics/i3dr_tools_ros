@@ -29,10 +29,12 @@ int STATE_ARM = 1;
 int state = STATE_CAMERA;
 
 sensor_msgs::ImageConstPtr MSG_LEFT_IMAGE;
-sensor_msgs::CameraInfoConstPtr MSG_CAMERA_INFO;
+sensor_msgs::ImageConstPtr MSG_RIGHT_IMAGE;
+sensor_msgs::CameraInfoConstPtr MSG_CAMERA_INFO_LEFT;
+sensor_msgs::CameraInfoConstPtr MSG_CAMERA_INFO_RIGHT;
 
 typedef message_filters::sync_policies::ApproximateTime<
-    sensor_msgs::Image, sensor_msgs::CameraInfo>
+    sensor_msgs::Image,sensor_msgs::Image, sensor_msgs::CameraInfo, sensor_msgs::CameraInfo>
     policy_t;
 
 void cameraInfo_to_KDRP(const sensor_msgs::CameraInfoConstPtr msg_camera_info, cv::Mat &K, cv::Mat &D, cv::Mat &R, cv::Mat &P)
@@ -81,8 +83,9 @@ bool findAruco(cv::Mat frame, cv::Mat camera_matrix, cv::Mat camera_distortion, 
     std::vector<int> markerIds;
     std::vector<std::vector<cv::Point2f>> markerCorners, rejectedCansidates;
 
-    cv::Ptr<cv::aruco::Dictionary> markerDictionary = cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_ARUCO_ORIGINAL);
-    float aruco_marker_length = 0.05;
+    //cv::Ptr<cv::aruco::Dictionary> markerDictionary = cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_ARUCO_ORIGINAL);
+    cv::Ptr<cv::aruco::Dictionary> markerDictionary = cv::aruco::getPredefinedDictionary(cv::aruco::PREDEFINED_DICTIONARY_NAME::DICT_6X6_250);
+    float aruco_marker_length = 0.045;
 
     std::vector<cv::Vec3d> rotationVectors, translationVectors;
 
@@ -98,74 +101,65 @@ bool findAruco(cv::Mat frame, cv::Mat camera_matrix, cv::Mat camera_distortion, 
     cv::Mat ImagePoints4(3, 1, CV_64FC1);
     cv::Mat translationMatrix(3, 1, CV_64FC1);
 
+    ROS_INFO("Detecting markers...");
     cv::aruco::detectMarkers(frame, markerDictionary, markerCorners, markerIds);
     if (markerCorners.size() > 0)
     {
-        cv::aruco::estimatePoseSingleMarkers(markerCorners, aruco_marker_length, camera_matrix, camera_distortion, rotationVectors, translationVectors);
+        //cv::aruco::estimatePoseSingleMarkers(markerCorners, aruco_marker_length, camera_matrix, camera_distortion, rotationVectors, translationVectors);
+        
+        if (markerIds.size() > 0){
+            ROS_INFO("Creating grid...");
+            cv::Ptr<cv::aruco::GridBoard> board = cv::aruco::GridBoard::create(4, 3, 0.045, 0.0095, markerDictionary,1);
+            ROS_INFO("Getting pose...");
+            cv::Vec3d rvec, tvec;
+            int valid = cv::aruco::estimatePoseBoard(markerCorners,markerIds,board,camera_matrix,camera_distortion,rvec, tvec);
+            if (valid > 0){
+                ROS_INFO("Drawing markers...");
+                cv::aruco::drawAxis(frame, camera_matrix, camera_distortion, rvec, tvec, aruco_marker_length);
+                
+                ROS_INFO("Getting markers tf...");
+                cam_aruco_tf.setOrigin(tf::Vector3(tvec.val[0], tvec.val[1], tvec.val[2]));
+                tf::Quaternion q;
+                q.setRPY(rvec.val[0], rvec.val[1], rvec.val[2]);
+                cam_aruco_tf.setRotation(q);
 
-        ImagePoints1.at<double>(0, 0) = markerCorners[0][0].x;
-        ImagePoints1.at<double>(1, 0) = markerCorners[0][0].y;
-        ImagePoints1.at<double>(2, 0) = 0.0f;
+                ROS_INFO("Done.");
 
-        ImagePoints2.at<double>(0, 0) = markerCorners[0][1].x;
-        ImagePoints2.at<double>(1, 0) = markerCorners[0][1].y;
-        ImagePoints2.at<double>(2, 0) = 0.0f;
-
-        ImagePoints3.at<double>(0, 0) = markerCorners[0][2].x;
-        ImagePoints3.at<double>(1, 0) = markerCorners[0][2].y;
-        ImagePoints3.at<double>(2, 0) = 0.0f;
-
-        ImagePoints4.at<double>(0, 0) = markerCorners[0][3].x;
-        ImagePoints4.at<double>(1, 0) = markerCorners[0][3].y;
-        ImagePoints4.at<double>(2, 0) = 0.0f;
-
-        translationMatrix.at<double>(0, 0) = translationVectors[0].val[0];
-        translationMatrix.at<double>(1, 0) = translationVectors[0].val[1];
-        translationMatrix.at<double>(2, 0) = translationVectors[0].val[2];
-
-        for (int i = 0; i < markerIds.size(); i++)
-        {
-            cv::aruco::drawAxis(frame, camera_matrix, camera_distortion, rotationVectors[i], translationVectors[i], aruco_marker_length);
-            Rodrigues(rotationVectors[i], Rotationmatrix);
-            WorldPoints1 = (Rotationmatrix.t() * ImagePoints1) - (Rotationmatrix.t() * translationMatrix);
-            WorldPoints2 = (Rotationmatrix.t() * ImagePoints2) - (Rotationmatrix.t() * translationMatrix);
-            WorldPoints3 = (Rotationmatrix.t() * ImagePoints3) - (Rotationmatrix.t() * translationMatrix);
-            WorldPoints4 = (Rotationmatrix.t() * ImagePoints4) - (Rotationmatrix.t() * translationMatrix);
-            //std::cout << "T" << translationVectors[i] << std::endl;
+                valid_aruco = true;
+            } else {
+                valid_aruco = false;
+                ROS_INFO("No Aruco found");
+            }
+        } else {
+            valid_aruco = false;
+            ROS_INFO("No Aruco found");
         }
 
-        cam_aruco_tf;
-        cam_aruco_tf.setOrigin(tf::Vector3(translationVectors[0].val[0], translationVectors[0].val[1], translationVectors[0].val[2]));
-        tf::Quaternion q;
-        q.setRPY(rotationVectors[0].val[0], rotationVectors[0].val[1], rotationVectors[0].val[2]);
-        cam_aruco_tf.setRotation(q);
-
-        valid_aruco = true;
+        //std::cout << "T" << translationVectors[0] << std::endl;
+        //std::cout << "R" << rotationVectors[0] << std::endl; 
     }
     else
     {
         valid_aruco = false;
         ROS_INFO("No Aruco found");
     }
-    cv::Mat frame_resize;
-    cv::resize(frame, frame_resize, cv::Size(960, 540));
-    cv::imshow("i3dr_hand_eye", frame_resize);
-    cv::waitKey(1);
 
     return valid_aruco;
 }
 
-void imageCallback(const sensor_msgs::ImageConstPtr &msg_image, const sensor_msgs::CameraInfoConstPtr &msg_camera_info)
+void imageCallback(const sensor_msgs::ImageConstPtr &msg_image_left, const sensor_msgs::ImageConstPtr &msg_image_right, const sensor_msgs::CameraInfoConstPtr &msg_camera_info_left, const sensor_msgs::CameraInfoConstPtr &msg_camera_info_right)
 {
-    MSG_LEFT_IMAGE = msg_image;
-    MSG_CAMERA_INFO = msg_camera_info;
+    MSG_LEFT_IMAGE = msg_image_left;
+    MSG_CAMERA_INFO_LEFT = msg_camera_info_left;
+    MSG_RIGHT_IMAGE = msg_image_right;
+    MSG_CAMERA_INFO_RIGHT = msg_camera_info_right;
 }
 
 bool trig_aruco_robot(std_srvs::Empty::Request &request, std_srvs::Empty::Response &response)
 {
     ROS_INFO("aruco robot alignment triggered");
     //get transform from aruco marker to tooltip
-    tf::StampedTransform arcuo_to_tooltip_tf = getTf("tool0","world");
+    tf::StampedTransform arcuo_to_tooltip_tf = getTf("tool0","base_link");
     
     tf::Transform rotate_world_tf;
     tf::Quaternion q;
@@ -186,30 +180,52 @@ bool trig_aruco_camera(std_srvs::Empty::Request &request, std_srvs::Empty::Respo
     try
     {
         ROS_INFO("loading image...");
-        cv_bridge::CvImagePtr input_image;
-        input_image = cv_bridge::toCvCopy(MSG_LEFT_IMAGE, "mono8");
-        cv::Mat K, D, R, P;
+        cv_bridge::CvImagePtr left_image, right_image;
+        left_image = cv_bridge::toCvCopy(MSG_LEFT_IMAGE, "mono8");
+        right_image = cv_bridge::toCvCopy(MSG_RIGHT_IMAGE, "mono8");
+        cv::Mat Kl, Dl, Rl, Pl, Kr, Dr, Rr, Pr;
         ROS_INFO("extracting info...");
-        cameraInfo_to_KDRP(MSG_CAMERA_INFO, K, D, R, P);
-        std::string camera_frame = MSG_CAMERA_INFO->header.frame_id;
+        cameraInfo_to_KDRP(MSG_CAMERA_INFO_LEFT, Kl, Dl, Rl, Pl);
+        cameraInfo_to_KDRP(MSG_CAMERA_INFO_RIGHT, Kr, Dr, Rr, Pr);
+        std::string camera_frame_left = "phobos_cameraLeft_optical";
+        std::string camera_frame_right = "phobos_cameraRight_optical";
         std::string camera_base_frame = "phobos_base_link";
 
         ROS_INFO("detecting aruco...");
         //find transform from aruco to camera left
-        tf::Transform cam_aruco_tf;
-        bool aruco_found = findAruco(input_image->image, K, D, cam_aruco_tf);
+        tf::Transform camL_aruco_tf,camR_aruco_tf;
+        bool aruco_found_l = findAruco(left_image->image, Kl, Dl, camL_aruco_tf);
+        bool aruco_found_r = findAruco(right_image->image, Kr, Dr, camR_aruco_tf);
 
-        if (aruco_found){
+        cv::Mat frame_resize_l, frame_resize_r;
+        cv::resize(left_image->image, frame_resize_l, cv::Size(960, 540));
+        cv::resize(right_image->image, frame_resize_r, cv::Size(960, 540));
+        cv::imshow("i3dr_hand_eye_l", frame_resize_l);
+        cv::imshow("i3dr_hand_eye_r", frame_resize_r);
+        cv::waitKey(1);
+
+        if (aruco_found_l && aruco_found_r){
             //find transform from camera_left to camera_base
-            tf::StampedTransform camera_left_to_base_tf = getTf(camera_base_frame,camera_frame);
+            tf::StampedTransform camera_left_to_base_tf = getTf(camera_base_frame,camera_frame_left);
+            tf::StampedTransform camera_right_to_base_tf = getTf(camera_base_frame,camera_frame_right);
+
+            static tf::TransformBroadcaster tf_br;
+            tf_br.sendTransform(tf::StampedTransform(camL_aruco_tf, ros::Time::now(), camera_frame_left, "aruco_marker_left"));
+            tf_br.sendTransform(tf::StampedTransform(camR_aruco_tf, ros::Time::now(), camera_frame_right, "aruco_marker_right"));
+
+            
+            tf::Transform zero_tf;
+            tf::Quaternion q;
+            q.setRPY(0, 0, 0);
+            zero_tf.setRotation(q);
 
             //find transform from aruco_marker to camera_base
             //transform world->camera_base where aruco_marker is world zero
-            tf::Transform camera_base_to_aruco_tf = camera_left_to_base_tf * cam_aruco_tf;
+            //tf::Transform camera_base_to_aruco_tf = camL_aruco_tf.inverse() * camera_left_to_base_tf;
 
-            static tf::TransformBroadcaster tf_br;
-            tf_br.sendTransform(tf::StampedTransform(camera_base_to_aruco_tf, ros::Time::now(), "world", camera_base_frame));
-            ROS_INFO("camera calibrated to world coordinates (aruco is world zero)");
+            tf_br.sendTransform(tf::StampedTransform(zero_tf, ros::Time::now(), camera_base_frame, "world"));
+            //tf_br.sendTransform(tf::StampedTransform(cam_aruco_tf, ros::Time::now(), camera_frame, "aruco_marker"));
+            //ROS_INFO("camera calibrated to world coordinates (aruco is world zero)");
         }
     }
     catch (cv_bridge::Exception &e)
@@ -243,7 +259,10 @@ int main(int argc, char **argv)
         ROS_INFO("arm_tooltip_tf: %s", arm_tooltip_tf.c_str());
     }
 
-    cv::namedWindow("i3dr_hand_eye");
+    cv::namedWindow("i3dr_hand_eye_r");
+    cv::startWindowThread();
+
+    cv::namedWindow("i3dr_hand_eye_l");
     cv::startWindowThread();
     
     //TODO: add loading previous calibration from yaml
@@ -253,12 +272,14 @@ int main(int argc, char **argv)
     ros::ServiceServer srv_aruco_robot = nh.advertiseService("trig_aruco_robot", trig_aruco_robot);
 
     // Subscribers creation.
-    message_filters::Subscriber<sensor_msgs::Image> sub_image_l(nh, camera_namespace + "/image_raw", 1);
-    message_filters::Subscriber<sensor_msgs::CameraInfo> sub_camera_info_l(nh, camera_namespace + "/camera_info", 1);
+    message_filters::Subscriber<sensor_msgs::Image> sub_image_l(nh, camera_namespace + "/left/image_raw", 1);
+    message_filters::Subscriber<sensor_msgs::Image> sub_image_r(nh, camera_namespace + "/right/image_raw", 1);
+    message_filters::Subscriber<sensor_msgs::CameraInfo> sub_camera_info_l(nh, camera_namespace + "/left/camera_info", 1);
+    message_filters::Subscriber<sensor_msgs::CameraInfo> sub_camera_info_r(nh, camera_namespace + "/right/camera_info", 1);
 
     // Message filter creation.
-    message_filters::Synchronizer<policy_t> sync(policy_t(10), sub_image_l, sub_camera_info_l);
-    sync.registerCallback(boost::bind(&imageCallback, _1, _2));
+    message_filters::Synchronizer<policy_t> sync(policy_t(10), sub_image_l,sub_image_r, sub_camera_info_l,sub_camera_info_r);
+    sync.registerCallback(boost::bind(&imageCallback, _1, _2, _3, _4));
 
     while (ros::ok())
     {

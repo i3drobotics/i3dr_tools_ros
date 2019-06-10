@@ -18,19 +18,9 @@ include_directories(
     ${PCL_INCLUDE_DIRS}
 )
 
-add_service_files(
-    FILES
-    SetFloat.srv
-    SetInt.srv
-)
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
-
 generate_dynamic_reconfigure_options(
 	cfg/i3DR_Disparity.cfg
+	cfg/tiscamera_settings.cfg
 )
 
 catkin_package(

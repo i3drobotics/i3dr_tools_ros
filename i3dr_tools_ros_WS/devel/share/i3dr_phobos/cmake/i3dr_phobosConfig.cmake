@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(i3dr_phobos_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include " STREQUAL " ")
+if(NOT " " STREQUAL " ")
   set(i3dr_phobos_INCLUDE_DIRS "")
-  set(_include_dirs "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include")
+  set(_include_dirs "")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://i3drobotics.com/phobos " STREQUAL " ")
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/home/i3dr/i3dr_SBRI_ros/i3dr_SBRI_ros_WS/devel/lib;/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -152,7 +152,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(i3dr_phobos_EXPORTED_TARGETS "i3dr_phobos_generate_messages_cpp;i3dr_phobos_generate_messages_eus;i3dr_phobos_generate_messages_lisp;i3dr_phobos_generate_messages_nodejs;i3dr_phobos_generate_messages_py")
+set(i3dr_phobos_EXPORTED_TARGETS "")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${i3dr_phobos_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -189,7 +189,7 @@ foreach(depend ${depends})
   list(APPEND i3dr_phobos_EXPORTED_TARGETS ${${i3dr_phobos_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "i3dr_phobos-msg-extras.cmake")
+set(pkg_cfg_extras "")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${i3dr_phobos_DIR}/${extra})

@@ -26,7 +26,9 @@
         <arg name="camera_namespace" value="phobos_nuclear"/>
         <arg name="camera_right_serial" value="31710260"/>
         <arg name="camera_left_serial" value="31710277"/>
-        <arg name="exposure" value="15000"/>
+        <arg name="frame_width" default="2448"/>
+        <arg name="frame_height" default="2048"/>
+        <arg name="exposure" value="1500000"/>
         <arg name="gain" value="0"/>
     </include>
 

@@ -1,8 +1,0 @@
-prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel
-
-Name: i3dr_registration_localisation
-Description: Description of i3dr_registration_localisation
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel/lib 
-Requires: std_msgs sensor_msgs imu_filter_madgwick rtabmap tf

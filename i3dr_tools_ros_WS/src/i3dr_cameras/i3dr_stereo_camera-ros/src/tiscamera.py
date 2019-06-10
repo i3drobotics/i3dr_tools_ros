@@ -19,7 +19,9 @@ CameraProperty = namedtuple(
 class Camera:
     """"""
 
-    def __init__(self, serial, width, height, framerate, color, liveview, topic_name=None, node_name=None):
+    def __init__(self, serial, width, height, framerate, color, liveview, 
+    topic_name=None, node_name=None, 
+    camera_info=None, camera_frame=None, camera_name=None):
         """ Constructor.
         Creates the sink pipeline and the source pipeline.
 
@@ -43,6 +45,12 @@ class Camera:
             topic_name if topic_name is not None else ""
         self.node_name = "__name:="
         self.node_name += node_name if node_name is not None else "tis_camera_node"
+        self.camera_info = "_camera_info_url:="
+        self.camera_info += camera_info if camera_info is not None else "file:///home/i3dr/.ros/camera_info/camera.yaml"
+        self.camera_name = "_camera_name:="
+        self.camera_name += camera_name if camera_name is not None else "camera"
+        self.camera_frame = "_frame_id:="
+        self.camera_frame += camera_frame if camera_frame is not None else "/camera_frame"
         print("self.topic_name: " + str(self.topic_name))
         print("self.node_name: " + str(self.node_name))
         self.pid = -1
@@ -52,7 +60,8 @@ class Camera:
         pixelformat = "BGRx"
         if not color:
             pixelformat = "GRAY8"
-
+        
+        '''
         if liveview:
             p = 'tcambin serial="%s" name=source ! video/x-raw,format=%s,width=%d,height=%d,framerate=%d/1' % (
                 serial, pixelformat, width, height, framerate,)
@@ -65,6 +74,19 @@ class Camera:
                 serial, pixelformat, width, height, framerate,)
             p += ' ! videoconvert ! video/x-raw,format=RGB ,width=%d,height=%d,framerate=%d/1! shmsink socket-path=/tmp/ros_mem' % (
                 width, height, framerate,)
+        '''
+        if liveview:
+            p = 'tcamsrc serial="%s" name=source ! video/x-raw,format=%s,width=%d,height=%d,framerate=%d/1' % (
+                serial, pixelformat, width, height, framerate,)
+            p += ' ! tee name=t'
+            p += ' t. ! queue ! videoconvert ! video/x-raw,format=%s ,width=%d,height=%d,framerate=%d/1 ! shmsink socket-path=/tmp/ros_mem' % (
+                pixelformat, width, height, framerate,)
+            p += ' t. ! queue ! videoconvert ! ximagesink'
+        else:
+            p = 'tcamsrc serial="%s" name=source ! video/x-raw,format=%s,width=%d,height=%d,framerate=%d/1' % (
+                serial, pixelformat, width, height, framerate,)
+            p += '! videoconvert ! video/x-raw,format=%s ,width=%d,height=%d,framerate=%d/1 ! shmsink socket-path=/tmp/ros_mem' % (
+                pixelformat, width, height, framerate,)
 
         print(p)
 
@@ -80,10 +102,25 @@ class Camera:
         self.source = self.pipeline.get_by_name("source")
 
         # Create gscam_config variable with content
-        gscam = 'shmsrc socket-path=/tmp/ros_mem ! video/x-raw-rgb, width=%d,height=%d,framerate=%d/1' % (
-            width, height, framerate,)
-        gscam += ',bpp=24,depth=24,blue_mask=16711680, green_mask=65280, red_mask=255 ! ffmpegcolorspace'
-        os.environ["GSCAM_CONFIG"] = gscam
+        #gscam = 'shmsrc socket-path=/tmp/ros_mem ! video/x-raw-rgb, width=%d,height=%d,framerate=%d/1' % (
+        #    width, height, framerate,)
+        #gscam += ',bpp=24,depth=24,blue_mask=16711680, green_mask=65280, red_mask=255 ! ffmpegcolorspace'
+
+        gscam = 'shmsrc socket-path=/tmp/ros_mem ! video/x-raw, format=%s width=%d,height=%d,framerate=%d/1' % (
+            pixelformat,width, height, framerate,)
+        gscam += '! videoconvert'
+        
+        t_pipe = 'video/x-raw, format=(string)%s, ' % (pixelformat)
+        t_pipe += 'width=%d, height=%d,framerate=%d/1 ' % (width,height,framerate)
+        t_pipe += '! videoconvert --verbose'
+        t_p = 'tcamsrc serial=%s ! %s' % (serial,t_pipe)
+
+        os.environ["GSCAM_CONFIG"] = t_p
+
+        self.gscam_command = ["rosrun","gscam","gscam",
+                    "_camera_name:=cam", "_camera_info_url:=file:///home/i3dr/.ros/camera_info/cam_info.yaml",
+                    "_frame_id:=/cam_depth_optical_frame",
+                    "_sync_sink:=true"]
 
     def start_pipeline(self):
         """ Starts the camera sink pipeline and the rosrun process
@@ -91,10 +128,8 @@ class Camera:
         :return:
         """
         try:
-            self.pipeline.set_state(Gst.State.PLAYING)
-            self.pid = subprocess.Popen(
-                ["rosrun", "gscam", "gscam", self.topic_name, self.node_name])
-
+            #self.pipeline.set_state(Gst.State.PLAYING)
+            self.pid = subprocess.Popen(self.gscam_command)
         except GLib.Error as error:
             print("Error starting pipeline: {0}".format(error))
             raise

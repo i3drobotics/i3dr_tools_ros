@@ -7,17 +7,6 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
 )
 
-add_service_files(
-    FILES
-    SetFloat.srv
-    SetInt.srv
-)
-
-generate_messages(
-  DEPENDENCIES
-  std_msgs
-)
-
 catkin_package(
     CATKIN_DEPENDS
 )

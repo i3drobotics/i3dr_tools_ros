@@ -7,14 +7,15 @@
     <arg name="camera_right_serial" default="31710260"/>
     <arg name="camera_left_serial" default="31710277"/>
     <arg name="camera_namespace" default="stereo"/>
+    <arg name="frame_width" default="2448"/>
+    <arg name="frame_height" default="2048"/>
     <arg name="exposure" default="10000"/>
     <arg name="gain" default="100"/>
+    <arg name="cameraType" default="tiscamera"/>
 
     <!-- STEREO <MATCHER> -->
     <group ns="$(arg camera_namespace)">
         <arg name="fps" value="1"/>
-        <arg name="frame_width" value="2448"/>
-        <arg name="frame_height" value="2048"/>
 
         <arg name="exposure_auto" value="false"/>
         <arg name="gain_auto" value="false"/>

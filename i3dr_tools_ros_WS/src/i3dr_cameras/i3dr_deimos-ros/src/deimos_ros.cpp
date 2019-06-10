@@ -34,7 +34,7 @@ namespace uvc_camera {
 			frames_to_skip = 0;
 			device = "/dev/video0";
 			frame = "camera";
-			frameIMU = "imu_link";
+			frameIMU = "deimos_imu_link";
 			frameImageLeft = "deimos_depth_optical_frame";
 			frameImageRight = "deimos_depth_optical_frame";
 			frameCameraInfoLeft = "deimos_depth_optical_frame";
@@ -170,7 +170,7 @@ namespace uvc_camera {
 				exposure_sub = node.subscribe ("set_exposure", 1, &deimosCamera::callBackExposure, this);
 				brightness_sub = node.subscribe ("set_brightness", 1, &deimosCamera::callBackBrightness, this);
 
-				IMU_pub = node.advertise<sensor_msgs::Imu>("imu_data", 1, true);
+				IMU_pub = node.advertise<sensor_msgs::Imu>("imu", 1, true);
 				IMU_inclination_pub = node.advertise<geometry_msgs::Point>("get_inclination", 1, true);
 				IMU_thread = boost::thread(boost::bind(&deimosCamera::IMU_enable, this));
 

@@ -6,11 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /CameraModel1
         - /TF1/Frames1
-        - /Image1
       Splitter Ratio: 0.5
-    Tree Height: 369
+    Tree Height: 339
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -29,7 +27,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Image
+    SyncSource: Right_Image
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -63,6 +61,14 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        aruco_marker_left:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        aruco_marker_right:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         phobos_base_link:
           Alpha: 1
           Show Axes: false
@@ -101,129 +107,72 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        ee_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        forearm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        shoulder_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tool0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        upper_arm_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        wrist_1_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wrist_2_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        wrist_3_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
-        All Enabled: true
+        All Enabled: false
+        aruco_marker_left:
+          Value: true
+        aruco_marker_right:
+          Value: true
         base:
-          Value: true
+          Value: false
         base_link:
-          Value: true
+          Value: false
         ee_link:
-          Value: true
+          Value: false
         forearm_link:
-          Value: true
+          Value: false
         phobos_base_link:
           Value: true
         phobos_cameraLeft:
-          Value: true
+          Value: false
         phobos_cameraLeft_optical:
           Value: true
         phobos_cameraRight:
-          Value: true
+          Value: false
         phobos_cameraRight_optical:
           Value: true
         phobos_center:
-          Value: true
+          Value: false
         phobos_depth_optical_frame:
-          Value: true
+          Value: false
         shoulder_link:
-          Value: true
+          Value: false
         tool0:
-          Value: true
+          Value: false
         tool0_controller:
-          Value: true
+          Value: false
         upper_arm_link:
-          Value: true
+          Value: false
         world:
-          Value: true
+          Value: false
         wrist_1_link:
-          Value: true
+          Value: false
         wrist_2_link:
-          Value: true
+          Value: false
         wrist_3_link:
-          Value: true
+          Value: false
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        phobos_base_link:
-          phobos_center:
-            phobos_cameraLeft:
-              phobos_cameraLeft_optical:
-                phobos_depth_optical_frame:
-                  {}
-            phobos_cameraRight:
-              phobos_cameraRight_optical:
-                {}
         world:
           base_link:
             base:
@@ -243,11 +192,23 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /phobos/left/image_raw
+      Image Topic: /phobos/left/image_rect
       Max Value: 1
       Median window: 5
       Min Value: 0
-      Name: Image
+      Name: Left_Image
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /phobos/right/image_rect
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Right_Image
       Normalize Range: true
       Queue Size: 2
       Transport Hint: raw
@@ -285,28 +246,30 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.0331835002
-        Y: -0.443839848
-        Z: -0.0530450754
+        X: 0.103885137
+        Y: -0.592838347
+        Z: 0.226315439
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.620397806
+      Pitch: 0.715397775
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.55039763
+      Yaw: 1.92039764
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 846
+  Height: 1056
   Hide Left Dock: false
   Hide Right Dock: false
-  Image:
+  Left_Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a000002c4fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000002800000200000000d700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d006100670065010000022e000000be0000001600ffffff000000010000010f000002c4fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730100000028000002c4000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000050b0000003efc0100000002fb0000000800540069006d006501000000000000050b0000030000fffffffb0000000800540069006d0065010000000000000450000000000000000000000286000002c400000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000020b00000396fc020000000afb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000001e2000000d700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb00000014004c006500660074005f0049006d0061006700650100000210000000d40000001600fffffffb0000001600520069006700680074005f0049006d00610067006501000002ea000000d40000001600ffffff000000010000010f00000396fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002800000396000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f0000030000fffffffb0000000800540069006d006501000000000000045000000000000000000000052e0000039600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Right_Image:
+    collapsed: false
   Selection:
     collapsed: false
   Time:
@@ -315,6 +278,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1291
-  X: 75
-  Y: 60
+  Width: 1855
+  X: 65
+  Y: 24

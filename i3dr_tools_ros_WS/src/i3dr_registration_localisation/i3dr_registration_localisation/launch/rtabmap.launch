@@ -194,8 +194,8 @@
         <param name="guess_min_translation"       type="double" value="$(arg odom_guess_min_translation)"/>
         <param name="guess_min_rotation"          type="double" value="$(arg odom_guess_min_rotation)"/>
  
-        <param name="Vis/FeatureType" type="int" value="6"/>
-        <param name="GFTT/MinDistance" type="string" value="10"/> <!-- default 5 pixels -->
+        <param name="Vis/FeatureType" type="int" value="8"/>
+        <param name="GFTT/MinDistance" type="string" value="5"/> <!-- default 5 pixels -->
           <!--<param name="Odom/Strategy" value="1"/>-->
           <!-- maximum features map size, default 2000 -->
           <!--<param name="Odom/MaxSize" type="string" value="10000"/> -->
@@ -334,6 +334,8 @@
       <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
       <param unless="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="true"/>
       <param name="Mem/InitWMWithAllNodes" type="string" value="$(arg localization)"/>
+
+      <!--<param name="Grid/CellSize" type="string" value="0.008"/>-->
 
       <!-- Force 3DoF if camera is fixed to 2D plane -->
       <!--<param name="Reg/Force3DoF" type="string" value="true"/>-->

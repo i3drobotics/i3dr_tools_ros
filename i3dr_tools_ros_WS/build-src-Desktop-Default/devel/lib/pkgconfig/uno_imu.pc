@@ -1,8 +1,0 @@
-prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel
-
-Name: uno_imu
-Description: Description of uno_imu
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/build-src-Desktop-Default/devel/lib 
-Requires: serial std_msgs sensor_msgs imu_filter_madgwick rtabmap tf
