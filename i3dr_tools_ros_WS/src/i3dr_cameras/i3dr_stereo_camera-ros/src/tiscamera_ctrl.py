@@ -27,12 +27,17 @@ class tiscamera_ctrl(object):
             self.width = rospy.get_param('~Width')
             self.height = rospy.get_param('~Height')
             self.fps = rospy.get_param('~FPS')
+
+            self.camera_info = rospy.get_param('~camera_info',"file:///home/i3dr/.ros/camera_info/cam_info.yaml")
+            self.camera_name = rospy.get_param('~camera_name',"cam")
+            self.camera_frame = rospy.get_param('~camera_frame',"/cam_optical_frame")
+
             self.cam = tiscamera.Camera(
                 self.serial, self.width, self.height, self.fps, False, False,
-                topic_name="cam_test", node_name="tiscamera_node",
-                camera_info="file:///home/i3dr/.ros/camera_info/cam_info.yaml",
-                camera_name="cam",
-                camera_frame="/cam_depth_optical_frame")
+                topic_name="tiscamera_topic_%s" % (self.serial), node_name="tiscamera_node_%s" % (self.serial),
+                camera_info=self.camera_info,
+                camera_name=self.camera_name,
+                camera_frame=self.camera_frame)
             self.CD = CD
             self.cam.source
 
@@ -40,13 +45,19 @@ class tiscamera_ctrl(object):
 
             self.set_property('Trigger Mode', True)
 
-            rospy.Service('tiscam_set_exposure_auto', SetBool, self.set_exposure_auto)
-            rospy.Service('tiscam_set_gain_auto', SetBool, self.set_gain_auto)
-            rospy.Service('tiscam_set_exposure', SetInt, self.set_exposure)
-            rospy.Service('tiscam_set_gain', SetInt, self.set_gain)
+            rospy.Service('tiscam_%s_set_brightness' % (self.serial), SetInt, self.set_brightness)
+            rospy.Service('tiscam_%s_set_exposure_auto' % (self.serial), SetBool, self.set_exposure_auto)
+            rospy.Service('tiscam_%s_set_gain_auto' % (self.serial), SetBool, self.set_gain_auto)
+            rospy.Service('tiscam_%s_set_exposure' % (self.serial), SetInt, self.set_exposure)
+            rospy.Service('tiscam_%s_set_gain' % (self.serial), SetInt, self.set_gain)
 
             # set inital camera properties based on parameters
             # initalise rosservice for each camera property given in parameters
+            if (rospy.has_param('~Brightness')):
+                rospy.loginfo("setting inital brightness")
+                brightness = rospy.get_param('~Brightness')
+                self.set_property('Brightness', brightness)
+
             if (rospy.has_param('~Exposure_Auto')):
                 rospy.loginfo("setting inital exposure auto")
                 exposure_auto = rospy.get_param('~Exposure_Auto')
@@ -80,14 +91,19 @@ class tiscamera_ctrl(object):
                 "tiscamera_ctrl: Required parameter(s) not set")
 
     def dynamic_settings_onChange(self, config, level):
-        rospy.loginfo("""Reconfigure Request: {Exposure_Auto}, {Gain_Auto},{Exposure}, {Gain},""".format(**config))
+        rospy.loginfo("""Reconfigure Request: {Brightness}, {Exposure_Auto}, {Gain_Auto},{Exposure}, {Gain},""".format(**config))
 
+        current_Bright = self.cam.get_property("Brightness")[1]
         current_ExpAuto = self.cam.get_property("Exposure Auto")[1]
         current_GainAuto = self.cam.get_property("Gain Auto")[1]
         current_Exp = self.cam.get_property("Exposure")[1]
         current_Gain = self.cam.get_property("Gain")[1]
 
-        print(current_Exp)
+        print(self.cam.get_property("Exposure"))
+        print(config["Exposure"])
+
+        if current_Bright != config["Brightness"]:
+            self.set_property("Brightness",config["Brightness"])
 
         if current_ExpAuto != config["Exposure_Auto"]:
             self.set_property("Exposure Auto",config["Exposure_Auto"])
@@ -143,6 +159,11 @@ class tiscamera_ctrl(object):
             msg = "[ERROR] Unable to set tiscamera property"
             rospy.logerr(msg)
         return (success, msg)
+
+    def set_brightness(self, req):
+        # callback request to set exposure auto
+        success, msg = self.set_property("Brightness", req.data)
+        return SetIntResponse(success, msg)
 
     def set_exposure_auto(self, req):
         # callback request to set exposure auto

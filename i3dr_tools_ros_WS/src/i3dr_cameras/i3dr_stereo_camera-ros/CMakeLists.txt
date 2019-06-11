@@ -16,6 +16,7 @@ find_package(PCL 1.2 REQUIRED)
 include_directories(
     ${catkin_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}
+	include/jr/include
 )
 
 generate_dynamic_reconfigure_options(

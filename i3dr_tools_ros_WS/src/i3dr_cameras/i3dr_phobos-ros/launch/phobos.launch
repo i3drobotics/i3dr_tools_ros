@@ -3,7 +3,7 @@
 <launch>
     <!-- SETUP ARGUMENTS -->
     <!-- enable/disable rviz -->
-    <arg name="rviz" default="false" />
+    <arg name="rviz" default="true" />
     <!-- enable/disable calibration -->
     <arg name="calibrate" default="false"/>
     <arg name="slam" default="false"/>
@@ -17,7 +17,6 @@
         <param name="use_tf_static" value="$(arg use_tf_static)"/>
     </node>
     
-
     <!-- STEREO CAPTURE -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_capture.launch">
         <!-- Be sure to change this to your cameras serials -->
@@ -26,8 +25,8 @@
         <arg name="camera_left_serial" value="41810612"/>
         <arg name="frame_width" value="1920"/>
         <arg name="frame_height" value="1080"/>
-        <arg name="exposure" value="10000"/>
-        <arg name="gain" value="100"/>
+        <arg name="exposure" value="6000"/>
+        <arg name="gain" value="0"/>
     </include>
 
     <!-- STEREO CALIBRATION -->
@@ -37,14 +36,14 @@
 
     <!-- STEREO MATCHER -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
-        <arg name="use_i3dr_matcher" value="false"/>
+        <arg name="use_i3dr_matcher" value="true"/>
 
         <!-- enable/disable gui for stereo matching parameters -->
         <arg name="camera_namespace" value="phobos"/>
         <arg name="gui" value="true"/>
         <arg name="stereo_algorithm" value="0" />
-        <arg name="min_disparity" value="-437" />
-        <arg name="disparity_range" value="448" />
+        <arg name="min_disparity" value="-250" />
+        <arg name="disparity_range" value="192" />
         <arg name="correlation_window_size" value="19" />
         <arg name="uniqueness_ratio" value="1" />
         <arg name="speckle_range" value="4" />
@@ -67,6 +66,6 @@
     <!-- DISPLAY -->
     <!-- run rviz with config file -->
     <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rivz" 
-        args="-d $(find i3dr_stereo_camera)/rviz/scene.rviz"/>
+        args="-d $(find i3dr_phobos)/rviz/scene.rviz"/>
 
 </launch>

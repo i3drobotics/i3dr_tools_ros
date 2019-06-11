@@ -27,7 +27,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Image
+    SyncSource: ""
 Toolbars:
   toolButtonStyle: 2
 Visualization Manager:
@@ -124,10 +124,6 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        odom:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: rd_i3dr_deimos
       TF Prefix: ""
@@ -155,27 +151,23 @@ Visualization Manager:
           Value: true
         deimos_imu_link:
           Value: true
-        odom:
-          Value: true
       Marker Scale: 0.300000012
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        deimos_base_link:
-          deimos_center:
-            deimos_cameraLeft:
-              deimos_cameraLeft_optical:
+        deimos_imu_link:
+          deimos_base_link:
+            deimos_center:
+              deimos_cameraLeft:
+                deimos_cameraLeft_optical:
+                  {}
+              deimos_cameraRight:
+                deimos_cameraRight_optical:
+                  {}
                 deimos_depth_optical_frame:
                   {}
-            deimos_cameraRight:
-              deimos_cameraRight_optical:
-                {}
-            deimos_imu_link:
-              {}
-        odom:
-          {}
       Update Interval: 0
       Value: true
     - Class: rviz/Image
@@ -245,7 +237,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: deimos_base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -266,25 +258,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.89091992
+      Distance: 1.03384447
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.0261547416
-        Y: -1.34403515
-        Z: -0.649800479
+        X: -0.190854043
+        Y: 0.312354743
+        Z: -0.293791175
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.46979624
+      Pitch: 0.504795969
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.6553973
+      Yaw: 5.23357868
     Saved: ~
 Window Geometry:
   Displays:

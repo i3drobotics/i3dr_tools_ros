@@ -29,6 +29,7 @@
 #include <i3dr_stereo_camera/i3DR_DisparityConfig.h>
 
 #include <boost/filesystem.hpp>
+//#include <PhobosIntegration/PhobosIntegration.hpp>
 
 #include <string>
 
@@ -61,10 +62,14 @@ void cameraInfo_to_KDRP(const sensor_msgs::CameraInfoConstPtr &msg_camera_info, 
     P = cv::Mat(3, 4, CV_64FC1, (void *)msg_camera_info->P.data());
 }
 
+cv::Mat JR_generate_disp(cv::Mat left_image, cv::Mat right_image){
+    cv::Mat disp;
+
+}
+
 //Calculate disparity using left and right images
 Mat stereo_match(Mat left_image, Mat right_image, int algorithm, int min_disparity, int disparity_range, int correlation_window_size, int uniqueness_ratio, int texture_threshold, int speckleSize, int speckelRange)
 {
-
     cv::Mat disp, disparity_rl, disparity_filter;
     cv::Size image_size = cv::Size(left_image.size().width, left_image.size().height);
     // Setup for 16-bit disparity
@@ -134,6 +139,9 @@ Mat stereo_match(Mat left_image, Mat right_image, int algorithm, int min_dispari
         wls_filter->setLambda(wls_lambda);
         wls_filter->setSigmaColor(wls_sigma);
         wls_filter->filter(disp, left_image, disparity_filter, disparity_rl);
+    }
+    else if (algorithm == JR_StereoSGBM){
+        disp = JR_generate_disp(left_image,right_image);
     }
     //disp.convertTo(disp, CV_32F);
     //disparity_filter.convertTo(disparity_filter, CV_32F);

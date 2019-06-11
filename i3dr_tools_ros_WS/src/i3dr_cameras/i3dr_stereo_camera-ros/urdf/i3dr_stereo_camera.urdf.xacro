@@ -19,7 +19,7 @@ Copyright (c) 2019, I3D Robotics Ltd.
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
-                    <box size="${width} ${height} ${length}"/>
+                    <box size="${length} ${width} ${height}"/>
                 </geometry>
                 <material name="${camera_name}_camera_colour">
                     <color rgba="${r} ${g} ${b} ${a}"/>
@@ -56,9 +56,9 @@ Copyright (c) 2019, I3D Robotics Ltd.
         </joint>
 
         <joint name="${camera_name}_depth_optical_joint" type="fixed">
-            <parent link="${camera_name}_cameraLeft_optical"/>
+            <parent link="${camera_name}_cameraRight"/>
             <child link="${camera_name}_depth_optical_frame"/>
-            <origin xyz="0 0 0" rpy="0 0 0" />
+            <origin xyz="0 0 0" rpy="${-pi/2} 0 ${(-pi/2)}" />
         </joint>
 
         <sensor name="${camera_name}_right_camera_sensor" update_rate="60">
@@ -72,12 +72,12 @@ Copyright (c) 2019, I3D Robotics Ltd.
         <joint name="${camera_name}_mount_center_joint" type="fixed">
             <parent link="${camera_name}_base_link"/>
             <child link="${camera_name}_center"/>
-            <origin xyz="${mount_offset_x} ${mount_offset_y} ${(length/2)+mount_offset_z}" rpy="0 0 ${-pi/2}" />
+            <origin xyz="${mount_offset_x} ${mount_offset_y} ${(height/2)+mount_offset_z}" rpy="0 0 ${-pi/2}" />
         </joint>
 
         <!-- Correct for IMU orientation, Z -> X -->
         <joint name="${camera_name}_imu_joint" type="fixed">
-            <origin xyz="0 0.015 -0.002" rpy="0 ${pi/2} 0" />
+            <origin xyz="0 0 0" rpy="0 ${pi/2} 0" />
             <parent link="${camera_name}_imu_link" />
             <child link="${camera_name}_base_link" />
         </joint>

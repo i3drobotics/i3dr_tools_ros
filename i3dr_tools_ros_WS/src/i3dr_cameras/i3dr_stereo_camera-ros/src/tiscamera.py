@@ -76,17 +76,17 @@ class Camera:
                 width, height, framerate,)
         '''
         if liveview:
-            p = 'tcamsrc serial="%s" name=source ! video/x-raw,format=%s,width=%d,height=%d,framerate=%d/1' % (
-                serial, pixelformat, width, height, framerate,)
+            p = 'tcamsrc serial="%s" name=source_%s ! video/x-raw,format=%s,width=%d,height=%d,framerate=%d/1' % (
+                serial, serial, pixelformat, width, height, framerate,)
             p += ' ! tee name=t'
-            p += ' t. ! queue ! videoconvert ! video/x-raw,format=%s ,width=%d,height=%d,framerate=%d/1 ! shmsink socket-path=/tmp/ros_mem' % (
-                pixelformat, width, height, framerate,)
+            p += ' t. ! queue ! videoconvert ! video/x-raw,format=%s ,width=%d,height=%d,framerate=%d/1 ! shmsink socket-path=/tmp/ros_mem_%s' % (
+                pixelformat, width, height, framerate, serial, )
             p += ' t. ! queue ! videoconvert ! ximagesink'
         else:
-            p = 'tcamsrc serial="%s" name=source ! video/x-raw,format=%s,width=%d,height=%d,framerate=%d/1' % (
-                serial, pixelformat, width, height, framerate,)
-            p += '! videoconvert ! video/x-raw,format=%s ,width=%d,height=%d,framerate=%d/1 ! shmsink socket-path=/tmp/ros_mem' % (
-                pixelformat, width, height, framerate,)
+            p = 'tcamsrc serial="%s" name=source_%s ! video/x-raw,format=%s,width=%d,height=%d,framerate=%d/1' % (
+                serial, serial, pixelformat, width, height, framerate,)
+            p += '! videoconvert ! video/x-raw,format=%s ,width=%d,height=%d,framerate=%d/1 ! shmsink socket-path=/tmp/ros_mem_%s' % (
+                pixelformat, width, height, framerate, serial, )
 
         print(p)
 
@@ -99,15 +99,15 @@ class Camera:
         if self.pipeline.get_state(10 * Gst.SECOND)[0] != Gst.StateChangeReturn.SUCCESS:
             raise RuntimeError("Failed to start video stream.")
         # Query a pointer to our source, so we can set properties.
-        self.source = self.pipeline.get_by_name("source")
+        self.source = self.pipeline.get_by_name("source_%s" % (serial))
 
         # Create gscam_config variable with content
         #gscam = 'shmsrc socket-path=/tmp/ros_mem ! video/x-raw-rgb, width=%d,height=%d,framerate=%d/1' % (
         #    width, height, framerate,)
         #gscam += ',bpp=24,depth=24,blue_mask=16711680, green_mask=65280, red_mask=255 ! ffmpegcolorspace'
 
-        gscam = 'shmsrc socket-path=/tmp/ros_mem ! video/x-raw, format=%s width=%d,height=%d,framerate=%d/1' % (
-            pixelformat,width, height, framerate,)
+        gscam = 'shmsrc socket-path=/tmp/ros_mem_%s ! video/x-raw, format=%s width=%d,height=%d,framerate=%d/1' % (
+            serial, pixelformat,width, height, framerate,)
         gscam += '! videoconvert'
         
         t_pipe = 'video/x-raw, format=(string)%s, ' % (pixelformat)
@@ -118,8 +118,8 @@ class Camera:
         os.environ["GSCAM_CONFIG"] = t_p
 
         self.gscam_command = ["rosrun","gscam","gscam",
-                    "_camera_name:=cam", "_camera_info_url:=file:///home/i3dr/.ros/camera_info/cam_info.yaml",
-                    "_frame_id:=/cam_depth_optical_frame",
+                    self.camera_name, self.camera_info,
+                    self.camera_frame,
                     "_sync_sink:=true"]
 
     def start_pipeline(self):
