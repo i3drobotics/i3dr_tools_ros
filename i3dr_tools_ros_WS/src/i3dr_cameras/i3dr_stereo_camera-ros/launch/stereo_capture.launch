@@ -16,7 +16,7 @@
     <arg name="gain_auto" default="false"/>
     <arg name="fps" default="1"/>
     <!-- 0=TIS, 1=Basler -->
-    <arg name="cameratype" default="0"/>
+    <arg name="cameratype" default="1"/>
 
     <!-- STEREO <MATCHER> -->
     <group ns="$(arg camera_namespace)">
