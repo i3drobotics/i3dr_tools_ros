@@ -67,7 +67,7 @@ set(image_view_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(image_view_SOURCE_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline/image_view)
+  set(image_view_SOURCE_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/image_pipeline/image_view)
   set(image_view_DEVEL_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel)
   set(image_view_INSTALL_PREFIX "")
   set(image_view_PREFIX ${image_view_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include " STREQUAL " "
         message(FATAL_ERROR "Project 'image_view' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'image_view' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline/image_view/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'image_view' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/image_pipeline/image_view/${idir}'.  ${_report}")
     endif()
     _list_append_unique(image_view_INCLUDE_DIRS ${include})
   endforeach()

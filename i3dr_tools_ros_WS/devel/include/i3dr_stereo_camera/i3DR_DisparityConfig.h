@@ -445,13 +445,13 @@ i3DR_DisparityConfig::GroupDescription<i3DR_DisparityConfig::DEFAULT, i3DR_Dispa
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.stereo_algorithm = 0;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __max__.stereo_algorithm = 1;
+      __max__.stereo_algorithm = 2;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.stereo_algorithm = 0;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      Default.abstract_parameters.push_back(i3DR_DisparityConfig::AbstractParamDescriptionConstPtr(new i3DR_DisparityConfig::ParamDescription<int>("stereo_algorithm", "int", 0, "stereo algorithm", "{'enum_description': 'stereo algorithm', 'enum': [{'srcline': 11, 'description': 'Block Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 0, 'ctype': 'int', 'type': 'int', 'name': 'StereoBM'}, {'srcline': 12, 'description': 'SemiGlobal Block Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'StereoSGBM'}]}", &i3DR_DisparityConfig::stereo_algorithm)));
+      Default.abstract_parameters.push_back(i3DR_DisparityConfig::AbstractParamDescriptionConstPtr(new i3DR_DisparityConfig::ParamDescription<int>("stereo_algorithm", "int", 0, "stereo algorithm", "{'enum_description': 'stereo algorithm', 'enum': [{'srcline': 11, 'description': 'Block Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 0, 'ctype': 'int', 'type': 'int', 'name': 'StereoBM'}, {'srcline': 12, 'description': 'SemiGlobal Block Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'StereoSGBM'}, {'srcline': 13, 'description': 'Joanneum Research Stereo Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'JRSGB'}]}", &i3DR_DisparityConfig::stereo_algorithm)));
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
-      __param_descriptions__.push_back(i3DR_DisparityConfig::AbstractParamDescriptionConstPtr(new i3DR_DisparityConfig::ParamDescription<int>("stereo_algorithm", "int", 0, "stereo algorithm", "{'enum_description': 'stereo algorithm', 'enum': [{'srcline': 11, 'description': 'Block Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 0, 'ctype': 'int', 'type': 'int', 'name': 'StereoBM'}, {'srcline': 12, 'description': 'SemiGlobal Block Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'StereoSGBM'}]}", &i3DR_DisparityConfig::stereo_algorithm)));
+      __param_descriptions__.push_back(i3DR_DisparityConfig::AbstractParamDescriptionConstPtr(new i3DR_DisparityConfig::ParamDescription<int>("stereo_algorithm", "int", 0, "stereo algorithm", "{'enum_description': 'stereo algorithm', 'enum': [{'srcline': 11, 'description': 'Block Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 0, 'ctype': 'int', 'type': 'int', 'name': 'StereoBM'}, {'srcline': 12, 'description': 'SemiGlobal Block Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 1, 'ctype': 'int', 'type': 'int', 'name': 'StereoSGBM'}, {'srcline': 13, 'description': 'Joanneum Research Stereo Matching', 'srcfile': '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg', 'cconsttype': 'const int', 'value': 2, 'ctype': 'int', 'type': 'int', 'name': 'JRSGB'}]}", &i3DR_DisparityConfig::stereo_algorithm)));
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.prefilter_size = 5;
 //#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
@@ -661,10 +661,12 @@ i3DR_DisparityConfig::GroupDescription<i3DR_DisparityConfig::DEFAULT, i3DR_Dispa
     return statics;
   }
 
-//#line 11 "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg"
+//#line 11 "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg"
       const int i3DR_Disparity_StereoBM = 0;
-//#line 12 "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg"
+//#line 12 "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg"
       const int i3DR_Disparity_StereoSGBM = 1;
+//#line 13 "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/cfg/i3DR_Disparity.cfg"
+      const int i3DR_Disparity_JRSGB = 2;
 }
 
 #undef DYNAMIC_RECONFIGURE_FINAL

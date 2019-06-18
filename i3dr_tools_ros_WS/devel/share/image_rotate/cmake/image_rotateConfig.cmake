@@ -67,7 +67,7 @@ set(image_rotate_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(image_rotate_SOURCE_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline/image_rotate)
+  set(image_rotate_SOURCE_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/image_pipeline/image_rotate)
   set(image_rotate_DEVEL_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel)
   set(image_rotate_INSTALL_PREFIX "")
   set(image_rotate_PREFIX ${image_rotate_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include " STREQUAL " "
         message(FATAL_ERROR "Project 'image_rotate' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'image_rotate' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline/image_rotate/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'image_rotate' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/image_pipeline/image_rotate/${idir}'.  ${_report}")
     endif()
     _list_append_unique(image_rotate_INCLUDE_DIRS ${include})
   endforeach()

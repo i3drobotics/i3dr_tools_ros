@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--XML-->
+<launch>
+    <!-- SETUP ARGUMENTS -->
+    <!-- enable/disable rviz -->
+    <arg name="rviz" default="false" />
+    <!-- enable/disable calibration -->
+    <arg name="calibrate" default="false"/>
+    <arg name="slam" default="false"/>
+
+    <arg name="camera_name" default="realsense_D435i"/>
+
+    <!-- STEREO CAPTURE -->
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+        <arg name="align_depth" value="true"/>
+        <arg name="linear_accel_cov" value="1.0"/>
+        <arg name="unite_imu_method" value="linear_interpolation"/>
+        <arg name="camera" value="$(arg camera_name)"/>
+    </include>
+
+    <!-- STEREO CALIBRATION -->
+    <include if="$(arg calibrate)" file="$(find i3dr_stereo_camera)/launch/stereo_calibration.launch">
+        <arg name="camera_namespace" value="$(arg camera_name)"/>
+    </include>
+
+    <!-- STEREO MATCHER -->
+    <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
+        <arg name="use_i3dr_matcher" value="true"/>
+
+        <arg name="camera_namespace" value="$(arg camera_name)"/>
+        <arg name="gui" value="true"/>
+        <arg name="stereo_algorithm" value="0" />
+        <arg name="min_disparity" value="9" />
+        <arg name="disparity_range" value="112" />
+        <arg name="correlation_window_size" value="19" />
+        <arg name="uniqueness_ratio" value="2" />
+        <arg name="speckle_size" value="1000" />
+
+        <arg name="left_image_topic" value="infra1/image_rect_raw"/>
+        <arg name="right_image_topic" value="infra2/image_rect_raw"/>
+        <arg name="left_image_info_topic" value="infra1/camera_info"/>
+        <arg name="right_image_info_topic" value="infra2/camera_info"/>
+    </include>
+
+    <!-- STEREO REGISTRATOIN -->
+    <include if="$(arg slam)" file="$(find i3dr_registration_localisation)/launch/stereo_localisation.launch">
+        <arg name="localization" value="false"/>
+        <!-- enable/disable gui for stereo matching parameters -->
+        <arg name="camera_namespace" value="$(arg camera_name)"/>
+        <arg name="depth_odom" value="true"/>
+        <!--<arg name="depth_icp_odom" default="false"/>-->
+        <arg name="madgwick" value="true"/>
+        <arg name="ukf" value="false"/>
+        <arg name="imu_topic" value="/realsense_D435i/imu"/>
+        <arg name="base_link_frame" value="realsense_D435i_link"/>
+        <arg name="disparity2Depth" value="false"/>
+        <arg name="rgb_topic" default="/realsense_D435i/left/image_rect"/>
+        <arg name="depth_topic" value="/realsense_D435i/aligned_depth_to_color/image_raw"/>
+        <arg name="cloud_topic" default="/realsense_D435i/points2"/>
+        <arg name="slow_processing" default="false"/>
+    </include>
+
+    <!-- DISPLAY -->
+    <!-- run rviz with config file -->
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rivz" 
+        args="-d $(find i3dr_realsense)/rviz/scene.rviz"/>
+
+</launch>

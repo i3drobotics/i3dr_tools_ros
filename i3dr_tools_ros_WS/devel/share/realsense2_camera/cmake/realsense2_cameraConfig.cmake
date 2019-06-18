@@ -67,7 +67,7 @@ set(realsense2_camera_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(realsense2_camera_SOURCE_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/realsense-ros/realsense2_camera)
+  set(realsense2_camera_SOURCE_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/realsense-ros/realsense2_camera)
   set(realsense2_camera_DEVEL_PREFIX /home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel)
   set(realsense2_camera_INSTALL_PREFIX "")
   set(realsense2_camera_PREFIX ${realsense2_camera_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include " STREQUAL " "
         message(FATAL_ERROR "Project 'realsense2_camera' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'realsense2_camera' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/realsense-ros/realsense2_camera/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'realsense2_camera' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/realsense-ros/realsense2_camera/${idir}'.  ${_report}")
     endif()
     _list_append_unique(realsense2_camera_INCLUDE_DIRS ${include})
   endforeach()

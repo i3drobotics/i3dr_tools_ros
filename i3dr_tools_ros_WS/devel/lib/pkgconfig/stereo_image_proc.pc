@@ -3,6 +3,6 @@ prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel
 Name: stereo_image_proc
 Description: Description of stereo_image_proc
 Version: 1.12.23
-Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline/stereo_image_proc/include
+Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/image_pipeline/stereo_image_proc/include
 Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib -lstereo_image_proc
 Requires: image_geometry image_proc sensor_msgs stereo_msgs

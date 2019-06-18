@@ -7,7 +7,7 @@ from sys import path as sys_path
 
 from pkgutil import extend_path
 
-__extended_path = "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline/camera_calibration/src".split(";")
+__extended_path = "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/image_pipeline/camera_calibration/src".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p
