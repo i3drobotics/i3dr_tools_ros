@@ -21,12 +21,13 @@
     <include file="$(find i3dr_stereo_camera)/launch/stereo_capture.launch">
         <!-- Be sure to change this to your cameras serials -->
         <arg name="camera_namespace" value="$(arg camera_name)"/>
-        <arg name="camera_right_serial" value="31710260"/>
-        <arg name="camera_left_serial" value="31710277"/>
-        <arg name="frame_width" default="2448"/>
-        <arg name="frame_height" default="2048"/>
-        <arg name="exposure" value="1500000"/>
+        <arg name="camera_right_serial" value="31710277"/>
+        <arg name="camera_left_serial" value="31710260"/>
+        <arg name="frame_width" default="1920"/>
+        <arg name="frame_height" default="1080"/>
+        <arg name="exposure" value="50000"/>
         <arg name="gain" value="0"/>
+        <arg name="fps" value="5"/>
     </include>
 
     <!-- STEREO CALIBRATION -->
@@ -36,14 +37,14 @@
 
     <!-- STEREO MATCHER -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
-        <arg name="use_i3dr_matcher" value="true"/>
+        <arg name="use_i3dr_matcher" value="false"/>
 
         <!-- enable/disable gui for stereo matching parameters -->
         <arg name="camera_namespace" value="$(arg camera_name)"/>
-        <arg name="gui" value="true"/>
+        <arg name="gui" value="false"/>
         <arg name="stereo_algorithm" value="0" />
         <arg name="min_disparity" value="0" />
-        <arg name="disparity_range" value="432" />
+        <arg name="disparity_range" value="304" />
         <arg name="correlation_window_size" value="21" />
         <arg name="uniqueness_ratio" value="10" />
         <arg name="speckle_range" value="4" />

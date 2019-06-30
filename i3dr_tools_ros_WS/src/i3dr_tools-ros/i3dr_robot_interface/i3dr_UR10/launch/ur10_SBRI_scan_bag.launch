@@ -1,0 +1,21 @@
+<launch>
+    <arg name="camera_name" default="phobos_nuclear"/>
+    <arg name="folder_name" default="/media/i3dr/Seagate Backup Plus Drive/SBRI_room_scans/workshop_scan"/>
+
+    <arg name="record" default="true"/>
+
+    <arg name="play_timestamp" default="2019-06-28-14-29-22"/>
+
+
+
+    <node if="$(arg record)" pkg="rosbag" type="record" name="rosbag_record_SBRI_scan_cam" 
+            args="record -o '$(arg folder_name)/i3dr_ROS_room_scan_cam' /$(arg camera_name)/left/image_raw /$(arg camera_name)/left/camera_info /$(arg camera_name)/right/image_raw /$(arg camera_name)/right/camera_info"/>
+    <node if="$(arg record)" pkg="rosbag" type="record" name="rosbag_record_SBRI_scan_robot" 
+            args="record -o '$(arg folder_name)/i3dr_ROS_room_scan_robot' /tf /tf_static /joint_states"/>
+
+        <node unless="$(arg record)" pkg="rosbag" type="play" name="rosbag_play_SBRI_scan_cam" 
+            args="'$(arg folder_name)/i3dr_ROS_room_scan_cam_$(arg play_timestamp).bag'"/>
+    <node unless="$(arg record)" pkg="rosbag" type="play" name="rosbag_play_SBRI_scan_robot" 
+            args="'$(arg folder_name)/i3dr_ROS_room_scan_robot_$(arg play_timestamp).bag'"/>
+
+</launch>

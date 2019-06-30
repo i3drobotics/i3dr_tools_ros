@@ -78,6 +78,6 @@
     </node>
 
     <!-- run rqt control gui for adjusting stereo configuration -->
-    <node if="$(arg gui)" pkg="rqt_reconfigure" type="rqt_reconfigure" name="display_controls_$(arg camera_namespace)" />
+    <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="display_controls_$(arg camera_namespace)" />
 
 </launch>
