@@ -41,8 +41,8 @@
 
    <node name="i3dr_ur10_scan" pkg="i3dr_ur10" type="i3dr_ur10_scan.py" output="screen">
         <param name="scan_type" type="string" value="room"/>
-        <param name="ur10_move_time" type="int" value="10"/>
-        <param name="ur10_pose_pause" type="int" value="1"/>
+        <param name="ur10_move_time" type="int" value="20"/>
+        <param name="ur10_pose_pause" type="int" value="0"/>
     </node>
 
     <node name="i3dr_ur10_scan_gui" pkg="i3dr_ur10" type="i3dr_ur10_scan_gui.py" output="screen">

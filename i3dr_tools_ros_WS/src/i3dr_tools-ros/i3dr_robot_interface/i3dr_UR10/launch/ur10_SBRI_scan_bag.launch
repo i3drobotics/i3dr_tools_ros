@@ -1,21 +1,51 @@
 <launch>
     <arg name="camera_name" default="phobos_nuclear"/>
-    <arg name="folder_name" default="/media/i3dr/Seagate Backup Plus Drive/SBRI_room_scans/workshop_scan"/>
+    <arg name="folder_name" default="/media/i3dr/Seagate Backup Plus Drive/SBRI_room_scans/wood_scan"/>
 
     <arg name="record" default="true"/>
+    
+    <group if="$(arg record)">
+        <node pkg="rosbag" type="record" name="rosbag_record_SBRI_scan" 
+            args="record -o '$(arg folder_name)/i3dr_ROS_room_scan' /tf /tf_static /joint_states /$(arg camera_name)/left/image_raw /$(arg camera_name)/left/camera_info /$(arg camera_name)/right/image_raw /$(arg camera_name)/right/camera_info"/>
+    </group>
+    <group unless="$(arg record)">
+        <arg name="bag_name" default="i3dr_ROS_room_scan_2019-07-04-15-45-00[Light_on-Laser_on]"/>
+        <arg name="rviz" default="true"/>
 
-    <arg name="play_timestamp" default="2019-06-28-14-29-22"/>
+        <param name="use_sim_time" value="true"/>
+        
+        <!-- SETUP ROBOT MODEL -->
+        <param name="$(arg camera_name)_robot_description" command="$(find xacro)/xacro '$(find i3dr_phobos_nuclear)/urdf/phobos_nuclear_scene.urdf.xacro'" />
+        <arg name="use_tf_static" default="false"/>
+        <node name="robot_state_publisher_phobos_nuclear" pkg="robot_state_publisher" type="state_publisher">
+            <remap from="robot_description" to="$(arg camera_name)_robot_description"/>
+            <param name="use_tf_static" value="$(arg use_tf_static)"/>
+        </node>
 
+        <!-- STEREO MATCHER -->
+        <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
+            <arg name="use_i3dr_matcher" value="false"/>
 
+            <!-- enable/disable gui for stereo matching parameters -->
+            <arg name="camera_namespace" value="$(arg camera_name)"/>
+            <arg name="gui" value="false"/>
+            <arg name="stereo_algorithm" value="0" />
+            <arg name="min_disparity" value="0" />
+            <arg name="disparity_range" value="416" />
+            <arg name="correlation_window_size" value="25" />
+            <arg name="uniqueness_ratio" value="6" />
+            <arg name="speckle_range" value="4" />
+            <arg name="speckle_size" value="1000" />
+        </include>
 
-    <node if="$(arg record)" pkg="rosbag" type="record" name="rosbag_record_SBRI_scan_cam" 
-            args="record -o '$(arg folder_name)/i3dr_ROS_room_scan_cam' /$(arg camera_name)/left/image_raw /$(arg camera_name)/left/camera_info /$(arg camera_name)/right/image_raw /$(arg camera_name)/right/camera_info"/>
-    <node if="$(arg record)" pkg="rosbag" type="record" name="rosbag_record_SBRI_scan_robot" 
-            args="record -o '$(arg folder_name)/i3dr_ROS_room_scan_robot' /tf /tf_static /joint_states"/>
+        <!-- PLAY ROS BAG OF IMAGES AND TF -->
+        <node pkg="rosbag" type="play" name="rosbag_play_SBRI_scan" 
+            args="--clock -r 4 '$(arg folder_name)/$(arg bag_name).bag'"/>
 
-        <node unless="$(arg record)" pkg="rosbag" type="play" name="rosbag_play_SBRI_scan_cam" 
-            args="'$(arg folder_name)/i3dr_ROS_room_scan_cam_$(arg play_timestamp).bag'"/>
-    <node unless="$(arg record)" pkg="rosbag" type="play" name="rosbag_play_SBRI_scan_robot" 
-            args="'$(arg folder_name)/i3dr_ROS_room_scan_robot_$(arg play_timestamp).bag'"/>
+        <!-- DISPLAY -->
+        <!-- run rviz with config file -->
+        <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rivz" 
+            args="-d $(find i3dr_ur10)/rviz/ur10_phobos_nuclear.rviz"/>
+    </group>
 
 </launch>

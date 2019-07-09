@@ -2,8 +2,6 @@
 #include <ros/console.h>
 #include <ros/param.h>
 
-#include <yaml-cpp/yaml.h>
-
 #include <boost/bind.hpp>
 
 #include "std_msgs/String.h"
@@ -29,8 +27,7 @@
 #include <i3dr_stereo_camera/i3DR_DisparityConfig.h>
 
 #include <boost/filesystem.hpp>
-//#include <PhobosIntegration/PhobosIntegration.hpp>
-#include <matcherjrsgm.h>
+#include <matcherJrsgm.h>
 
 #include <string>
 
@@ -141,14 +138,12 @@ Mat stereo_match(Mat left_image, Mat right_image, int algorithm, int min_dispari
         wls_filter->filter(disp, left_image, disparity_filter, disparity_rl);
     }
     else if (algorithm == JR_StereoSGBM){
-        MatcherJrSGM* matcher;
+        MatcherJrSGM* matcher = new MatcherJrSGM;
+        matcher->setDisparityRange(disparity_range);
+        matcher->setDisparityShift(min_disparity);
         matcher->setMatchCosts(p1,p2);
-        matcher->setOcclusion(false);
-        matcher->setInterpolation(false);
-        matcher->setSubPixel(false);
-        matcher->setDisparityRange(min_disparity);
-        matcher->setCensusWindow(disparity_range);
-
+        matcher->setWindowSize(correlation_window_size > 0 ? correlation_window_size : 9);
+        
         matcher->compute(left_image, right_image, disp);
     }
     //disp.convertTo(disp, CV_32F);

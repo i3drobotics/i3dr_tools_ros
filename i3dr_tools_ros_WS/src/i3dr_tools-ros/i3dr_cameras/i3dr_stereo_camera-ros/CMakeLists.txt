@@ -15,9 +15,19 @@ find_package(PCL 1.2 REQUIRED)
 
 include_directories(
 	include
-	include/Phobos/include
     ${catkin_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}
+)
+
+add_service_files(
+    FILES
+    SetFloat.srv
+    SetInt.srv
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
 )
 
 generate_dynamic_reconfigure_options(
@@ -32,20 +42,17 @@ catkin_package(
 #  DEPENDS system_lib
 )
 
-set(PHOBOINTEGRATION_LIBRARY_DIRS include/Phobos/lib)
-
 link_directories(${PCL_LIBRARY_DIRS})
-link_directories(include/Phobos/lib)
 add_definitions(${PCL_DEFINITIONS})
 
 add_executable(
-	generate_disparity src/generate_disparity.cpp src/matcherjrsgm.cpp
+	generate_disparity src/generate_disparity.cpp src/matcherJrsgm.cpp src/iniReader.cpp
 )
+
 target_link_libraries(
 	generate_disparity
 	${catkin_LIBRARIES}
 	${OpenCV_LIBRARIES}
-	yaml-cpp
 )
 
 add_executable(

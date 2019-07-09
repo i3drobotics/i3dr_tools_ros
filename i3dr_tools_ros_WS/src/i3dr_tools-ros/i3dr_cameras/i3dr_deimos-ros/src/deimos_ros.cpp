@@ -134,6 +134,24 @@ namespace uvc_camera {
 					printf ("setting exposure : FAIL\n");
 				
 				}
+
+				returnValue = cam->set_control(V4L2_CID_AUTOGAIN , false); // brightness
+				if ( false == returnValue)
+				{
+					printf ("setting auto gain : FAIL\n");
+				}
+
+				returnValue = cam->set_control(V4L2_CID_EXPOSURE_AUTO , false); // auto exposure
+				if ( false == returnValue)
+				{
+					printf ("setting auto exposure : FAIL\n");
+				}
+
+				returnValue = cam->set_control(V4L2_CID_GAIN , 0); // brightness
+				if ( false == returnValue)
+				{
+					printf ("setting gain : FAIL\n");
+				}
 			
 				std_msgs::Float64 exposure_msg;
 				exposure_msg.data=(float)exposure_value;

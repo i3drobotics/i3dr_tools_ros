@@ -22,7 +22,7 @@
     <include file="$(find i3dr_deimos)/launch/deimos_capture.launch">
         <arg name="camera_namespace" value="$(arg camera_name)"/>
         <arg name="device" value="/dev/video0"/>
-        <arg name="exposure" default="8000" />
+        <arg name="exposure" default="25000" />
     </include>
 
     <!-- STEREO CALIBRATION -->
@@ -37,11 +37,13 @@
         <arg name="camera_namespace" value="$(arg camera_name)"/>
         <arg name="gui" value="false"/>
         <arg name="stereo_algorithm" value="0" />
-        <arg name="min_disparity" value="-60" />
-        <arg name="disparity_range" value="128" />
-        <arg name="correlation_window_size" value="19" />
+        <arg name="min_disparity" value="-18" />
+        <arg name="disparity_range" value="96" />
+        <arg name="correlation_window_size" value="45" />
         <arg name="uniqueness_ratio" value="2" />
         <arg name="speckle_size" value="1000" />
+        <arg name="prefilter_size" value="147" />
+        <arg name="prefilter_cap" value="7" />
     </include>
 
     <!-- DISPLAY -->

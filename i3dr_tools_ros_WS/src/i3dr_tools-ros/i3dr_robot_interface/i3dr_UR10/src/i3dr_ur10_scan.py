@@ -217,15 +217,15 @@ def generate_scan_joints_v(scan_joints,init_joints,target_joints,v_scan_angle):
     for i in range(0,2):
         target_joints[5] = target_joints[5]+v_scan_angle
         scan_joints.append(target_joints[:])
-    for i in range(0,3):
+    for i in range(0,5):
         target_joints[5] = target_joints[5]-v_scan_angle
         scan_joints.append(target_joints[:])
-    for i in range(0,1):
+    for i in range(0,3):
         target_joints[5] = target_joints[5]+v_scan_angle
         scan_joints.append(target_joints[:])
     target_joints[5] = init_joints[5]
     return(scan_joints,target_joints)
-
+ 
 def generate_scan_joints(init_joints,h_scan_angle,v_scan_angle):
     scan_joints = []
     target_joints = init_joints

@@ -25,9 +25,9 @@
         <arg name="camera_left_serial" value="31710260"/>
         <arg name="frame_width" default="1920"/>
         <arg name="frame_height" default="1080"/>
-        <arg name="exposure" value="50000"/>
+        <arg name="exposure" value="30000"/>
         <arg name="gain" value="0"/>
-        <arg name="fps" value="5"/>
+        <arg name="fps" value="1"/>
     </include>
 
     <!-- STEREO CALIBRATION -->
@@ -44,9 +44,9 @@
         <arg name="gui" value="false"/>
         <arg name="stereo_algorithm" value="0" />
         <arg name="min_disparity" value="0" />
-        <arg name="disparity_range" value="304" />
-        <arg name="correlation_window_size" value="21" />
-        <arg name="uniqueness_ratio" value="10" />
+        <arg name="disparity_range" value="416" />
+        <arg name="correlation_window_size" value="25" />
+        <arg name="uniqueness_ratio" value="6" />
         <arg name="speckle_range" value="4" />
         <arg name="speckle_size" value="1000" />
     </include>
