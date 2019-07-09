@@ -32,11 +32,11 @@
 
     <!-- STEREO MATCHER -->
     <include file="$(find i3dr_stereo_camera)/launch/stereo_matcher.launch">
-        <arg name="use_i3dr_matcher" value="false"/>
+        <arg name="use_i3dr_matcher" value="true"/>
 
         <arg name="camera_namespace" value="$(arg camera_name)"/>
         <arg name="gui" value="false"/>
-        <arg name="stereo_algorithm" value="0" />
+        <arg name="stereo_algorithm" value="2" />
         <arg name="min_disparity" value="-18" />
         <arg name="disparity_range" value="96" />
         <arg name="correlation_window_size" value="45" />

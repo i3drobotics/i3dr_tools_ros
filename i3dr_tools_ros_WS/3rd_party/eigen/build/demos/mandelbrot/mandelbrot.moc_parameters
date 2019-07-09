@@ -1,0 +1,7 @@
+-I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/3rd_party/eigen
+-I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/3rd_party/eigen/build
+-I/usr/include/qt4
+-DNDEBUG
+-o
+/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/3rd_party/eigen/build/demos/mandelbrot/mandelbrot.moc
+/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/3rd_party/eigen/demos/mandelbrot/mandelbrot.h

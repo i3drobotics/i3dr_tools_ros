@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/3rd_party/eigen/unsupported/test/matrix_square_root.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildUnsupported"
+		],
+		"name" : "matrix_square_root_1"
+	}
+}

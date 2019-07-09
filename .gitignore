@@ -10,3 +10,6 @@ i3dr_tools_ros_WS/devel/*
 i3dr_tools_ros_WS/logs/*
 i3dr_tools_ros_WS/.catkin_tools/*
 i3dr_tools_ros_WS/Examples/*
+i3dr_tools_ros_WS/3rd_party/opencv/opencv2/opencv/build/*
+i3dr_tools_ros_WS/3rd_party/opencv/opencv34/opencv/build/*
+i3dr_tools_ros_WS/3rd_party/opencv/opencv4/opencv/build/*

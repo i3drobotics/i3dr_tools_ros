@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/3rd_party/eigen/test/product_selfadjoint.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "product_selfadjoint_4"
+	}
+}

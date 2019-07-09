@@ -154,7 +154,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(i3dr_stereo_camera_EXPORTED_TARGETS "i3dr_stereo_camera_gencfg")
+set(i3dr_stereo_camera_EXPORTED_TARGETS "i3dr_stereo_camera_generate_messages_cpp;i3dr_stereo_camera_generate_messages_eus;i3dr_stereo_camera_generate_messages_lisp;i3dr_stereo_camera_generate_messages_nodejs;i3dr_stereo_camera_generate_messages_py;i3dr_stereo_camera_gencfg")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${i3dr_stereo_camera_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -191,7 +191,7 @@ foreach(depend ${depends})
   list(APPEND i3dr_stereo_camera_EXPORTED_TARGETS ${${i3dr_stereo_camera_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "i3dr_stereo_camera-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${i3dr_stereo_camera_DIR}/${extra})
