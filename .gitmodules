@@ -47,8 +47,8 @@
 	url = https://github.com/opencv/opencv.git
 	branch = 3.4.6
 
-[submodule "opencv4_contrib"]
-	path = i3dr_tools_ros_WS/3rd_party/opencv/opencv4/opencv_contrib
+[submodule "opencv34_contrib"]
+	path = i3dr_tools_ros_WS/3rd_party/opencv/opencv34/opencv_contrib
 	url = https://github.com/opencv/opencv_contrib.git
 	branch = 3.4.6
 
