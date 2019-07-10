@@ -1,8 +1,0 @@
-prefix=/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel
-
-Name: i3dr_phobos
-Description: Description of i3dr_phobos
-Version: 0.0.1
-Cflags: 
-Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib 
-Requires: 
