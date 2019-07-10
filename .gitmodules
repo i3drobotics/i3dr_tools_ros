@@ -27,7 +27,7 @@
 	url = https://github.com/TheImagingSource/tiscamera.git
 
 [submodule "i3dr_stereo_camera-ros"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros
+	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera
 	url = https://github.com/i3drobotics/i3dr_stereo_camera-ros.git
 
 [submodule "python_tools"]
