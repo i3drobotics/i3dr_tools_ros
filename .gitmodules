@@ -61,3 +61,11 @@
 	path = i3dr_tools_ros_WS/3rd_party/opencv/opencv2/opencv
 	url = https://github.com/opencv/opencv.git
 	branch = 2.4.13.6
+
+[submodule "easy_handeye"]
+	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_robot_interface/easy_handeye
+	url = https://github.com/IFL-CAMP/easy_handeye.git
+
+[submodule "handeye_calib_camodocal"]
+	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_robot_interface/handeye_calib_camodocal
+	url = https://github.com/jhu-lcsr/handeye_calib_camodocal.git
