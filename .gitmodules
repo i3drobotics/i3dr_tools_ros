@@ -41,6 +41,7 @@
 [submodule "i3dr_deimos-ros"]
 	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_deimos
 	url = https://github.com/i3drobotics/i3dr_deimos-ros.git
+	branch = beta
 
 [submodule "i3dr_realsense-ros"]
 	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_realsense
