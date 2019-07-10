@@ -58,6 +58,10 @@
 	path = i3dr_tools_ros_WS/src/i3dr_registration_localisation/i3dr_rtabmap
 	url = https://github.com/i3drobotics/i3dr_rtabmap-ros.git
 
+[submodule "i3dr_ur10-ros"]
+	path = i3dr_tools_ros_WS/src/i3dr_registration_localisation/i3dr_ur10
+	url = https://github.com/i3drobotics/i3dr_ur10-ros.git
+
 [submodule "opencv34"]
 	path = i3dr_tools_ros_WS/3rd_party/opencv/opencv34/opencv
 	url = https://github.com/opencv/opencv.git
