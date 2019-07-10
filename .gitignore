@@ -1,9 +1,5 @@
 *.code-workspace
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 i3dr_tools_ros_WS/.vscode/*
 i3dr_tools_ros_WS/src/.vscode/*
 i3dr_tools_ros_WS/build/*
