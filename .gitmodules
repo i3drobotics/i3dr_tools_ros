@@ -1,25 +1,25 @@
 [submodule "realsense"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/realsense-ros
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/realsense-ros
 	url = https://github.com/intel-ros/realsense.git
 
 [submodule "universal_robot"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_robot_interface/universal_robot
+	path = i3dr_tools_ros_WS/src/i3dr_robot_interface/universal_robot
 	url = https://github.com/ros-industrial/universal_robot.git
 
 [submodule "image_pipeline"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/image_pipeline
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/image_pipeline
 	url = https://github.com/i3drobotics/image_pipeline
 
 [submodule "gscam"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/gscam
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/gscam
 	url = https://github.com/i3drobotics/gscam.git
 
 [submodule "pylon_camera"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/pylon_camera
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/pylon_camera
 	url = https://github.com/magazino/pylon_camera.git
 
 [submodule "camera_control_msgs"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/camera_control_msgs
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/camera_control_msgs
 	url = https://github.com/magazino/camera_control_msgs.git
 
 [submodule "tiscamera"]
@@ -27,19 +27,23 @@
 	url = https://github.com/TheImagingSource/tiscamera.git
 
 [submodule "i3dr_stereo_camera-ros"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera
 	url = https://github.com/i3drobotics/i3dr_stereo_camera-ros.git
+
+[submodule "i3dr_deimos-ros"]
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_deimos
+	url = https://github.com/i3drobotics/i3dr_deimos-ros.git
 
 [submodule "python_tools"]
 	path = python_tools
 	url = https://github.com/i3drobotics/python_tools.git
 
 [submodule "i3dr_pcl_tools-ros"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_registration_localisation/i3dr_pcl_tools
+	path = i3dr_tools_ros_WS/src/i3dr_registration_localisation/i3dr_pcl_tools
 	url = https://github.com/i3drobotics/i3dr_pcl_tools-ros.git
 
 [submodule "i3dr_rtabmap-ros"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_registration_localisation/i3dr_rtabmap
+	path = i3dr_tools_ros_WS/src/i3dr_registration_localisation/i3dr_rtabmap
 	url = https://github.com/i3drobotics/i3dr_rtabmap-ros.git
 
 [submodule "opencv34"]
@@ -63,9 +67,9 @@
 	branch = 2.4.13.6
 
 [submodule "easy_handeye"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_robot_interface/easy_handeye
+	path = i3dr_tools_ros_WS/src/i3dr_robot_interface/easy_handeye
 	url = https://github.com/IFL-CAMP/easy_handeye.git
 
-[submodule "handeye_calib_camodocal"]
-	path = i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_robot_interface/handeye_calib_camodocal
+[submodule "handeye_calib_camodocal"]s
+	path = i3dr_tools_ros_WS/src/i3dr_robot_interface/handeye_calib_camodocal
 	url = https://github.com/jhu-lcsr/handeye_calib_camodocal.git
