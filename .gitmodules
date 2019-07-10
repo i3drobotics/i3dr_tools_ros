@@ -30,9 +30,21 @@
 	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_stereo_camera
 	url = https://github.com/i3drobotics/i3dr_stereo_camera-ros.git
 
+[submodule "i3dr_phobos_nuclear-ros"]
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_phobos_nuclear
+	url = https://github.com/i3drobotics/i3dr_phobos_nuclear-ros.git
+
+[submodule "i3dr_phobos-ros"]
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_phobos
+	url = https://github.com/i3drobotics/i3dr_phobos-ros.git
+
 [submodule "i3dr_deimos-ros"]
 	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_deimos
 	url = https://github.com/i3drobotics/i3dr_deimos-ros.git
+
+[submodule "i3dr_realsense-ros"]
+	path = i3dr_tools_ros_WS/src/i3dr_cameras/i3dr_realsense
+	url = https://github.com/i3drobotics/i3dr_realsense-ros.git
 
 [submodule "python_tools"]
 	path = python_tools
