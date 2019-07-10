@@ -5,4 +5,4 @@ Description: Description of i3dr_stereo_camera
 Version: 0.0.1
 Cflags: -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/include -I/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/src/i3dr_tools-ros/i3dr_cameras/i3dr_stereo_camera-ros/include
 Libs: -L/home/i3dr/i3dr_tools_ros/i3dr_tools_ros_WS/devel/lib -li3dr_stereo_camera
-Requires: roscpp nodelet std_msgs sensor_msgs
+Requires: roscpp nodelet std_msgs sensor_msgs message_runtime

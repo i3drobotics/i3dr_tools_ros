@@ -2,7 +2,7 @@
     <arg name="camera_name" default="phobos_nuclear"/>
     <arg name="folder_name" default="/media/i3dr/Seagate Backup Plus Drive/SBRI_room_scans/wood_scan"/>
 
-    <arg name="record" default="true"/>
+    <arg name="record" default="false"/>
     
     <group if="$(arg record)">
         <node pkg="rosbag" type="record" name="rosbag_record_SBRI_scan" 
@@ -38,9 +38,38 @@
             <arg name="speckle_size" value="1000" />
         </include>
 
-        <!-- PLAY ROS BAG OF IMAGES AND TF -->
+        <!-- ROS BAG -->
         <node pkg="rosbag" type="play" name="rosbag_play_SBRI_scan" 
-            args="--clock -r 4 '$(arg folder_name)/$(arg bag_name).bag'"/>
+            args="--clock -r 1 '$(arg folder_name)/$(arg bag_name).bag'"/>
+        
+        <!-- GLUING -->
+        <!-- Transfom point cloud to world frame -->
+        <node name="transform_pcl_frame" pkg="i3dr_pcl_tools" type="transform_pcl_frame" output="screen" >
+            <param name="pcl2_input" type="string" value="/phobos_nuclear/points2" />
+            <param name="pcl2_output" type="string" value="/phobos_nuclear/world_points2" />
+            <param name="pcl_output" type="string" value="/phobos_nuclear/world_points" />
+            <param name="tf" type="string" value="/world" />
+        </node>
+        <!-- Crop point cloud -->
+        <node name="crop_pcl" pkg="i3dr_pcl_tools" type="crop_pcl" output="screen" >
+            <param name="pcl2_input" type="string" value="/phobos_nuclear/world_points2" />
+            <param name="pcl2_output" type="string" value="/phobos_nuclear/cropped_points2" />
+            <param name="pcl_output" type="string" value="/phobos_nuclear/cropped_points" />
+            <param name="minX" type="double" value="-6" />
+            <param name="maxX" type="double" value="6" />
+            <param name="minY" type="double" value="-6" />
+            <param name="maxY" type="double" value="6" />
+            <param name="minZ" type="double" value="-6" />
+            <param name="maxZ" type="double" value="6" />
+        </node>
+        <!-- Add point  cloud to map point cloud -->
+        <node name="pcl_map" pkg="i3dr_pcl_tools" type="pcl_map" output="screen" >
+            <param name="resolution" type="double" value="0.01" />
+            <param name="pcl2_input" type="string" value="/phobos_nuclear/cropped_points2" />
+            <param name="pcl2_output" type="string" value="/phobos_nuclear/map_points2" />
+            <param name="pcl_output" type="string" value="/phobos_nuclear/map_points" />
+        </node>
+        
 
         <!-- DISPLAY -->
         <!-- run rviz with config file -->

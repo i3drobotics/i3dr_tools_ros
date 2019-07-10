@@ -4,7 +4,7 @@
 
 <!-- STEREO REGISTRATOIN -->
     <arg name="localization" default="false"/>
-    <include file="$(find i3dr_registration_localisation)/launch/stereo_localisation.launch">
+    <include file="$(find i3dr_rtabmap)/launch/stereo_localisation.launch">
         <arg name="localization" value="$(arg localization)"/>
         <arg name="camera_namespace" value="$(arg camera_name)"/>
         <arg name="depth_odom" value="true"/>
