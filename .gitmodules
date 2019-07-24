@@ -16,7 +16,7 @@
 
 [submodule "pylon_camera"]
 	path = i3dr_tools_ros_WS/src/i3dr_cameras/pylon_camera
-	url = https://github.com/magazino/pylon_camera.git
+	url = https://github.com/yasmeenel3sh/pylon_camera.git
 
 [submodule "camera_control_msgs"]
 	path = i3dr_tools_ros_WS/src/i3dr_cameras/camera_control_msgs
